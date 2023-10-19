@@ -31,7 +31,7 @@
 #if !TARGET_OS_EXCLAVEKIT
   #include <sys/mman.h>
   #include <mach/mach.h>
-  #include <mach/mach_vm.h>
+  //#include <mach/mach_vm.h>
   #include <malloc/malloc.h>
 #endif //  !TARGET_OS_EXCLAVEKIT
 #include <sanitizer/asan_interface.h>
@@ -507,7 +507,7 @@ void MemoryManager::vm_deallocate_bytes(void* p, std::size_t size) {
         bytesToHex((const uint8_t*)&kr, sizeof(kern_return_t), intStrBuffer);
         strlcat(&buffer[0], intStrBuffer, 1024);
         strlcat(&buffer[0], ")", 1024);
-        CRSetCrashLogMessage2(buffer);
+        //CRSetCrashLogMessage2(buffer);
         assert(0 && "vm_allocate failed");
         return {nullptr, 0};
     }

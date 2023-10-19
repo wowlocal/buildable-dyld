@@ -33,7 +33,7 @@
 #include <sys/param.h>
 #include <sys/ucred.h>
 #include <sys/mount.h>
-#include <System/sys/fsgetpath.h>
+//#include <System/sys/fsgetpath.h>
 
 #include "FileManager.h"
 
@@ -295,7 +295,9 @@ int FileRecord::open(int flags) {
         fsid = _fileManager->fsidForUUID(_volume);
     }
     if (fsid && _objectID) {
-        _fd = openbyid_np((fsid_t*)&fsid, (fsobj_id_t*)_objectID, flags);
+        //_fd = openbyid_np((fsid_t*)&fsid, (fsobj_id_t*)_objectID, flags);
+        assert(false);
+        _fd = -1;
     }
     if (_fd == -1) {
         _fd = ::open(getPath(), flags);

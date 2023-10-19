@@ -35,7 +35,7 @@
     #include <sys/uio.h>
     #include <sys/un.h>
     #if __arm64__ || __arm__
-        #include <System/sys/mman.h>
+        //#include <System/sys/mman.h>
     #else
         #include <sys/mman.h>
     #endif
@@ -47,19 +47,19 @@
     #include <sys/param.h>
     #include <sys/mount.h>
     #include <dirent.h>
-    #include <System/sys/csr.h>
-    #include <System/sys/reason.h>
-    #include <kern/kcdata.h>
+    //#include <System/sys/csr.h>
+    //#include <System/sys/reason.h>
+    //#include <kern/kcdata.h>
     //FIXME: Hack to avoid <sys/commpage.h> being included by <System/machine/cpu_capabilities.h>
-    #include <System/sys/commpage.h>
-    #include <System/machine/cpu_capabilities.h>
-    #include <System/sys/content_protection.h>
-    #include <sandbox/private.h>
+    //#include <System/sys/commpage.h>
+    //#include <System/machine/cpu_capabilities.h>
+    //#include <System/sys/content_protection.h>
+    //#include <sandbox/private.h>
     #include <sys/syscall.h>
     #include <sys/attr.h>
-    #include <sys/vnode.h>
+    //#include <sys/vnode.h>
     #if !TARGET_OS_DRIVERKIT
-        #include <vproc_priv.h>
+        //#include <vproc_priv.h>
     #endif
     // no libc header for send() syscall interface
     extern "C" ssize_t __sendto(int, const void*, size_t, int, const struct sockaddr*, socklen_t);
@@ -249,25 +249,27 @@ bool SyscallDelegate::dtraceUserProbesEnabled() const
 void SyscallDelegate::dtraceRegisterUserProbes(dof_ioctl_data_t* probes) const
 {
 #if BUILDING_DYLD
-    int fd = ::open("/dev/" DTRACEMNR_HELPER, O_RDWR);
-    if ( fd != -1 ) {
-        // the probes data is variable length. The way this is handled is we just pass the pointer
-        // to ioctlData and the kernel reads the full data from that.
-        user_addr_t val = (user_addr_t)(unsigned long)probes;
-        ::ioctl(fd, DTRACEHIOC_ADDDOF, &val);
-        ::close(fd);
-    }
+//    int fd = ::open("/dev/" DTRACEMNR_HELPER, O_RDWR);
+//    if ( fd != -1 ) {
+//        // the probes data is variable length. The way this is handled is we just pass the pointer
+//        // to ioctlData and the kernel reads the full data from that.
+//        user_addr_t val = (user_addr_t)(unsigned long)probes;
+//        ::ioctl(fd, DTRACEHIOC_ADDDOF, &val);
+//        ::close(fd);
+//    }
+    assert(false);
 #endif
 }
 
 void SyscallDelegate::dtraceUnregisterUserProbe(int registeredID) const
 {
 #if BUILDING_DYLD
-    int fd = ::open("/dev/" DTRACEMNR_HELPER, O_RDWR, 0);
-    if ( fd != -1 ) {
-        ::ioctl(fd, DTRACEHIOC_REMOVE, registeredID);
-        ::close(fd);
-    }
+//    int fd = ::open("/dev/" DTRACEMNR_HELPER, O_RDWR, 0);
+//    if ( fd != -1 ) {
+//        ::ioctl(fd, DTRACEHIOC_REMOVE, registeredID);
+//        ::close(fd);
+//    }
+    assert(false);
 #endif
 }
 
@@ -377,14 +379,15 @@ void SyscallDelegate::forEachInDirectory(const char* dirPath, bool dirsOnly, voi
                     const char* entryName = (char*)(&entry->name_info) + entry->name_info.attr_dataoffset;
                     bool use = false;
                     if ( entry->returned.commonattr & ATTR_CMN_OBJTYPE ) {
-                        if ( entry->type == VDIR ) {
-                            if ( dirsOnly )
-                                use = true;
-                        }
-                        else if ( entry->type == VREG ) {
-                            if ( !dirsOnly )
-                                use = true;
-                        }
+                        assert(false);
+//                        if ( entry->type == VDIR ) {
+//                            if ( dirsOnly )
+//                                use = true;
+//                        }
+//                        else if ( entry->type == VREG ) {
+//                            if ( !dirsOnly )
+//                                use = true;
+//                        }
                     }
                     if ( use ) {
                         char newPath[PATH_MAX];
@@ -804,7 +807,7 @@ bool SyscallDelegate::saveFileWithAttribute(Diagnostics& diag, const char* path,
 #if TARGET_OS_OSX
     int fd = dyld3::open(tempPath, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 #else
-    int fd = ::open_dprotected_np(tempPath, O_WRONLY | O_CREAT, PROTECTION_CLASS_D, 0, S_IRUSR | S_IWUSR);
+    int fd = ::open_dprotected_np(tempPath, O_WRONLY | O_CREAT, /*PROTECTION_CLASS_D*/4, 0, S_IRUSR | S_IWUSR);
 #endif
     if ( fd == -1 ) {
         diag.error("open/open_dprotected_np(%s) failed, errno=%d", tempPath, errno);
@@ -944,7 +947,9 @@ SyscallDelegate::DyldCommPage::DyldCommPage()
 SyscallDelegate::DyldCommPage SyscallDelegate::dyldCommPageFlags() const
 {
 #if BUILDING_DYLD
-    return *((DyldCommPage*)_COMM_PAGE_DYLD_FLAGS);
+    //return *((DyldCommPage*)_COMM_PAGE_DYLD_FLAGS);
+    assert(false);
+    return *((DyldCommPage*) 0x00000002);
 #else
     return _commPageFlags;
 #endif

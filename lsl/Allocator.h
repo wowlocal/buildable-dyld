@@ -34,7 +34,7 @@
 #include <cstddef>
 #include <utility>
 #if !TARGET_OS_EXCLAVEKIT
-#include <_simple.h>
+//#include <_simple.h>
 #include <mach/vm_statistics.h>
 #include <os/lock.h>
 #include <pthread.h>
@@ -139,10 +139,10 @@ struct VIS_HIDDEN MemoryManager {
         // Eventually we will use this to parse parameters for controlling comapct info mlock()
         // We need to do this before allocator is created
 #if BUILDING_DYLD && !TARGET_OS_EXCLAVEKIT
-        if (_simple_getenv(apple, "dyld_hw_tpro") != nullptr) {
-            // Start in a writable state to allow bootstrap
-            _tproEnable = true;
-        }
+//        if (_simple_getenv(apple, "dyld_hw_tpro") != nullptr) {
+//            // Start in a writable state to allow bootstrap
+//            _tproEnable = true;
+//        }
 #endif //  BUILDING_DYLD && !TARGET_OS_EXCLAVEKIT
     }
 
@@ -192,21 +192,21 @@ private:
     __attribute__((always_inline))
     void makeWriteable(WriteProtectionState& previousState) {
 #if BUILDING_DYLD && !TARGET_OS_EXCLAVEKIT
-        if (_tproEnable) {
-            os_compiler_barrier();
-            // Stacks are in  memory, so it is possible to attack tpro via writing the stack vars in another thread. To protect
-            // against this we create a signature that mixes the value of writable and its address then validate it later. If the
-            // barriers work the state will never spill to the stack between varification and usage.
-            previousState.data      = os_thread_self_restrict_tpro_is_writable();
-#if __has_feature(ptrauth_calls)
-            previousState.signature = ptrauth_sign_generic_data(previousState.data, (uintptr_t)&previousState.data);
-#endif /* __has_feature(ptrauth_calls) */
-            if (!previousState.data) {
-                os_thread_self_restrict_tpro_to_rw();
-            }
-            os_compiler_barrier();
-            return;
-        }
+//        if (_tproEnable) {
+//            os_compiler_barrier();
+//            // Stacks are in  memory, so it is possible to attack tpro via writing the stack vars in another thread. To protect
+//            // against this we create a signature that mixes the value of writable and its address then validate it later. If the
+//            // barriers work the state will never spill to the stack between varification and usage.
+//            previousState.data      = os_thread_self_restrict_tpro_is_writable();
+//#if __has_feature(ptrauth_calls)
+//            previousState.signature = ptrauth_sign_generic_data(previousState.data, (uintptr_t)&previousState.data);
+//#endif /* __has_feature(ptrauth_calls) */
+//            if (!previousState.data) {
+//                os_thread_self_restrict_tpro_to_rw();
+//            }
+//            os_compiler_barrier();
+//            return;
+//        }
         if (_disableMemoryProtection) { return; }
         previousState.data      = 1;
 #if __has_feature(ptrauth_calls)
@@ -224,21 +224,21 @@ private:
     __attribute__((always_inline))
     void makeReadOnly(WriteProtectionState& previousState) {
 #if BUILDING_DYLD && !TARGET_OS_EXCLAVEKIT
-        if (_tproEnable) {
-            os_compiler_barrier();
-            // Stacks are in  memory, so it is possible to attack tpro via writing the stack vars in another thread. To protect
-            // against this we create a signature that mixes the value of writable and its address then validate it later. If the
-            // barriers work the state will never spill to the stack between varification and usage.
-            previousState.data      = os_thread_self_restrict_tpro_is_writable();
-#if __has_feature(ptrauth_calls)
-            previousState.signature = ptrauth_sign_generic_data(previousState.data, (uintptr_t)&previousState.data);
-#endif /* __has_feature(ptrauth_calls) */
-            if (previousState.data) {
-                os_thread_self_restrict_tpro_to_ro();
-            }
-            os_compiler_barrier();
-            return;
-        }
+//        if (_tproEnable) {
+//            os_compiler_barrier();
+//            // Stacks are in  memory, so it is possible to attack tpro via writing the stack vars in another thread. To protect
+//            // against this we create a signature that mixes the value of writable and its address then validate it later. If the
+//            // barriers work the state will never spill to the stack between varification and usage.
+//            previousState.data      = os_thread_self_restrict_tpro_is_writable();
+//#if __has_feature(ptrauth_calls)
+//            previousState.signature = ptrauth_sign_generic_data(previousState.data, (uintptr_t)&previousState.data);
+//#endif /* __has_feature(ptrauth_calls) */
+//            if (previousState.data) {
+//                os_thread_self_restrict_tpro_to_ro();
+//            }
+//            os_compiler_barrier();
+//            return;
+//        }
         if (_disableMemoryProtection) { return; }
         previousState.data      = -1;
 #if __has_feature(ptrauth_calls)
@@ -256,27 +256,27 @@ private:
     __attribute__((always_inline))
     void restorePreviousState(WriteProtectionState& previousState) {
 #if BUILDING_DYLD && !TARGET_OS_EXCLAVEKIT
-        if (_tproEnable) {
-            os_compiler_barrier();
-#if __has_feature(ptrauth_calls)
-            uintptr_t signedWritableState = ptrauth_sign_generic_data(previousState.data, (uintptr_t)&previousState.data);
-            if (previousState.signature != signedWritableState) {
-                // Someone tampered with writableState. Process is under attack, we need to abort();
-                abort();
-            }
-#endif /* __has_feature(ptrauth_calls) */
-
-            uintptr_t state = os_thread_self_restrict_tpro_is_writable();
-            if (state != previousState.data) {
-                if (previousState.data) {
-                    os_thread_self_restrict_tpro_to_rw();
-                } else {
-                    os_thread_self_restrict_tpro_to_ro();
-                }
-            }
-            os_compiler_barrier();
-            return;
-        }
+//        if (_tproEnable) {
+//            os_compiler_barrier();
+//#if __has_feature(ptrauth_calls)
+//            uintptr_t signedWritableState = ptrauth_sign_generic_data(previousState.data, (uintptr_t)&previousState.data);
+//            if (previousState.signature != signedWritableState) {
+//                // Someone tampered with writableState. Process is under attack, we need to abort();
+//                abort();
+//            }
+//#endif /* __has_feature(ptrauth_calls) */
+//
+//            uintptr_t state = os_thread_self_restrict_tpro_is_writable();
+//            if (state != previousState.data) {
+//                if (previousState.data) {
+//                    os_thread_self_restrict_tpro_to_rw();
+//                } else {
+//                    os_thread_self_restrict_tpro_to_ro();
+//                }
+//            }
+//            os_compiler_barrier();
+//            return;
+//        }
         if (_disableMemoryProtection) { return; }
 #if __has_feature(ptrauth_calls)
         uintptr_t signedWritableState = ptrauth_sign_generic_data(previousState.data, (uintptr_t)&previousState.data);

@@ -42,7 +42,7 @@
 #include <mach-o/dyld_priv.h>
 
 #if BUILDING_DYLD && !TARGET_OS_EXCLAVEKIT
-  #include <subsystem.h>
+  //#include <subsystem.h>
 #endif // BUILDING_DYLD && !TARGET_OS_EXCLAVEKIT
 
 #include "DyldSharedCache.h"
@@ -63,7 +63,8 @@ int resilient_stat(const char* path, struct stat* buf)
     int result;
     do {
 #if BUILDING_DYLD
-        result = ::stat_with_subsystem(path, buf);
+        //result = ::stat_with_subsystem(path, buf);
+        assert(false);
 #else
         result = ::stat(path, buf);
 #endif
@@ -81,7 +82,8 @@ int resilient_open(const char* path, int flag, int other)
         if (flag & O_CREAT)
             result = ::open(path, flag, other);
         else
-            result = ::open_with_subsystem(path, flag);
+            //result = ::open_with_subsystem(path, flag);
+            assert(false);
 #else
         result = ::open(path, flag, other);
 #endif

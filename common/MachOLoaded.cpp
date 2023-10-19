@@ -41,9 +41,9 @@
 
 #if !TARGET_OS_EXCLAVEKIT
 extern "C" {
-  #include <corecrypto/ccdigest.h>
-  #include <corecrypto/ccsha1.h>
-  #include <corecrypto/ccsha2.h>
+  #include "ccdigest.h"
+  #include "ccsha1.h"
+  #include "ccsha2.h"
 }
 #endif
 

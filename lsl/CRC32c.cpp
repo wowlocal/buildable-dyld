@@ -27,7 +27,7 @@
 
 #include <TargetConditionals.h>
 #if !TARGET_OS_EXCLAVEKIT
-  #include <System/machine/cpu_capabilities.h>
+  //#include <System/machine/cpu_capabilities.h>
 #endif
 
 #include "CRC32c.h"
@@ -149,9 +149,7 @@ static constinit CRC32cSW sCRC32cSW;
 
 CRC32c::CRC32c() : _impl(sCRC32cSW) {
 #ifdef ENABLE_CRC_INTRINSICS
-    if (CRC_HW_CHECK) {
         _impl = sCRC32cHW;
-    }
 #endif
 }
 

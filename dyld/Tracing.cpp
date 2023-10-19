@@ -29,7 +29,7 @@
 #include <assert.h>
 
 #include <mach/mach.h>
-#include <kern/kcdata.h>
+//#include <kern/kcdata.h>
 #include <mach-o/dyld_priv.h>
 #include <mach-o/dyld_images.h>
 #include <sys/fsgetpath.h>
@@ -54,29 +54,29 @@ static
 void kdebug_trace_dyld_region(const uint32_t code, cpu_type_t cputype, cpu_subtype_t cpuSubtype, const char* imagePath,
                              const uuid_t* uuid_bytes, const fsobj_id_t fsobjid, const fsid_t fsid, const void* load_addr)
 {
-#if BUILDING_DYLD
-    uint64_t id = kdebug_trace_string(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code), 0, imagePath);
-#if __ARM_ARCH_7K__
-    uint32_t *uuid = (uint32_t *)uuid_bytes;
-    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code + 2), uuid[0],
-                 uuid[1], uuid[2], uuid[3]);
-    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code + 3),
-                 (uint32_t)load_addr, fsid.val[0], fsid.val[1],
-                 fsobjid.fid_objno);
-    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code + 4),
-                 fsobjid.fid_generation, id, cputype, cpuSubtype);
-#else /* __ARM_ARCH_7K__ */
-    uint64_t *uuid = (uint64_t *)uuid_bytes;
-    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code), uuid[0],
-                 uuid[1], (uint64_t)load_addr,
-                 (uint64_t)fsid.val[0] | ((uint64_t)fsid.val[1] << 32));
-    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code + 1),
-                 (uint64_t)fsobjid.fid_objno |
-                 ((uint64_t)fsobjid.fid_generation << 32),
-                 id, ((uint64_t)cputype << 32) | cpuSubtype, 0);
-#endif /* !__ARM_ARCH_7K__ */
-    kdebug_trace_string(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code), id, nullptr);
-#endif // BUILDING_DYLD
+//#if BUILDING_DYLD
+//    uint64_t id = kdebug_trace_string(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code), 0, imagePath);
+//#if __ARM_ARCH_7K__
+//    uint32_t *uuid = (uint32_t *)uuid_bytes;
+//    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code + 2), uuid[0],
+//                 uuid[1], uuid[2], uuid[3]);
+//    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code + 3),
+//                 (uint32_t)load_addr, fsid.val[0], fsid.val[1],
+//                 fsobjid.fid_objno);
+//    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code + 4),
+//                 fsobjid.fid_generation, id, cputype, cpuSubtype);
+//#else /* __ARM_ARCH_7K__ */
+//    uint64_t *uuid = (uint64_t *)uuid_bytes;
+//    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code), uuid[0],
+//                 uuid[1], (uint64_t)load_addr,
+//                 (uint64_t)fsid.val[0] | ((uint64_t)fsid.val[1] << 32));
+//    kdebug_trace(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code + 1),
+//                 (uint64_t)fsobjid.fid_objno |
+//                 ((uint64_t)fsobjid.fid_generation << 32),
+//                 id, ((uint64_t)cputype << 32) | cpuSubtype, 0);
+//#endif /* !__ARM_ARCH_7K__ */
+//    kdebug_trace_string(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, code), id, nullptr);
+//#endif // BUILDING_DYLD
 }
 
 VIS_HIDDEN
@@ -93,27 +93,27 @@ void kdebug_trace_dyld_image(const uint32_t code,
 void kdebug_trace_dyld_cache(uint64_t rawFSObjID, uint64_t rawFSID, uint64_t sharedCacheBaseAddress,
                              const uint8_t sharedCacheUUID[16])
 {
-#if BUILDING_DYLD
-    if ( !dyld3::kdebug_trace_dyld_enabled(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, DBG_DYLD_UUID_SHARED_CACHE_A)) )
-        return;
-
-    // Don't send the event if dyld is in the cache.  In this case, we already sent the event when we transitioned to dyld in the cache
-    if ( __dso_handle.inDyldCache() )
-        return;
-
-    fsid_t*     fsid    = (fsid_t*)&rawFSID;
-    fsobj_id_t* fsobjid = (fsobj_id_t*)&rawFSObjID;
-
-    char pathBuffer[PATH_MAX] = { 0 };
-    // TODO: Add the shared cache path to the dynamic config region so that we don't need this call
-    if ( fsgetpath(pathBuffer, PATH_MAX, fsid, rawFSObjID) == -1 ) {
-        // Failed, likely due to the sandbox.  Zero the buffer for now.
-        pathBuffer[0] = 0;
-    }
-
-    kdebug_trace_dyld_region(DBG_DYLD_UUID_SHARED_CACHE_A, 0, 0, pathBuffer, (const uuid_t*)&sharedCacheUUID[0],
-                             *fsobjid, *fsid, (const void*)sharedCacheBaseAddress);
-#endif // BUILDING_DYLD
+//#if BUILDING_DYLD
+//    if ( !dyld3::kdebug_trace_dyld_enabled(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, DBG_DYLD_UUID_SHARED_CACHE_A)) )
+//        return;
+//
+//    // Don't send the event if dyld is in the cache.  In this case, we already sent the event when we transitioned to dyld in the cache
+//    if ( __dso_handle.inDyldCache() )
+//        return;
+//
+//    fsid_t*     fsid    = (fsid_t*)&rawFSID;
+//    fsobj_id_t* fsobjid = (fsobj_id_t*)&rawFSObjID;
+//
+//    char pathBuffer[PATH_MAX] = { 0 };
+//    // TODO: Add the shared cache path to the dynamic config region so that we don't need this call
+//    if ( fsgetpath(pathBuffer, PATH_MAX, fsid, rawFSObjID) == -1 ) {
+//        // Failed, likely due to the sandbox.  Zero the buffer for now.
+//        pathBuffer[0] = 0;
+//    }
+//
+//    kdebug_trace_dyld_region(DBG_DYLD_UUID_SHARED_CACHE_A, 0, 0, pathBuffer, (const uuid_t*)&sharedCacheUUID[0],
+//                             *fsobjid, *fsid, (const void*)sharedCacheBaseAddress);
+//#endif // BUILDING_DYLD
 }
 
 // FIXME
@@ -127,51 +127,52 @@ static std::atomic<uint64_t> trace_pair_id(1LL<<63);
 
 VIS_HIDDEN
 bool kdebug_trace_dyld_enabled(uint32_t code) {
-    return kdebug_is_enabled(code);
+    return false;
+    //return kdebug_is_enabled(code);
 }
 
 VIS_HIDDEN
 void kdebug_trace_dyld_marker(uint32_t code, kt_arg data1, kt_arg data2, kt_arg data3, kt_arg data4) {
-    if (kdebug_is_enabled(code)) {
-        data1.prepare(code);
-        data2.prepare(code);
-        data3.prepare(code);
-        data4.prepare(code);
-        kdebug_trace(code, data1.value(), data2.value(), data3.value(), data4.value());
-        data4.destroy(code);
-        data3.destroy(code);
-        data2.destroy(code);
-        data1.destroy(code);
-    }
+//    if (kdebug_is_enabled(code)) {
+//        data1.prepare(code);
+//        data2.prepare(code);
+//        data3.prepare(code);
+//        data4.prepare(code);
+//        kdebug_trace(code, data1.value(), data2.value(), data3.value(), data4.value());
+//        data4.destroy(code);
+//        data3.destroy(code);
+//        data2.destroy(code);
+//        data1.destroy(code);
+//    }
 }
 
 VIS_HIDDEN
 uint64_t kdebug_trace_dyld_duration_start(uint32_t code, kt_arg data1, kt_arg data2, kt_arg data3) {
     uint64_t result = 0;
-    if (kdebug_is_enabled(code)) {
-        result = ++trace_pair_id;
-        data1.prepare(code);
-        data2.prepare(code);
-        data3.prepare(code);
-        kdebug_trace(code | DBG_FUNC_START, result, data1.value(), data2.value(), data3.value());
-        data3.destroy(code);
-        data2.destroy(code);
-        data1.destroy(code);
-    }
+//    if (kdebug_is_enabled(code)) {
+//        result = ++trace_pair_id;
+//        data1.prepare(code);
+//        data2.prepare(code);
+//        data3.prepare(code);
+//        kdebug_trace(code | DBG_FUNC_START, result, data1.value(), data2.value(), data3.value());
+//        data3.destroy(code);
+//        data2.destroy(code);
+//        data1.destroy(code);
+//    }
     return result;
 }
 
 VIS_HIDDEN
 void kdebug_trace_dyld_duration_end(uint64_t trace_id, uint32_t code, kt_arg data1, kt_arg data2, kt_arg data3) {
-    if (trace_id != 0 && kdebug_is_enabled(code)) {
-        data1.prepare(code);
-        data2.prepare(code);
-        data3.prepare(code);
-        kdebug_trace(code | DBG_FUNC_END, trace_id, data1.value(), data2.value(), data3.value());
-        data3.destroy(code);
-        data2.destroy(code);
-        data1.destroy(code);
-    }
+//    if (trace_id != 0 && kdebug_is_enabled(code)) {
+//        data1.prepare(code);
+//        data2.prepare(code);
+//        data3.prepare(code);
+//        kdebug_trace(code | DBG_FUNC_END, trace_id, data1.value(), data2.value(), data3.value());
+//        data3.destroy(code);
+//        data2.destroy(code);
+//        data1.destroy(code);
+//    }
 }
 
 void ScopedTimer::startTimer() {

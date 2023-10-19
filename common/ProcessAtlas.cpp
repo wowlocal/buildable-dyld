@@ -34,7 +34,7 @@
 #include <fcntl.h>
 #include <dirent.h>
 #include <unistd.h>
-#include <libproc.h>
+//#include <libproc.h>
 
 #include <sys/attr.h>
 #include <sys/mman.h>
@@ -42,7 +42,7 @@
 #include <sys/fsgetpath.h>
 
 #include <mach/mach_time.h> // mach_absolute_time()
-#include <mach/mach_vm.h>
+//#include <mach/mach_vm.h>
 #include <mach-o/dyld_priv.h> // FIXME: We can remove this once we fully integrate into dyld4
 #include "dyld_cache_format.h"
 //FIXME: We should remove this header

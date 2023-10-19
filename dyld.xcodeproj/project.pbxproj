@@ -1351,6 +1351,14 @@
 		C1F96B4529035C6900D9EDE1 /* Test_Fixups.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Test_Fixups.mm; sourceTree = "<group>"; };
 		C1F98A2928D93FD70081A6EB /* Test_ObjC_64.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Test_ObjC_64.mm; sourceTree = "<group>"; };
 		C1F98A2B28D9404E0081A6EB /* ObjC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjC.cpp; sourceTree = "<group>"; };
+		C64DDC0F2ADC3D7D000D8D92 /* cc_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cc_config.h; sourceTree = "<group>"; };
+		C64DDC102ADC3D7D000D8D92 /* cc_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cc_error.h; sourceTree = "<group>"; };
+		C64DDC112ADC3D7D000D8D92 /* cc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cc.h; sourceTree = "<group>"; };
+		C64DDC122ADC3D7D000D8D92 /* ccsha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccsha1.h; sourceTree = "<group>"; };
+		C64DDC132ADC3D7D000D8D92 /* ccn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccn.h; sourceTree = "<group>"; };
+		C64DDC142ADC3D7D000D8D92 /* ccsha2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccsha2.h; sourceTree = "<group>"; };
+		C64DDC152ADC3D7D000D8D92 /* ccdigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccdigest.h; sourceTree = "<group>"; };
+		C64DDC162ADC8301000D8D92 /* VersionMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionMap.h; sourceTree = "<group>"; };
 		DE0CF9FE29B26DF900795EA9 /* dyld_exclavekit.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = dyld_exclavekit.modulemap; path = "include/mach-o/dyld_exclavekit.modulemap"; sourceTree = "<group>"; };
 		DE0CF9FF29B26E0500795EA9 /* dyld_exclavekit.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = dyld_exclavekit.private.modulemap; path = "include/mach-o/dyld_exclavekit.private.modulemap"; sourceTree = "<group>"; };
 		DE10EA3027D6A4340027519D /* MurmurHash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MurmurHash.cpp; sourceTree = "<group>"; };
@@ -2009,6 +2017,27 @@
 			path = cache_builder;
 			sourceTree = "<group>";
 		};
+		C64DDC0D2ADC3D7D000D8D92 /* MISHA */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MISHA;
+			sourceTree = "<group>";
+		};
+		C64DDC0E2ADC3D7D000D8D92 /* corecrypto */ = {
+			isa = PBXGroup;
+			children = (
+				C64DDC0F2ADC3D7D000D8D92 /* cc_config.h */,
+				C64DDC102ADC3D7D000D8D92 /* cc_error.h */,
+				C64DDC112ADC3D7D000D8D92 /* cc.h */,
+				C64DDC122ADC3D7D000D8D92 /* ccsha1.h */,
+				C64DDC132ADC3D7D000D8D92 /* ccn.h */,
+				C64DDC142ADC3D7D000D8D92 /* ccsha2.h */,
+				C64DDC152ADC3D7D000D8D92 /* ccdigest.h */,
+			);
+			path = corecrypto;
+			sourceTree = "<group>";
+		};
 		DE728E4B210CD6A100EB5409 /* rst */ = {
 			isa = PBXGroup;
 			children = (
@@ -2247,6 +2276,7 @@
 		F98B354A24ED744200DE738B /* dyld */ = {
 			isa = PBXGroup;
 			children = (
+				C64DDC162ADC8301000D8D92 /* VersionMap.h */,
 				F98B354D24ED744200DE738B /* dyldStartup.s */,
 				C1DE0A52254A4F21006E8953 /* BumpAllocator.h */,
 				F9A2755D2549144700D7C49F /* DyldAPIs.h */,
@@ -2679,6 +2709,8 @@
 		F9ED4CBE0630A7B100DF4E74 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				C64DDC0E2ADC3D7D000D8D92 /* corecrypto */,
+				C64DDC0D2ADC3D7D000D8D92 /* MISHA */,
 				F91BFAC52166CED7007F10AB /* mach-o */,
 				F99EE6AE06B48D4200BF1992 /* dlfcn.h */,
 				A5E247802369485F00BDED2F /* dlfcn_private.h */,
@@ -3684,7 +3716,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/build-scripts/prebuilt-loader-hash.sh\n";
+			shellScript = "#${SRCROOT}/build-scripts/prebuilt-loader-hash.sh\necho https://gist.github.com/mstange/7a642437b67ab7d8b0c68979ccd23a36\n";
 			showEnvVarsInLog = 0;
 		};
 		F960CE55254121350044A147 /* make PrebuiltLoader version */ = {
@@ -5852,7 +5884,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1C420B32771111700BF6075 /* dyldinfo.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"BUILDING_DYLDINFO=1",
@@ -5861,6 +5896,8 @@
 				INSTALL_PATH = /usr/bin;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = "";
 				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -5875,6 +5912,7 @@
 				"INSTALL_PATH[sdk=macosx*]" = /usr/bin;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -6468,7 +6506,7 @@
 				);
 				IS_ZIPPERED = "";
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 				SYSTEM_HEADER_SEARCH_PATHS = "";
 				USER_HEADER_SEARCH_PATHS = (
 					./dyld,
@@ -6518,7 +6556,7 @@
 					./ld,
 				);
 				IS_ZIPPERED = "";
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 				SYSTEM_HEADER_SEARCH_PATHS = "";
 				USER_HEADER_SEARCH_PATHS = (
 					./dyld,

@@ -29,7 +29,7 @@
 #include "Defines.h"
 #if SUPPORT_CLASSIC_RELOCS
   #include <mach-o/reloc.h>
-  #include <mach-o/x86_64/reloc.h>
+  //#include <mach-o/x86_64/reloc.h>
 #endif
 #include <mach-o/nlist.h>
 

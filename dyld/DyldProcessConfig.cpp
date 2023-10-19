@@ -23,9 +23,9 @@
 
 #include <TargetConditionals.h>
 #if !TARGET_OS_EXCLAVEKIT
-  #include <_simple.h>
+  //#include <_simple.h>
   #include <stdint.h>
-  #include <dyld/VersionMap.h>
+  #include "VersionMap.h"
   #include <mach/mach_time.h> // mach_absolute_time()
   #include <mach-o/dyld_priv.h>
   #include <sys/syscall.h>
@@ -35,14 +35,14 @@
     #include <sys/uio.h>
     #include <sys/un.h>
     #include <sys/mman.h>
-    #include <System/sys/csr.h>
-    #include <System/sys/reason.h>
-    #include <kern/kcdata.h>
+    //#include <System/sys/csr.h>
+    //#include <System/sys/reason.h>
+    //#include <kern/kcdata.h>
     //FIXME: Hack to avoid <sys/commpage.h> being included by <System/machine/cpu_capabilities.h>
-    #include <System/sys/commpage.h>
-    #include <System/machine/cpu_capabilities.h>
+    //#include <System/sys/commpage.h>
+    //#include <System/machine/cpu_capabilities.h>
     #if !TARGET_OS_DRIVERKIT
-        #include <vproc_priv.h>
+        //#include <vproc_priv.h>
     #endif
   // no libc header for send() syscall interface
   extern "C" ssize_t __sendto(int, const void*, size_t, int, const struct sockaddr*, socklen_t);
@@ -472,12 +472,16 @@ ProcessConfig::Process::Process(const KernelArgs* kernArgs, SyscallDelegate& sys
 #if !TARGET_OS_EXCLAVEKIT
 const char* ProcessConfig::Process::appleParam(const char* key) const
 {
-    return _simple_getenv((const char**)apple, key);
+    //return _simple_getenv((const char**)apple, key);
+    assert(false);
+    return "";
 }
 
 const char* ProcessConfig::Process::environ(const char* key) const
 {
-    return _simple_getenv((const char**)envp, key);
+    //return _simple_getenv((const char**)envp, key);
+    assert(false);
+    return "";
 }
 
 std::pair<uint64_t, uint64_t> ProcessConfig::Process::fileIDFromFileHexStrings(const char* encodedFileInfo)
@@ -539,7 +543,7 @@ const char* ProcessConfig::Process::getDyldPath(SyscallDelegate& sys, Allocator&
         }
     }
 #endif
-    
+
     // something wrong with "dyld_file=", fallback to default
     return "/usr/lib/dyld";
 }
@@ -1543,7 +1547,8 @@ ProcessConfig::PathOverrides::PathOverrides(const Process& process, const Securi
         if ( strlen(crashMsg) > 15 ) {
             // if there is a crash, have DYLD_ env vars show up in crash log as secondary string
             // main string is missing symbol/dylib message
-            CRSetCrashLogMessage2(allocator.strdup(crashMsg));
+            //CRSetCrashLogMessage2(allocator.strdup(crashMsg));
+            assert(false);
         }
     }
 
@@ -2421,7 +2426,7 @@ void halt(const char* message, const StructuredError* errorInfo)
     abort();
 #else
     strlcpy(error_string, message, sizeof(error_string));
-    CRSetCrashLogMessage(error_string);
+    //CRSetCrashLogMessage(error_string);
     console("%s\n", message);
 
     /*
@@ -2439,6 +2444,8 @@ void halt(const char* message, const StructuredError* errorInfo)
         strlcpy(error_string, message, sizeof(error_string));
     }
 */
+    assert(false);
+    /*
     char                payloadBuffer[EXIT_REASON_PAYLOAD_MAX_LEN];
     dyld_abort_payload* payload    = (dyld_abort_payload*)payloadBuffer;
     payload->version               = 1;
@@ -2478,6 +2485,7 @@ void halt(const char* message, const StructuredError* errorInfo)
         console("dyld_abort_payload.symbolOffset          = 0x%08X (%s)\n", payload->symbolOffset, payload->symbolOffset ? &payloadBuffer[payload->symbolOffset] : "");
     }
     abort_with_payload(OS_REASON_DYLD, kind, payloadBuffer, payloadSize, truncMessage, 0);
+     */
 #endif // TARGET_OS_EXCLAVEKIT
 }
 #endif // BUILDING_DYLD
@@ -2490,6 +2498,8 @@ void console(const char* format, ...)
     vfprintf(stderr, format, list);
     va_end(list);
 #else
+    assert(false);
+    /*
     if ( getpid() == 1 ) {
   #if BUILDING_DYLD
         int logFD = open("/dev/console", O_WRONLY | O_NOCTTY, 0);
@@ -2507,6 +2517,7 @@ void console(const char* format, ...)
         ::_simple_vdprintf(2, format, list);
         va_end(list);
     }
+     */
 #endif // TARGET_OS_EXCLAVEKIT
 }
 

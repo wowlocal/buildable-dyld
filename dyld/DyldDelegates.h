@@ -32,7 +32,7 @@
   #include <sys/syslog.h>
   #include <sys/uio.h>
   #include <sys/un.h>
-  #include <sys/dtrace.h>
+  //#include <sys/dtrace.h>
 #endif
 
 #if !BUILDING_DYLD
@@ -82,6 +82,21 @@ private:
 };
 
 #define ENOTAFILE_NP  666 // magic errno returned by SyscallDelegate::fileExists() if S_ISREG() is false
+
+typedef struct dof_helper {
+        char dofhp_mod[64];      /* executable or library name */
+        uint64_t dofhp_addr;                    /* base address of object */
+        uint64_t dofhp_dof;                     /* address of helper DOF */
+} dof_helper_t;
+
+typedef struct dof_ioctl_data {
+    /*
+     * This field must be 64 bits to keep the alignment the same
+     * when 64 bit user procs are sending data to 32 bit xnu
+     */
+    uint64_t dofiod_count;
+    dof_helper_t dofiod_helpers[1];
+} dof_ioctl_data_t;
 
 // all dyld syscalls goes through this delegate, which enables cache building and off line testing
 class SyscallDelegate

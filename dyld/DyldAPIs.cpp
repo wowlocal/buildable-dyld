@@ -37,13 +37,12 @@
   #include <fcntl.h>
   #include <errno.h>
   #include <mach-o/dyld_images.h>
-  #include <_simple.h>
+  //#include <_simple.h>
   #include <libkern/OSAtomic.h>
-  #include <_simple.h>
   #include <sys/errno.h>
   #include <malloc/malloc.h>
-  #include <libc_private.h>
-  #include <dyld/VersionMap.h>
+  //#include <libc_private.h>
+  //#include <dyld/VersionMap.h>
 
   #include "dyld_process_info_internal.h"
   #include "OptimizerObjC.h"
@@ -452,7 +451,7 @@ uint32_t APIs::getSdkVersion(const mach_header* mh)
                     return;
             }
         }
-        else if ( platform == PLATFORM_IOSSIMULATOR && (dyld_platform_t)config.process.platform == PLATFORM_IOSMAC ) {
+        else if ( platform == PLATFORM_IOSSIMULATOR && (dyld_platform_t)config.process.platform == 6/*PLATFORM_IOSMAC*/ ) {
             //FIXME bringup hack
             versionFound = true;
             retval       = 0x000C0000;
@@ -500,7 +499,7 @@ uint32_t APIs::dyld_get_min_os_version(const mach_header* mh)
                     return;
             }
         }
-        else if ( platform == PLATFORM_IOSSIMULATOR && (dyld_platform_t)config.process.platform == PLATFORM_IOSMAC ) {
+        else if ( platform == PLATFORM_IOSSIMULATOR && (dyld_platform_t)config.process.platform == 6/*PLATFORM_IOSMAC*/ ) {
             //FIXME bringup hack
             versionFound = true;
             retval       = 0x000C0000;
@@ -535,6 +534,48 @@ bool APIs::dyld_is_simulator_platform(dyld_platform_t platform)
     return result;
 }
 
+struct __attribute__((visibility("hidden"))) VersionSetEntry {
+    uint32_t set = 0;
+    uint32_t bridgeos = 0;
+    uint32_t ios = 0;
+    uint32_t macos = 0;
+    uint32_t tvos = 0;
+    uint32_t watchos = 0;
+    bool operator<(const uint32_t& other) const {
+        return set < other;
+    }
+};
+
+static const std::array<VersionSetEntry, 27> sVersionMap = {{
+    { .set = 0x007db0901, .ios = 0x00050000, .macos = 0x000a0700 },
+    { .set = 0x007dc0901, .ios = 0x00060000, .macos = 0x000a0800 },
+    { .set = 0x007dd0901, .ios = 0x00070000, .macos = 0x000a0900 },
+    { .set = 0x007de0901, .ios = 0x00080000, .macos = 0x000a0a00 },
+    { .set = 0x007df0901, .ios = 0x00090000, .macos = 0x000a0b00, .tvos = 0x00090000, .watchos = 0x00020000 },
+    { .set = 0x007e00901, .ios = 0x000a0000, .macos = 0x000a0c00, .tvos = 0x000a0000, .watchos = 0x00030000 },
+    { .set = 0x007e10901, .bridgeos = 0x00020000, .ios = 0x000b0000, .macos = 0x000a0d00, .tvos = 0x000b0000, .watchos = 0x00040000 },
+    { .set = 0x007e11201, .bridgeos = 0x00020000, .ios = 0x000b0200, .macos = 0x000a0d02, .tvos = 0x000b0200, .watchos = 0x00040200 },
+    { .set = 0x007e20901, .bridgeos = 0x00030000, .ios = 0x000c0000, .macos = 0x000a0e00, .tvos = 0x000c0000, .watchos = 0x00050000 },
+    { .set = 0x007e21015, .bridgeos = 0x00030100, .ios = 0x000c0100, .macos = 0x000a0e01, .tvos = 0x000c0100, .watchos = 0x00050100 },
+    { .set = 0x007e30301, .bridgeos = 0x00030400, .ios = 0x000c0200, .macos = 0x000a0e04, .tvos = 0x000c0200, .watchos = 0x00050200 },
+    { .set = 0x007e30601, .bridgeos = 0x00030400, .ios = 0x000c0300, .macos = 0x000a0e05, .tvos = 0x000c0300, .watchos = 0x00050200 },
+    { .set = 0x007e30715, .bridgeos = 0x00030400, .ios = 0x000c0400, .macos = 0x000a0e06, .tvos = 0x000c0400, .watchos = 0x00050300 },
+    { .set = 0x007e30901, .bridgeos = 0x00040000, .ios = 0x000d0000, .macos = 0x000a0f00, .tvos = 0x000d0000, .watchos = 0x00060000 },
+    { .set = 0x007e30902, .bridgeos = 0x00040000, .ios = 0x000d0100, .macos = 0x000a0f00, .tvos = 0x000d0000, .watchos = 0x00060000 },
+    { .set = 0x007e31015, .bridgeos = 0x00040100, .ios = 0x000d0200, .macos = 0x000a0f01, .tvos = 0x000d0200, .watchos = 0x00060100 },
+    { .set = 0x007e31201, .bridgeos = 0x00040100, .ios = 0x000d0300, .macos = 0x000a0f01, .tvos = 0x000d0300, .watchos = 0x00060100 },
+    { .set = 0x007e40301, .bridgeos = 0x00040100, .ios = 0x000d0400, .macos = 0x000a0f01, .tvos = 0x000d0400, .watchos = 0x00060200 },
+    { .set = 0x007e40415, .bridgeos = 0x00040100, .ios = 0x000d0500, .macos = 0x000a0f01, .tvos = 0x000d0400, .watchos = 0x00060200 },
+    { .set = 0x007e40601, .bridgeos = 0x00040100, .ios = 0x000d0600, .macos = 0x000a0f01, .tvos = 0x000d0400, .watchos = 0x00060200 },
+    { .set = 0x007e40715, .bridgeos = 0x00040100, .ios = 0x000d0700, .macos = 0x000a0f01, .tvos = 0x000d0400, .watchos = 0x00060200 },
+    { .set = 0x007e40901, .bridgeos = 0x00050000, .ios = 0x000e0000, .macos = 0x000a1000, .tvos = 0x000e0000, .watchos = 0x00070000 },
+    { .set = 0x007e41015, .bridgeos = 0x00050000, .ios = 0x000e0200, .macos = 0x000a1000, .tvos = 0x000e0200, .watchos = 0x00070100 },
+    { .set = 0x007e41201, .bridgeos = 0x00050100, .ios = 0x000e0300, .macos = 0x000b0100, .tvos = 0x000e0300, .watchos = 0x00070200 },
+    { .set = 0x007e50301, .bridgeos = 0x00050300, .ios = 0x000e0500, .macos = 0x000b0300, .tvos = 0x000e0500, .watchos = 0x00070400 },
+    { .set = 0x007e50901, .bridgeos = 0x00060000, .ios = 0x000f0000, .macos = 0x000c0000, .tvos = 0x000f0000, .watchos = 0x00080000 },
+    { .set = 0x007e51015, .bridgeos = 0x00060000, .ios = 0x000f0100, .macos = 0x000c0000, .tvos = 0x000f0100, .watchos = 0x00080100 }
+}};
+
 dyld_build_version_t APIs::mapFromVersionSet(dyld_build_version_t versionSet)
 {
 #if TARGET_OS_EXCLAVEKIT
@@ -542,8 +583,8 @@ dyld_build_version_t APIs::mapFromVersionSet(dyld_build_version_t versionSet)
 #else
     if ( versionSet.platform != 0xffffffff )
         return versionSet;
-    const dyld3::VersionSetEntry* foundEntry = nullptr;
-    for (const dyld3::VersionSetEntry& entry : dyld3::sVersionMap) {
+    const VersionSetEntry* foundEntry = nullptr;
+    for (const VersionSetEntry& entry : sVersionMap) {
         if ( entry.set >= versionSet.version ) {
             foundEntry = &entry;
             break;
@@ -1109,7 +1150,7 @@ bool APIs::_dyld_is_memory_immutable(const void* addr, size_t length)
 
 int APIs::dladdr(const void* addr, Dl_info* info)
 {
-    dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLADDR, (uint64_t)addr, 0, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLADDR, (uint64_t)addr, 0, 0);
     if ( config.log.apis )
         log("dladdr(%p, %p)\n", addr, info);
     // <rdar://problem/42171466> calling dladdr(xx,NULL) crashes
@@ -1197,9 +1238,9 @@ int APIs::dladdr(const void* addr, Dl_info* info)
             }
         }
     }
-    timer.setData4(result);
-    timer.setData5(info->dli_fbase);
-    timer.setData6(info->dli_saddr);
+//    timer.setData4(result);
+//    timer.setData5(info->dli_fbase);
+//    timer.setData6(info->dli_saddr);
     return result;
 }
 
@@ -1226,6 +1267,14 @@ void APIs::setErrorString(const char* format, ...)
         return;
 
 #if !TARGET_OS_EXCLAVEKIT
+    char buf[1024];
+    buf[sizeof(buf)-1]='\0';
+    va_list list;
+    va_start(list, format);
+    vsnprintf(buf, sizeof(buf), format, list);
+    va_end(list);
+    size_t                 strLen      = strlen(buf) + 1;
+    /*
     _SIMPLE_STRING buf = _simple_salloc();
     if ( buf == nullptr )
         return;
@@ -1234,6 +1283,7 @@ void APIs::setErrorString(const char* format, ...)
     _simple_vsprintf(buf, format, list);
     va_end(list);
     size_t                 strLen      = strlen(_simple_string(buf)) + 1;
+     */
 #else
     char buf[1024];
     buf[sizeof(buf)-1]='\0';
@@ -1262,9 +1312,13 @@ void APIs::setErrorString(const char* format, ...)
         errorBuffer = p;
     }
 #if !TARGET_OS_EXCLAVEKIT
+    strlcpy(errorBuffer->message, buf, errorBuffer->sizeAllocated);
+    errorBuffer->valid = true;
+/*
     strcpy(errorBuffer->message, _simple_string(buf));
     errorBuffer->valid = true;
     _simple_sfree(buf);
+ */
 #else
     strlcpy(errorBuffer->message, buf, errorBuffer->sizeAllocated);
     errorBuffer->valid = true;
@@ -1333,7 +1387,7 @@ void* APIs::dlopen_from(const char* path, int mode, void* addressInCaller)
         this->libSystemLoader->runInitializers(*this);
     }
 #endif
-    dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLOPEN, path, mode, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLOPEN, path, mode, 0);
     if ( config.log.apis )
         log("dlopen(\"%s\", 0x%08X)\n", path, mode);
 
@@ -1362,7 +1416,7 @@ void* APIs::dlopen_from(const char* path, int mode, void* addressInCaller)
                 if ( config.log.apis ) {
                     log("      dlopen(%s) => %p\n", Loader::leafName(path), result);
                 }
-                timer.setData4(result);
+                //timer.setData4(result);
                 return result;
             }
         }
@@ -1471,7 +1525,7 @@ void* APIs::dlopen_from(const char* path, int mode, void* addressInCaller)
 
             // do fixups
             {
-                dyld3::ScopedTimer fixupsTimer(DBG_DYLD_TIMING_APPLY_FIXUPS, 0, 0, 0);
+                //dyld3::ScopedTimer fixupsTimer(DBG_DYLD_TIMING_APPLY_FIXUPS, 0, 0, 0);
 
                 for ( const Loader* ldr : newLoaders ) {
                     bool allowLazyBinds = ((mode & RTLD_NOW) == 0);
@@ -1609,7 +1663,7 @@ void* APIs::dlopen_from(const char* path, int mode, void* addressInCaller)
         else
             log("      dlopen(%s) => %p\n", Loader::leafName(path), result);
     }
-    timer.setData4(result);
+    //timer.setData4(result);
     return result;
 }
 
@@ -1620,7 +1674,7 @@ int APIs::dlclose(void* handle)
         log("dlclose(%p)\n", handle);
 #if !TARGET_OS_EXCLAVEKIT
 
-    dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLCLOSE, (uint64_t)handle, 0, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLCLOSE, (uint64_t)handle, 0, 0);
 
     // silently accept magic handles for main executable
     if ( handle == RTLD_MAIN_ONLY )
@@ -1647,7 +1701,7 @@ int APIs::dlclose(void* handle)
 
 bool APIs::dlopen_preflight(const char* path)
 {
-    dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLOPEN_PREFLIGHT, path, 0, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLOPEN_PREFLIGHT, path, 0, 0);
 
     if ( config.log.apis )
         log("dlopen_preflight(%s)\n", path);
@@ -1656,7 +1710,7 @@ bool APIs::dlopen_preflight(const char* path)
     uint32_t               imageIndex;
     const DyldSharedCache* dyldCache = config.dyldCache.addr;
     if ( dyldCache && dyldCache->hasImagePath(path, imageIndex) ) {
-        timer.setData4(true);
+        //timer.setData4(true);
         return true;
     }
 
@@ -1665,7 +1719,7 @@ bool APIs::dlopen_preflight(const char* path)
     if ( config.syscall.realpath(path, realerPath) ) {
         if ( strcmp(path, realerPath) != 0 ) {
             if ( dyldCache && dyldCache->hasImagePath(realerPath, imageIndex) ) {
-                timer.setData4(true);
+                //timer.setData4(true);
                 return true;
             }
         }
@@ -1696,7 +1750,7 @@ bool APIs::dlopen_preflight(const char* path)
     if ( config.log.apis )
         log("      dlopen_preflight(%s) => %d\n", Loader::leafName(path), result);
 
-    timer.setData4(result);
+    //timer.setData4(result);
     return result;
 #else
     unavailable_on_exclavekit();
@@ -1712,7 +1766,7 @@ void* APIs::dlopen_audited(const char* path, int mode)
 
 void* APIs::dlsym(void* handle, const char* symbolName)
 {
-    dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLSYM, (uint64_t)(stripPointer(handle)), symbolName, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_DLSYM, (uint64_t)(stripPointer(handle)), symbolName, 0);
 
     if ( config.log.apis )
         log("dlsym(%p, \"%s\")\n", handle, symbolName);
@@ -1832,7 +1886,7 @@ void* APIs::dlsym(void* handle, const char* symbolName)
 #endif
         if ( config.log.apis )
             log("     dlsym(\"%s\") => %p\n", symbolName, ptr);
-        timer.setData4((uint64_t)(stripPointer(ptr)));
+        //timer.setData4((uint64_t)(stripPointer(ptr)));
         return ptr;
     }
     if ( config.log.apis )

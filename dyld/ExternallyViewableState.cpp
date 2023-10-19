@@ -29,7 +29,7 @@
 #include <mach-o/dyld_images.h>
 #include <TargetConditionals.h>
 #include <mach/mach_time.h> // mach_absolute_time()
-#include <libproc_internal.h>
+//#include <libproc_internal.h>
 
 #include "ExternallyViewableState.h"
 #include "ProcessAtlas.h"
@@ -650,7 +650,7 @@ void ExternallyViewableState::notifyMonitorOfImageListChanges(bool unloading, un
     if ( _syscallHelpers->version >= 11 )
         _syscallHelpers->notifyMonitorOfImageListChanges(unloading, imageCount, loadAddresses, imagePaths);
   #else
-    dyld3::ScopedTimer timer(DBG_DYLD_REMOTE_IMAGE_NOTIFIER, 0, 0, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_REMOTE_IMAGE_NOTIFIER, 0, 0, 0);
     RemoteNotificationResponder responder(_allImageInfo->notifyPorts[0]);
     if ( responder.active() )
         responder.notifyMonitorOfImageListChanges(unloading, imageCount, loadAddresses, imagePaths, this->lastImageListUpdateTime());
@@ -666,7 +666,7 @@ void ExternallyViewableState::notifyMonitorOfMainCalled()
     if ( _syscallHelpers->version >= 17 )
         _syscallHelpers->notifyMonitorOfMainCalled();
   #else
-    dyld3::ScopedTimer timer(DBG_DYLD_REMOTE_IMAGE_NOTIFIER, 0, 0, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_REMOTE_IMAGE_NOTIFIER, 0, 0, 0);
     RemoteNotificationResponder responder(_allImageInfo->notifyPorts[0]);
     if ( responder.active() )
         responder.notifyMonitorOfMainCalled();
@@ -682,7 +682,7 @@ void ExternallyViewableState::notifyMonitorOfDyldBeforeInitializers()
     if ( _syscallHelpers->version >= 17 )
         _syscallHelpers->notifyMonitorOfDyldBeforeInitializers();
   #else
-    dyld3::ScopedTimer timer(DBG_DYLD_REMOTE_IMAGE_NOTIFIER, 0, 0, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_REMOTE_IMAGE_NOTIFIER, 0, 0, 0);
     RemoteNotificationResponder responder(_allImageInfo->notifyPorts[0]);
     if ( responder.active() )
         responder.notifyMonitorOfDyldBeforeInitializers();

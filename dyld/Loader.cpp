@@ -1384,7 +1384,7 @@ const MachOAnalyzer* Loader::mapSegments(Diagnostics& diag, RuntimeState& state,
                                          const Array<Region>& regions, bool neverUnloads, bool prebuilt, const FileValidationInfo& fileValidation)
 {
 #if BUILDING_DYLD
-    dyld3::ScopedTimer timer(DBG_DYLD_TIMING_MAP_IMAGE, path, 0, 0);
+    //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_MAP_IMAGE, path, 0, 0);
 #endif
     // open file
     int fd = state.config.syscall.open(path, O_RDONLY, 0);
@@ -1413,7 +1413,7 @@ const MachOAnalyzer* Loader::mapSegments(Diagnostics& diag, RuntimeState& state,
     // register code signature
     uint64_t coveredCodeLength = UINT64_MAX;
     if ( hasCodeSignature && codeSignature.size != 0 ) {
-        dyld3::ScopedTimer codeSigTimer(DBG_DYLD_TIMING_ATTACH_CODESIGNATURE, 0, 0, 0);
+        //dyld3::ScopedTimer codeSigTimer(DBG_DYLD_TIMING_ATTACH_CODESIGNATURE, 0, 0, 0);
         fsignatures_t siginfo;
         siginfo.fs_file_start = sliceOffset;                             // start of mach-o slice in fat file
         siginfo.fs_blob_start = (void*)(long)(codeSignature.fileOffset); // start of CD in mach-o file
@@ -2148,7 +2148,7 @@ void Loader::findAndRunAllInitializers(RuntimeState& state) const
 #if __has_feature(ptrauth_calls)
             func = __builtin_ptrauth_sign_unauthenticated(func, ptrauth_key_asia, 0);
 #endif
-            dyld3::ScopedTimer timer(DBG_DYLD_TIMING_STATIC_INITIALIZER, (uint64_t)ma, (uint64_t)func, 0);
+            //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_STATIC_INITIALIZER, (uint64_t)ma, (uint64_t)func, 0);
             ((Initializer)func)(state.config.process.argc, state.config.process.argv, state.config.process.envp, state.config.process.apple, state.vars);
         });
     });

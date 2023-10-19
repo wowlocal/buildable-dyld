@@ -43,12 +43,12 @@
   #include <mach/mach_host.h>
 #if SUPPORT_CLASSIC_RELOCS
   #include <mach-o/reloc.h>
-  #include <mach-o/x86_64/reloc.h>
+  //#include <mach-o/x86_64/reloc.h>
 #endif
 extern "C" {
-  #include <corecrypto/ccdigest.h>
-  #include <corecrypto/ccsha1.h>
-  #include <corecrypto/ccsha2.h>
+  #include "ccdigest.h"
+  #include "ccsha1.h"
+  #include "ccsha2.h"
 }
 #endif
 
@@ -62,7 +62,7 @@ extern "C" {
 #include "CodeSigningTypes.h"
 
 #if (BUILDING_DYLD || BUILDING_LIBDYLD) && !TARGET_OS_EXCLAVEKIT
-    #include <subsystem.h>
+    //#include <subsystem.h>
 #endif
 
 namespace dyld3 {
@@ -77,7 +77,9 @@ int stat(const char* path, struct stat* buf)
     int result;
     do {
 #if BUILDING_DYLD
-        result = ::stat_with_subsystem(path, buf);
+        assert(false);
+        // ???
+        result = ::stat(path, buf);
 #else
         result = ::stat(path, buf);
 #endif
@@ -104,9 +106,15 @@ int open(const char* path, int flag, int other)
     do {
 #if BUILDING_DYLD
         if (flag & O_CREAT)
+        {
             result = ::open(path, flag, other);
+        }
         else
-            result = ::open_with_subsystem(path, flag);
+        {
+            result = -1; 
+            assert(false);
+        }
+        //result = ::open_with_subsystem(path, flag);
 #else
         result = ::open(path, flag, other);
 #endif

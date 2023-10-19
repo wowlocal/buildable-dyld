@@ -31,10 +31,10 @@
   #include <errno.h>
   #include <fcntl.h>
   #include <pthread.h>
-  #include <libproc.h>
+  //#include <libproc.h>
   #include <mach/mach_time.h> // mach_absolute_time()
   #include <mach/mach_init.h>
-  #include <mach/shared_region.h>
+  //#include <mach/shared_region.h>
   #include <sys/param.h>
   #include <sys/types.h>
   #include <sys/stat.h>
@@ -43,15 +43,15 @@
   #include <sys/mman.h>
   #include <sys/ioctl.h>
   #include <libkern/OSAtomic.h>
-  #include <_simple.h>
-  #include <os/lock_private.h>
+  //#include <_simple.h>
+  //#include <os/lock_private.h>
   #include <Availability.h>
-  #include <System/sys/codesign.h>
-  #include <System/sys/csr.h>
-  #include <System/sys/reason.h>
-  #include <System/machine/cpu_capabilities.h>
-  #include <CrashReporterClient.h>
-  #include <libproc_internal.h>
+  //#include <System/sys/codesign.h>
+  //#include <System/sys/csr.h>
+  //#include <System/sys/reason.h>
+  //#include <System/machine/cpu_capabilities.h>
+  //#include <CrashReporterClient.h>
+  //#include <libproc_internal.h>
   #if !TARGET_OS_SIMULATOR
     #include <libamfi.h>
   #endif // !TARGET_OS_SIMULATOR
@@ -516,9 +516,9 @@ __attribute__((noinline)) static MainFunc prepare(APIs& state, const MachOAnalyz
     }
 #else
     uint64_t launchTraceID = 0;
-    if ( dyld3::kdebug_trace_dyld_enabled(DBG_DYLD_TIMING_LAUNCH_EXECUTABLE) ) {
-        launchTraceID = dyld3::kdebug_trace_dyld_duration_start(DBG_DYLD_TIMING_LAUNCH_EXECUTABLE, (uint64_t)state.config.process.mainExecutable, 0, 0);
-    }
+//    if ( dyld3::kdebug_trace_dyld_enabled(DBG_DYLD_TIMING_LAUNCH_EXECUTABLE) ) {
+//        launchTraceID = dyld3::kdebug_trace_dyld_duration_start(DBG_DYLD_TIMING_LAUNCH_EXECUTABLE, (uint64_t)state.config.process.mainExecutable, 0, 0);
+//    }
 
 #if TARGET_OS_OSX
     const bool isSimulatorProgram = MachOFile::isSimulatorPlatform(state.config.process.platform);
@@ -701,7 +701,7 @@ __attribute__((noinline)) static MainFunc prepare(APIs& state, const MachOAnalyz
 
     // do fixups
     {
-        dyld3::ScopedTimer timer(DBG_DYLD_TIMING_APPLY_FIXUPS, 0, 0, 0);
+        //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_APPLY_FIXUPS, 0, 0, 0);
         // just in case we need to patch the case
         DyldCacheDataConstLazyScopedWriter  cacheDataConst(state);
 
@@ -761,7 +761,7 @@ __attribute__((noinline)) static MainFunc prepare(APIs& state, const MachOAnalyz
 #endif // SUPPORT_CREATING_PREBUILTLOADERS
 
     // call kdebug trace for each image
-    if ( kdebug_is_enabled(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, DBG_DYLD_UUID_MAP_A)) ) {
+    /*if ( kdebug_is_enabled(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, DBG_DYLD_UUID_MAP_A)) ) {
         // dyld in the cache event was sent earlier when we unmapped the on-disk dyld
         if ( !dyldMH->inDyldCache() ) {
             // add trace for dyld itself
@@ -791,7 +791,7 @@ __attribute__((noinline)) static MainFunc prepare(APIs& state, const MachOAnalyz
             ml->getUuid(uuid);
             kdebug_trace_dyld_image(DBG_DYLD_UUID_MAP_A, ldr->path(), &uuid, fsobjid, fsid, ml);
         }
-    }
+    }*/
 #endif // TARGET_OS_EXCLAVEKIT
 
     if ( state.libdyldLoader == nullptr )
@@ -896,11 +896,11 @@ __attribute__((noinline)) static MainFunc prepare(APIs& state, const MachOAnalyz
     void *result;
 
 #if !TARGET_OS_EXCLAVEKIT
-    if ( dyld3::kdebug_trace_dyld_enabled(DBG_DYLD_TIMING_LAUNCH_EXECUTABLE) ) {
-        dyld3::kdebug_trace_dyld_duration_end(launchTraceID, DBG_DYLD_TIMING_LAUNCH_EXECUTABLE, 0, 0, 4);
-    }
+//    if ( dyld3::kdebug_trace_dyld_enabled(DBG_DYLD_TIMING_LAUNCH_EXECUTABLE) ) {
+//        dyld3::kdebug_trace_dyld_duration_end(launchTraceID, DBG_DYLD_TIMING_LAUNCH_EXECUTABLE, 0, 0, 4);
+//    }
 
-    ARIADNEDBG_CODE(220, 1);
+//    ARIADNEDBG_CODE(220, 1);
 
     if ( state.config.security.skipMain ) {
         return &fake_main;

@@ -45,12 +45,12 @@
   #include <sys/stat.h>
   #include <sys/ioctl.h>
   #include <libkern/OSAtomic.h>
-  #include <libc_private.h>
+  //#include <libc_private.h>
   #include <pthread.h>
-  #include <corecrypto/ccdigest.h>
-  #include <corecrypto/ccsha1.h>
-  #include <corecrypto/ccsha2.h>
-  #include <_simple.h>
+  #include "ccdigest.h"
+  #include "ccsha1.h"
+  #include "ccsha2.h"
+  //#include <_simple.h>
 #endif
 #include <stdarg.h>
 #include <stdio.h>
@@ -117,7 +117,8 @@ void _libcpp_verbose_abort(const char* msg, ...)
 extern void __cxa_pure_virtual(void);
 void __cxa_pure_virtual()
 {
-    abort_report_np("Pure virtual method called");
+    //abort_report_np("Pure virtual method called");
+    assert(false);
 }
 
 
@@ -129,7 +130,8 @@ int	fprintf(FILE* file, const char* format, ...)
 #if TARGET_OS_EXCLAVEKIT
     vfprintf(file, format, list);
 #else
-	_simple_vdprintf(STDERR_FILENO, format, list);
+    vfprintf(file, format, list);
+	//_simple_vdprintf(STDERR_FILENO, format, list);
 #endif
 	va_end(list);
 	return 0;
@@ -177,11 +179,15 @@ size_t fwrite(const void* ptr, size_t size, size_t nitme, FILE* stream)
 
 int vsnprintf(char* str, size_t size, const char*  format, va_list list)
 {
+    /*
     _SIMPLE_STRING s = _simple_salloc();
     int result = _simple_vsprintf(s, format, list);
     strlcpy(str, _simple_string(s), size);
     _simple_sfree(s);
-    return result;
+     return result;
+     */
+    assert(false);
+    return 0;
 }
 
 int snprintf(char* str, size_t size, const char* format, ...)
@@ -283,6 +289,9 @@ int close(int fd) {
 
 int openat(int fd, const char *path, int oflag, ...)
 {
+    assert(false);
+    return 0;
+    /*
     char pathBuffer[PATH_MAX] = { 0 };
     int result = fcntl(fd, F_GETPATH, pathBuffer);
     if ( result == -1 )
@@ -296,6 +305,7 @@ int openat(int fd, const char *path, int oflag, ...)
     va_end(args);
 
     return result;
+     */
 }
 
 ssize_t pread(int fd, void* buf, size_t nbytes, off_t offset) {
@@ -657,7 +667,8 @@ static bool findHostLibSystemFunctions() {
 int proc_regionfilename(int pid, uint64_t address, void* buffer, uint32_t bufferSize)
 {
 	if ( gSyscallHelpers->version >= 5 )
-		return gSyscallHelpers->proc_regionfilename(pid, address, buffer, bufferSize);
+        assert(false);
+		//return gSyscallHelpers->proc_regionfilename(pid, address, buffer, bufferSize);
 #if SUPPORT_HOST_10_11
 	findHostFunctions();
 	if ( proc_proc_regionfilename )
@@ -759,7 +770,8 @@ kern_return_t mach_port_destruct(ipc_space_t task, mach_port_name_t name, mach_p
 void abort_with_payload(uint32_t reason_namespace, uint64_t reason_code, void* payload, uint32_t payload_size, const char* reason_string, uint64_t reason_flags)
 {
 	if ( gSyscallHelpers->version >= 6 )
-		gSyscallHelpers->abort_with_payload(reason_namespace, reason_code, payload, payload_size, reason_string, reason_flags);
+        assert(false);
+		//gSyscallHelpers->abort_with_payload(reason_namespace, reason_code, payload, payload_size, reason_string, reason_flags);
     halt(reason_string, NULL);
 }
 
@@ -777,19 +789,22 @@ kern_return_t   thread_info(thread_inspect_t target_act, thread_flavor_t flavor,
 
 bool kdebug_is_enabled(uint32_t code) {
     if ( gSyscallHelpers->version >= 8 )
-        return gSyscallHelpers->kdebug_is_enabled(code);
+        assert(false);
+        //return gSyscallHelpers->kdebug_is_enabled(code);
     return false;
 }
 
 int kdebug_trace(uint32_t code, uint64_t arg1, uint64_t arg2, uint64_t arg3, uint64_t arg4) {
     if ( gSyscallHelpers->version >= 8 )
-        return gSyscallHelpers->kdebug_trace(code, arg1, arg2, arg3, arg4);
+        assert(false);
+        //return gSyscallHelpers->kdebug_trace(code, arg1, arg2, arg3, arg4);
     return 0;
 }
 
 uint64_t kdebug_trace_string(uint32_t debugid, uint64_t str_id, const char *str) {
     if ( gSyscallHelpers->version >= 9 )
-        return gSyscallHelpers->kdebug_trace_string(debugid, str_id, str);
+        assert(false);
+        //return gSyscallHelpers->kdebug_trace_string(debugid, str_id, str);
     return 0;
 }
 
@@ -842,7 +857,8 @@ int getattrlist(const char* path, void* attrList, void * attrBuf, size_t attrBuf
 
 int getfsstat(struct statfs *buf, int bufsize, int flags) {
     if ( gSyscallHelpers->version >= 17 )
-        return gSyscallHelpers->getfsstat(buf, bufsize, flags);
+        assert(false);
+        //return gSyscallHelpers->getfsstat(buf, bufsize, flags);
     return -1;
 }
 

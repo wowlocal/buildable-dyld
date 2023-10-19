@@ -32,13 +32,13 @@
   #include <sys/stat.h>
   #include <sys/types.h>
   #include <sys/mman.h>
-  #include <System/sys/reason.h>
-  #include <kern/kcdata.h>
+  //#include <System/sys/reason.h>
+  //#include <kern/kcdata.h>
   #include <libkern/OSAtomic.h>
-  #include <_simple.h>
+  //#include <_simple.h>
   // atexit header is missing C++ guards
   extern "C" {
-    #include <System/atexit.h>
+    //#include <System/atexit.h>
   }
 #endif
 #include <mach-o/dyld_priv.h>
@@ -663,9 +663,9 @@ void RuntimeState::vlog(const char* format, va_list list)
 #endif // !TARGET_OS_SIMULATOR
     if ( _logDescriptor != -1 ) {
         // NOTE: it would be nicer to somehow merge these into one write call to reduce multithread interleaving
-        ::_simple_dprintf(_logDescriptor, "dyld[%d]: ", config.process.pid);
+        //::_simple_dprintf(_logDescriptor, "dyld[%d]: ", config.process.pid);
         // write to file, stderr, or console
-        ::_simple_vdprintf(_logDescriptor, format, list);
+        //::_simple_vdprintf(_logDescriptor, format, list);
     }
 
 #if BUILDING_DYLD && !TARGET_OS_SIMULATOR
@@ -1261,13 +1261,16 @@ void Reaper::finalizeDeadImages()
         return;
 
     if ( _state.libSystemHelpers != nullptr ) {
-        STACK_ALLOC_OVERFLOW_SAFE_ARRAY(__cxa_range_t, ranges, _deadCount);
+        assert(false);
+        //STACK_ALLOC_OVERFLOW_SAFE_ARRAY(__cxa_range_t, ranges, _deadCount);
         for ( LoaderAndUse& lu : _unloadables ) {
             if ( lu.inUse )
                 continue;
             const MachOAnalyzer* ma = lu.loader->analyzer(_state);
             if ( lu.loader->dylibInDyldCache )
                 continue;
+            assert(false);
+            /*
             ma->forEachSegment(^(const MachOAnalyzer::SegmentInfo& segInfo, bool& stop) {
                 if ( segInfo.executable() ) {
                     __cxa_range_t range;
@@ -1276,9 +1279,11 @@ void Reaper::finalizeDeadImages()
                     ranges.push_back(range);
                 }
             });
+             */
         }
         // call any termination routines register for this image
-        _state.libSystemHelpers->__cxa_finalize_ranges(ranges.begin(), (uint32_t)ranges.count());
+        assert(false);
+        //_state.libSystemHelpers->__cxa_finalize_ranges(ranges.begin(), (uint32_t)ranges.count());
     }
 }
 
@@ -1445,7 +1450,8 @@ void RuntimeState::notifyDtrace(const std::span<const Loader*>& newLoaders)
             dof_helper_t& entry = dofData->dofiod_helpers[dofData->dofiod_count];
             entry.dofhp_addr = (uintptr_t)ma + offset;
             entry.dofhp_dof  = (uintptr_t)ma + offset;
-            strlcpy(entry.dofhp_mod, ldr->leafName(), DTRACE_MODNAMELEN);
+            assert(false);
+            //strlcpy(entry.dofhp_mod, ldr->leafName(), DTRACE_MODNAMELEN);
             if (verbose) log("adding DOF section at offset 0x%08X from %s\n", offset, ldr->path());
             dofData->dofiod_count++;
             if ( !ldr->neverUnload )
@@ -1488,21 +1494,21 @@ void RuntimeState::notifyLoad(const std::span<const Loader*>& newLoaders)
     const uint32_t count = (uint32_t)newLoaders.size();
 #if !TARGET_OS_EXCLAVEKIT
     // call kdebug trace for each image
-    if ( kdebug_is_enabled(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, DBG_DYLD_UUID_MAP_A)) ) {
-        for ( const Loader* ldr : newLoaders ) {
-            const MachOLoaded* ml = ldr->loadAddress(*this);
-            struct stat        stat_buf;
-            fsid_t             fsid    = { { 0, 0 } };
-            fsobj_id_t         fsobjid = { 0, 0 };
-            if ( !ldr->dylibInDyldCache && (dyld3::stat(ldr->path(), &stat_buf) == 0) ) { //FIXME Loader knows inode
-                fsobjid = *(fsobj_id_t*)&stat_buf.st_ino;
-                fsid    = { { stat_buf.st_dev, 0 } };
-            }
-            uuid_t uuid;
-            ml->getUuid(uuid);
-            kdebug_trace_dyld_image(DBG_DYLD_UUID_MAP_A, ldr->path(), &uuid, fsobjid, fsid, ml);
-        }
-    }
+//    if ( kdebug_is_enabled(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, DBG_DYLD_UUID_MAP_A)) ) {
+//        for ( const Loader* ldr : newLoaders ) {
+//            const MachOLoaded* ml = ldr->loadAddress(*this);
+//            struct stat        stat_buf;
+//            fsid_t             fsid    = { { 0, 0 } };
+//            fsobj_id_t         fsobjid = { 0, 0 };
+//            if ( !ldr->dylibInDyldCache && (dyld3::stat(ldr->path(), &stat_buf) == 0) ) { //FIXME Loader knows inode
+//                fsobjid = *(fsobj_id_t*)&stat_buf.st_ino;
+//                fsid    = { { stat_buf.st_dev, 0 } };
+//            }
+//            uuid_t uuid;
+//            ml->getUuid(uuid);
+//            kdebug_trace_dyld_image(DBG_DYLD_UUID_MAP_A, ldr->path(), &uuid, fsobjid, fsid, ml);
+//        }
+//    }
 #endif // !TARGET_OS_EXCLAVEKIT
 
     // call each _dyld_register_func_for_add_image function with each image
@@ -1510,7 +1516,7 @@ void RuntimeState::notifyLoad(const std::span<const Loader*>& newLoaders)
         for ( NotifyFunc func : _notifyAddImage ) {
             for ( const Loader* ldr : newLoaders ) {
                 const MachOLoaded* ml = ldr->loadAddress(*this);
-                dyld3::ScopedTimer timer(DBG_DYLD_TIMING_FUNC_FOR_ADD_IMAGE, (uint64_t)ml, (uint64_t)func, 0);
+                //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_FUNC_FOR_ADD_IMAGE, (uint64_t)ml, (uint64_t)func, 0);
                 if ( this->config.log.notifications )
                     this->log("notifier %p called with mh=%p\n", func, ml);
                 if ( ldr->dylibInDyldCache )
@@ -1522,7 +1528,7 @@ void RuntimeState::notifyLoad(const std::span<const Loader*>& newLoaders)
         for ( LoadNotifyFunc func : _notifyLoadImage ) {
             for ( const Loader* ldr : newLoaders ) {
                 const MachOLoaded* ml = ldr->loadAddress(*this);
-                dyld3::ScopedTimer timer(DBG_DYLD_TIMING_FUNC_FOR_ADD_IMAGE, (uint64_t)ml, (uint64_t)func, 0);
+                //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_FUNC_FOR_ADD_IMAGE, (uint64_t)ml, (uint64_t)func, 0);
                 if ( this->config.log.notifications )
                     this->log("notifier %p called with mh=%p\n", func, ml);
                 func(ml, ldr->path(), !ldr->neverUnload);
@@ -1535,7 +1541,7 @@ void RuntimeState::notifyLoad(const std::span<const Loader*>& newLoaders)
                 mhs[i]   = newLoaders[i]->loadAddress(*this);
                 paths[i] = newLoaders[i]->path();
             }
-            dyld3::ScopedTimer timer(DBG_DYLD_TIMING_FUNC_FOR_ADD_IMAGE, (uint64_t)mhs[0], (uint64_t)func, 0);
+            //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_FUNC_FOR_ADD_IMAGE, (uint64_t)mhs[0], (uint64_t)func, 0);
             if ( this->config.log.notifications )
                 this->log("bulk notifier %p called with %d images\n", func, count);
             func(count, mhs, paths);
@@ -1561,7 +1567,7 @@ void RuntimeState::notifyLoad(const std::span<const Loader*>& newLoaders)
         }
         if ( loadersWithObjC != 0 ) {
             memoryManager.withWritableMemory([&]{
-                dyld3::ScopedTimer timer(DBG_DYLD_TIMING_OBJC_MAP, 0, 0, 0);
+                //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_OBJC_MAP, 0, 0, 0);
                 if ( _notifyObjCMapped != nullptr )
                     (*_notifyObjCMapped)(loadersWithObjC, pathsBuffer, mhBuffer);
                 if ( _notifyObjCMapped2 != nullptr )
@@ -1592,7 +1598,7 @@ void RuntimeState::notifyUnload(const std::span<const Loader*>& loadersToRemove)
         for ( NotifyFunc func : _notifyRemoveImage ) {
             for ( const Loader* ldr : loadersToRemove ) {
                 const MachOLoaded* ml = ldr->loadAddress(*this);
-                dyld3::ScopedTimer timer(DBG_DYLD_TIMING_FUNC_FOR_REMOVE_IMAGE, (uint64_t)ml, (uint64_t)func, 0);
+                //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_FUNC_FOR_REMOVE_IMAGE, (uint64_t)ml, (uint64_t)func, 0);
                 if ( this->config.log.notifications )
                     this->log("remove notifier %p called with mh=%p\n", func, ml);
                 if ( ldr->dylibInDyldCache )
@@ -1616,20 +1622,20 @@ void RuntimeState::notifyUnload(const std::span<const Loader*>& loadersToRemove)
 
 #if !TARGET_OS_EXCLAVEKIT
     // call kdebug trace for each image
-    if ( kdebug_is_enabled(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, DBG_DYLD_UUID_MAP_A)) ) {
-        for ( const Loader* ldr : loadersToRemove ) {
-            uuid_t      uuid;
-            fsid_t      fsid    = { { 0, 0 } };
-            fsobj_id_t  fsobjid = { 0, 0 };
-            struct stat stat_buf;
-            ldr->loadAddress(*this)->getUuid(uuid);
-            if ( dyld3::stat(ldr->path(), &stat_buf) == 0 ) { // FIXME, get inode from Loader
-                fsobjid = *(fsobj_id_t*)&stat_buf.st_ino;
-                fsid    = { { stat_buf.st_dev, 0 } };
-            }
-            kdebug_trace_dyld_image(DBG_DYLD_UUID_UNMAP_A, ldr->path(), &uuid, fsobjid, fsid, ldr->loadAddress(*this));
-        }
-    }
+//    if ( kdebug_is_enabled(KDBG_CODE(DBG_DYLD, DBG_DYLD_UUID, DBG_DYLD_UUID_MAP_A)) ) {
+//        for ( const Loader* ldr : loadersToRemove ) {
+//            uuid_t      uuid;
+//            fsid_t      fsid    = { { 0, 0 } };
+//            fsobj_id_t  fsobjid = { 0, 0 };
+//            struct stat stat_buf;
+//            ldr->loadAddress(*this)->getUuid(uuid);
+//            if ( dyld3::stat(ldr->path(), &stat_buf) == 0 ) { // FIXME, get inode from Loader
+//                fsobjid = *(fsobj_id_t*)&stat_buf.st_ino;
+//                fsid    = { { stat_buf.st_dev, 0 } };
+//            }
+//            kdebug_trace_dyld_image(DBG_DYLD_UUID_UNMAP_A, ldr->path(), &uuid, fsobjid, fsid, ldr->loadAddress(*this));
+//        }
+//    }
 
     // tell dtrace about static probes that are going away
     if ( config.syscall.dtraceUserProbesEnabled() ) {
@@ -1883,7 +1889,7 @@ void RuntimeState::notifyObjCInit(const Loader* ldr)
     if ( _notifyObjCInit != nullptr ) {
         const MachOLoaded* ml  = ldr->loadAddress(*this);
         const char*        pth = ldr->path();
-        dyld3::ScopedTimer timer(DBG_DYLD_TIMING_OBJC_INIT, (uint64_t)ml, 0, 0);
+        //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_OBJC_INIT, (uint64_t)ml, 0, 0);
         if ( this->config.log.notifications )
             this->log("objc-init-notifier called with mh=%p, path=%s\n", ml, pth);
         _notifyObjCInit(pth, ml);
@@ -1892,7 +1898,7 @@ void RuntimeState::notifyObjCInit(const Loader* ldr)
     if ( _notifyObjCInit2 != nullptr ) {
         const MachOLoaded* ml  = ldr->loadAddress(*this);
         const char*        pth = ldr->path();
-        dyld3::ScopedTimer timer(DBG_DYLD_TIMING_OBJC_INIT, (uint64_t)ml, 0, 0);
+        //dyld3::ScopedTimer timer(DBG_DYLD_TIMING_OBJC_INIT, (uint64_t)ml, 0, 0);
         if ( this->config.log.notifications )
             this->log("objc-init-notifier called with mh=%p, path=%s\n", ml, pth);
         _dyld_objc_notify_mapped_info info = {

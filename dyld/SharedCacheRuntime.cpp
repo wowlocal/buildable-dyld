@@ -45,7 +45,7 @@
 
 #include <mach-o/loader.h>
 #include <mach-o/ldsyms.h>
-#include <mach/shared_region.h>
+//#include <mach/shared_region.h>
 #include <mach/mach.h>
 #include <optional>
 #include <Availability.h>
@@ -63,8 +63,8 @@
 
 // should be in mach/shared_region.h
 extern "C" int __shared_region_check_np(uint64_t* startaddress);
-extern "C" int __shared_region_map_and_slide_np(int fd, uint32_t count, const shared_file_mapping_np mappings[], long slide, const dyld_cache_slide_info2* slideInfo, size_t slideInfoSize);
-extern "C" int __shared_region_map_and_slide_2_np(uint32_t files_count, const shared_file_np files[], uint32_t mappings_count, const shared_file_mapping_slide_np mappings[]);
+//extern "C" int __shared_region_map_and_slide_np(int fd, uint32_t count, const shared_file_mapping_np mappings[], long slide, const dyld_cache_slide_info2* slideInfo, size_t slideInfoSize);
+//extern "C" int __shared_region_map_and_slide_2_np(uint32_t files_count, const shared_file_np files[], uint32_t mappings_count, const shared_file_mapping_slide_np mappings[]);
 
 #ifndef VM_PROT_NOAUTH
 #define VM_PROT_NOAUTH  0x40  /* must not interfere with normal prot assignments */
@@ -79,7 +79,7 @@ namespace dyld3 {
 
 struct CacheInfo
 {
-    shared_file_mapping_slide_np            mappings[DyldSharedCache::MaxMappings];
+//    shared_file_mapping_slide_np            mappings[DyldSharedCache::MaxMappings];
     uint32_t                                mappingsCount;
     bool                                    isTranslated;
     bool                                    hasCacheSuffixes = false;
@@ -492,6 +492,8 @@ static bool preflightCacheFile(const SharedCacheOptions& options, SharedCacheLoa
         }
 
         // Add a file for each mapping
+        assert(false);
+        /*
         info->fd                        = fd;
         info->mappings[i].sms_address               = fileMappings[i].address;
         info->mappings[i].sms_size                  = fileMappings[i].size;
@@ -507,6 +509,7 @@ static bool preflightCacheFile(const SharedCacheOptions& options, SharedCacheLoa
             info->mappings[i].sms_init_prot    |= (VM_PROT_SLIDE | authProt);
             info->mappings[i].sms_max_prot     |= (VM_PROT_SLIDE | authProt);
         }
+         */
     }
 
     info->hasCacheSuffixes = (cache->header.mappingOffset > __offsetof(dyld_cache_header, cacheSubType));
@@ -1094,6 +1097,9 @@ static bool mapSplitCachePrivate(const SharedCacheOptions& options, SharedCacheL
 #if TARGET_OS_SIMULATOR
 static bool mapCachePrivate(const SharedCacheOptions& options, SharedCacheLoadInfo* results)
 {
+    assert(false);
+    return false;
+    /*
     // open and validate cache file
     CacheInfo info;
     char baseSharedCachePath[SHARED_CACHE_PATH_MAX] = { 0 };
@@ -1171,6 +1177,7 @@ static bool mapCachePrivate(const SharedCacheOptions& options, SharedCacheLoadIn
     ::mprotect(dynamicConfigData, dynamicConfigSize, VM_PROT_READ);
 
     return true;
+     */
 }
 #endif // TARGET_OS_SIMULATOR
 
