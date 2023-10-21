@@ -256,6 +256,38 @@
             endingLineNumber = "1614"
             landmarkName = "APIs::dlopen_from(path, mode, addressInCaller)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E3B57AA-EAEC-4142-B773-38162D63E608 - 40b3cbbe69e82884"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld4::APIs::dlopen_from(char const*, int, void*)::$_1::operator()() const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/dyld/DyldAPIs.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1614"
+                  endingLineNumber = "1614"
+                  offsetFromSymbolStart = "3064">
+               </Location>
+               <Location
+                  uuid = "9E3B57AA-EAEC-4142-B773-38162D63E608 - 40b3cbbe69e82884"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld4::APIs::dlopen_from(char const*, int, void*)::$_1::operator()() const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/dyld/DyldAPIs.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1614"
+                  endingLineNumber = "1614"
+                  offsetFromSymbolStart = "3036">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

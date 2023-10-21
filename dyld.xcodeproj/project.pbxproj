@@ -6388,6 +6388,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos watchsimulator iphonesimulator appletvsimulator exclavekit.macosx exclavekit.iphoneos";
 				UNSTRIPPED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = (
@@ -6420,6 +6421,7 @@
 				LD_GENERATE_MAP_FILE = YES;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos watchsimulator iphonesimulator appletvsimulator exclavekit.macosx exclavekit.iphoneos";
 				UNSTRIPPED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = (

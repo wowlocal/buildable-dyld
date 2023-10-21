@@ -1515,7 +1515,7 @@ void* APIs::dlopen_from(const char* path, int mode, void* addressInCaller)
         if ( diag.noError() && !newLoaders.empty() ) {
 #if HAS_EXTERNAL_STATE
             // tell debugger about newly loaded images in case there is a crash during fixups
-            notifyDebuggerLoad(newLoaders);
+            //notifyDebuggerLoad(newLoaders);
 #endif // HAS_EXTERNAL_STATE
 
             // proactive weakDefMap means we update the weakDefMap with everything just loaded before doing any binding
