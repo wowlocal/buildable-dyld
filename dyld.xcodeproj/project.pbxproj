@@ -452,6 +452,7 @@
 		C1F96B4629035C6900D9EDE1 /* Test_Fixups.mm in Sources */ = {isa = PBXBuildFile; fileRef = C1F96B4529035C6900D9EDE1 /* Test_Fixups.mm */; };
 		C1F98A2A28D93FD70081A6EB /* Test_ObjC_64.mm in Sources */ = {isa = PBXBuildFile; fileRef = C1F98A2928D93FD70081A6EB /* Test_ObjC_64.mm */; };
 		C1F98A2C28D9404E0081A6EB /* ObjC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1F98A2B28D9404E0081A6EB /* ObjC.cpp */; };
+		C677C6D12AE189DC0081A2C2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C677C6D02AE189DC0081A2C2 /* main.c */; };
 		DE0E1537297B997800D0FCFD /* SplitSeg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A83521291C5DAD0030401B /* SplitSeg.cpp */; };
 		DE10EA3227D6A4340027519D /* MurmurHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE10EA3027D6A4340027519D /* MurmurHash.cpp */; };
 		DE10EA3327D6B4200027519D /* MurmurHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE10EA3027D6A4340027519D /* MurmurHash.cpp */; };
@@ -1359,6 +1360,8 @@
 		C64DDC142ADC3D7D000D8D92 /* ccsha2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccsha2.h; sourceTree = "<group>"; };
 		C64DDC152ADC3D7D000D8D92 /* ccdigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccdigest.h; sourceTree = "<group>"; };
 		C64DDC162ADC8301000D8D92 /* VersionMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionMap.h; sourceTree = "<group>"; };
+		C677C6CF2AE189DC0081A2C2 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		C677C6D02AE189DC0081A2C2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		DE0CF9FE29B26DF900795EA9 /* dyld_exclavekit.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = dyld_exclavekit.modulemap; path = "include/mach-o/dyld_exclavekit.modulemap"; sourceTree = "<group>"; };
 		DE0CF9FF29B26E0500795EA9 /* dyld_exclavekit.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = dyld_exclavekit.private.modulemap; path = "include/mach-o/dyld_exclavekit.private.modulemap"; sourceTree = "<group>"; };
 		DE10EA3027D6A4340027519D /* MurmurHash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MurmurHash.cpp; sourceTree = "<group>"; };
@@ -2312,6 +2315,8 @@
 				F98B356224ED744200DE738B /* Tracing.h */,
 				F98B355124ED744200DE738B /* Tracing.cpp */,
 				F993988F26F005CC0074D515 /* dyld.dirty */,
+				C677C6CF2AE189DC0081A2C2 /* main.h */,
+				C677C6D02AE189DC0081A2C2 /* main.c */,
 			);
 			path = dyld;
 			sourceTree = "<group>";
@@ -2388,8 +2393,8 @@
 				F9D7EF8924F44DEB002930F3 /* update_dyld_sim_shared_cache.xcconfig */,
 				C12657F0286FB78500048F94 /* dext_spawn_entitlement.plist */,
 				C12657EF286FB77E00048F94 /* get_task_allow_entitlement.plist */,
-				C12D46B12817AE3B009036F6 /* jumbo_address_space_entitlement.plist */,
 				C12657EE286FB77400048F94 /* task_read_for_pid_entitlement.plist */,
+				C12D46B12817AE3B009036F6 /* jumbo_address_space_entitlement.plist */,
 			);
 			path = configs;
 			sourceTree = "<group>";
@@ -4747,6 +4752,7 @@
 				2DD10D4D2970C8970001295E /* Algorithm.cpp in Sources */,
 				37B3E69D2747A70400EF3C96 /* FileManager.cpp in Sources */,
 				3751B1E726475C0800FEDF6A /* Allocator.cpp in Sources */,
+				C677C6D12AE189DC0081A2C2 /* main.c in Sources */,
 				DE10EA3227D6A4340027519D /* MurmurHash.cpp in Sources */,
 				F98B35AC24ED761E00DE738B /* SharedCacheRuntime.cpp in Sources */,
 				2D558DE029657E7200E89303 /* LoggingStub.cpp in Sources */,
@@ -6364,9 +6370,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F98B359F24ED748E00DE738B /* dyld.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				EXCLUDED_ARCHS = x86_64;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DYLD_VERSION=$(RC_ProjectSourceVersion)",
@@ -6378,6 +6387,7 @@
 				LD_GENERATE_MAP_FILE = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos watchsimulator iphonesimulator appletvsimulator exclavekit.macosx exclavekit.iphoneos";
 				UNSTRIPPED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = (
@@ -6394,9 +6404,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F98B359F24ED748E00DE738B /* dyld.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				EXCLUDED_ARCHS = x86_64;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DYLD_VERSION=$(RC_ProjectSourceVersion)",
@@ -6406,6 +6419,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				LD_GENERATE_MAP_FILE = YES;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos watchsimulator iphonesimulator appletvsimulator exclavekit.macosx exclavekit.iphoneos";
 				UNSTRIPPED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = (

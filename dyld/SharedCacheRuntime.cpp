@@ -1097,7 +1097,7 @@ static bool mapSplitCachePrivate(const SharedCacheOptions& options, SharedCacheL
 #if TARGET_OS_SIMULATOR
 static bool mapCachePrivate(const SharedCacheOptions& options, SharedCacheLoadInfo* results)
 {
-    assert(false);
+    //assert(false);
     return false;
     /*
     // open and validate cache file

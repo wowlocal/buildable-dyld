@@ -79,7 +79,7 @@ struct VIS_HIDDEN  [[clang::ptrauth_vtable_pointer(process_independent, address_
     virtual void*           malloc(size_t size) const;
     virtual void            free(void* p) const;
     virtual size_t          malloc_size(const void* p) const;
-    virtual kern_return_t   vm_allocate(vm_map_t target_task, vm_address_t* address, vm_size_t size, int flags) const;
+//    virtual kern_return_t   vm_allocate(vm_map_t target_task, vm_address_t* address, vm_size_t size, int flags) const;
     virtual kern_return_t   vm_deallocate(vm_map_t target_task, vm_address_t address, vm_size_t size) const;
     virtual int             pthread_key_create_free(dyld_thread_key_t* key) const;
     virtual int             pthread_key_create_thread_exit(dyld_thread_key_t* key) const;

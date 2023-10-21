@@ -389,7 +389,7 @@ ProcessConfig::Process::Process(const KernelArgs* kernArgs, SyscallDelegate& sys
     this->envp                                                      = kernArgs->findEnvp();
     this->apple                                                     = kernArgs->findApple();
     this->pid                                                       = syscall.getpid();
-    this->commPage                                                  = syscall.dyldCommPageFlags();
+    //this->commPage                                                  = syscall.dyldCommPageFlags();
     this->isTranslated                                              = syscall.isTranslated();
     std::tie(this->mainExecutableFSID, this->mainExecutableObjID)   = this->getMainFileID();
     std::tie(this->dyldFSID, this->dyldObjID)                       = this->getDyldFileID();
@@ -472,7 +472,8 @@ ProcessConfig::Process::Process(const KernelArgs* kernArgs, SyscallDelegate& sys
 #if !TARGET_OS_EXCLAVEKIT
 const char* ProcessConfig::Process::appleParam(const char* key) const
 {
-    //return _simple_getenv((const char**)apple, key);
+    auto r = ::getenv((const char *)apple);
+    return r;
     assert(false);
     return "";
 }
@@ -480,6 +481,8 @@ const char* ProcessConfig::Process::appleParam(const char* key) const
 const char* ProcessConfig::Process::environ(const char* key) const
 {
     //return _simple_getenv((const char**)envp, key);
+    auto r = ::getenv((const char *)apple);
+    return r;
     assert(false);
     return "";
 }
@@ -521,6 +524,7 @@ std::pair<uint64_t, uint64_t> ProcessConfig::Process::getDyldFileID() {
 
 #if TARGET_OS_SIMULATOR
 std::pair<uint64_t, uint64_t> ProcessConfig::Process::getDyldSimFileID(SyscallDelegate& sys) {
+    return {0,0};
     const char* rootPath = this->environ("DYLD_ROOT_PATH");
     char simDyldPath[PATH_MAX];
     strlcpy(simDyldPath, rootPath, PATH_MAX);
@@ -558,6 +562,7 @@ std::pair<uint64_t, uint64_t> ProcessConfig::Process::getMainFileID() {
 
 const char* ProcessConfig::Process::getMainPath(SyscallDelegate& sys, Allocator& allocator)
 {
+    return this->mainUnrealPath;
     if (mainExecutableFSID && mainExecutableObjID) {
         char pathFromIDs[PATH_MAX];
         if ( sys.fsgetpath(pathFromIDs, PATH_MAX, mainExecutableFSID, mainExecutableObjID) != -1 ) {
@@ -690,7 +695,9 @@ Platform ProcessConfig::Process::getMainPlatform()
     this->mainExecutableMinOSVersionSet = findVersionSetEquivalent(this->basePlatform, this->mainExecutableMinOSVersion);
 #endif // !TARGET_OS_EXCLAVEKIT
 
-    return result;
+    //return result;
+    // HARDCODE
+    return dyld3::Platform::iOS_simulator;
 }
 
 
@@ -2444,7 +2451,7 @@ void halt(const char* message, const StructuredError* errorInfo)
         strlcpy(error_string, message, sizeof(error_string));
     }
 */
-    assert(false);
+    //assert(false);
     /*
     char                payloadBuffer[EXIT_REASON_PAYLOAD_MAX_LEN];
     dyld_abort_payload* payload    = (dyld_abort_payload*)payloadBuffer;
@@ -2498,7 +2505,7 @@ void console(const char* format, ...)
     vfprintf(stderr, format, list);
     va_end(list);
 #else
-    assert(false);
+    //assert(false);
     /*
     if ( getpid() == 1 ) {
   #if BUILDING_DYLD

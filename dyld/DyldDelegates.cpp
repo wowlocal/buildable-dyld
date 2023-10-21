@@ -655,7 +655,7 @@ const void* SyscallDelegate::mapFileReadOnly(Diagnostics& diag, const char* path
     if ( statbuf.st_size == 0 )
         return nullptr;
 
-    int fd = this->open(path, O_RDONLY, 0);
+    int fd = ::open(path, O_RDONLY, 0);//this->open(path, O_RDONLY, 0);
     if ( fd < 0 ) {
         int err = errno;
         if ( (err == EPERM) && this->sandboxBlockedOpen(path) )
@@ -948,7 +948,7 @@ SyscallDelegate::DyldCommPage SyscallDelegate::dyldCommPageFlags() const
 {
 #if BUILDING_DYLD
     //return *((DyldCommPage*)_COMM_PAGE_DYLD_FLAGS);
-    assert(false);
+    //assert(false);
     return *((DyldCommPage*) 0x00000002);
 #else
     return _commPageFlags;

@@ -1303,11 +1303,16 @@ MainFunc _dyld_sim_prepare(int argc, const char* argv[], const char* envp[], con
                            const mach_header* mainExecutableMH, const MachOAnalyzer* dyldMA, uintptr_t dyldSimSlide,
                            const dyld::SyscallHelpers* sc, uintptr_t* startGlue)
 {
+    mach_task_self_ = task_self_trap();
+//    vm_address_t    r;
+//    int vmFlags = 1006632960;
+//    kern_return_t kr = vm_allocate(mach_task_self(), &r, 266240, VM_FLAGS_ANYWHERE | vmFlags);
+
     // save table of syscall pointers
-    gSyscallHelpers = sc;
+    gSyscallHelpers = sc; // NULL
 
     // walk all fixups chains and rebase dyld_sim and make DATA_CONST r/o
-    rebaseSelf(dyldMA);
+    //rebaseSelf(dyldMA);
 
     // back solve for KernelArgs because host dyld does not pass it
     KernelArgs* kernArgs = (KernelArgs*)(((uint8_t*)argv) - 2 * sizeof(void*));
@@ -1318,7 +1323,7 @@ MainFunc _dyld_sim_prepare(int argc, const char* argv[], const char* envp[], con
     kernArgs->mainExecutable = (MachOAnalyzer*)mainExecutableMH;
 
     // Do any set up needed by any linked static libraries
-    initializeLibc(kernArgs);
+    //initializeLibc(kernArgs);
 
      // create an Allocator inside its own allocation pool
     // Setup the memory manager object before the allocator so the allocator can use it before copying it internally
@@ -1334,6 +1339,7 @@ MainFunc _dyld_sim_prepare(int argc, const char* argv[], const char* envp[], con
 
     // create APIs (aka RuntimeState) object in the allocator
     APIs& state = *new (allocator.aligned_alloc(alignof(APIs), sizeof(APIs))) APIs(config, locks, allocator);
+    void* handle2 = state.dlopen("/usr/lib/system/libsystem_kernel.dylib", RTLD_NOW);
 
     // function pointer that will be set to the entry point. Declare it here so the value can escape from withWritableMemory()
     MainFunc result = nullptr;

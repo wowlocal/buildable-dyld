@@ -186,7 +186,7 @@ int vsnprintf(char* str, size_t size, const char*  format, va_list list)
     _simple_sfree(s);
      return result;
      */
-    assert(false);
+    //assert(false);
     return 0;
 }
 
@@ -272,20 +272,20 @@ void* memset(void* b, int c, size_t len)
 
 #if TARGET_OS_SIMULATOR
 
-int open(const char* path, int oflag, ...) {
-	int retval;
+//int open(const char* path, int oflag, ...) {
+//	int retval;
+//
+//	va_list args;
+//	va_start(args, oflag);
+//	retval = gSyscallHelpers->open(path, oflag, va_arg(args, int));
+//	va_end(args);
+//
+//	return retval;
+//}
 
-	va_list args;
-	va_start(args, oflag);
-	retval = gSyscallHelpers->open(path, oflag, va_arg(args, int));
-	va_end(args);
-
-	return retval;
-}
-
-int close(int fd) {
-	return gSyscallHelpers->close(fd);
-}
+//int close(int fd) {
+//	return gSyscallHelpers->close(fd);
+//}
 
 int openat(int fd, const char *path, int oflag, ...)
 {
@@ -316,32 +316,32 @@ ssize_t write(int fd, const void *buf, size_t nbytes) {
 	return gSyscallHelpers->write(fd, buf , nbytes);
 }
 
-void* mmap(void* addr, size_t len, int prot, int flags, int fd, off_t offset) {
-	return gSyscallHelpers->mmap(addr, len, prot, flags, fd, offset);
-}
+//void* mmap(void* addr, size_t len, int prot, int flags, int fd, off_t offset) {
+//	return gSyscallHelpers->mmap(addr, len, prot, flags, fd, offset);
+//}
 
-int munmap(void* addr, size_t len) {
-	return gSyscallHelpers->munmap(addr, len);
-}
+//int munmap(void* addr, size_t len) {
+//	return gSyscallHelpers->munmap(addr, len);
+//}
 
 int madvise(void* addr, size_t len, int advice) {
 	return gSyscallHelpers->madvise(addr, len, advice);
 }
 
-int stat(const char* path, struct stat* buf) {
-	return gSyscallHelpers->stat(path, buf);
-}
+//int stat(const char* path, struct stat* buf) {
+//	return gSyscallHelpers->stat(path, buf);
+//}
 
-int fcntl(int fd, int cmd, ...) {
-        int retval;
-
-        va_list args;
-        va_start(args, cmd);
-        retval = gSyscallHelpers->fcntl(fd, cmd, va_arg(args, void *));
-        va_end(args);
-
-	return retval;
-}
+//int fcntl(int fd, int cmd, ...) {
+//        int retval;
+//
+//        va_list args;
+//        va_start(args, cmd);
+//        retval = gSyscallHelpers->fcntl(fd, cmd, va_arg(args, void *));
+//        va_end(args);
+//
+//	return retval;
+//}
 
 int ioctl(int fd, unsigned long request, ...) {
         int retval;
@@ -366,22 +366,20 @@ char* realpath(const char* file_name, char* resolved_name) {
 	return gSyscallHelpers->realpath(file_name, resolved_name);
 }
 
-
-
-kern_return_t vm_allocate(vm_map_t target_task, vm_address_t *address,
-						  vm_size_t size, int flags) {
-	return gSyscallHelpers->vm_allocate(target_task, address, size, flags);
-}
+//kern_return_t vm_allocate(vm_map_t target_task, vm_address_t *address,
+//						  vm_size_t size, int flags) {
+//	return gSyscallHelpers->vm_allocate(target_task, address, size, flags);
+//}
 
 kern_return_t vm_deallocate(vm_map_t target_task, vm_address_t address,
 							vm_size_t size) {
 	return gSyscallHelpers->vm_deallocate(target_task, address, size);
 }
 
-kern_return_t vm_protect(vm_map_t target_task, vm_address_t address,
-							vm_size_t size, boolean_t max, vm_prot_t prot) {
-	return gSyscallHelpers->vm_protect(target_task, address, size, max, prot);
-}
+//kern_return_t vm_protect(vm_map_t target_task, vm_address_t address,
+//							vm_size_t size, boolean_t max, vm_prot_t prot) {
+//	return gSyscallHelpers->vm_protect(target_task, address, size, max, prot);
+//}
 
 
 void _ZN5dyld43logEPKcz(const char* format, ...) {
@@ -428,9 +426,9 @@ kern_return_t mach_port_deallocate(ipc_space_t task, mach_port_name_t name) {
 	return gSyscallHelpers->mach_port_deallocate(task, name);
 }
 
-mach_port_name_t task_self_trap() {
-	return gSyscallHelpers->task_self_trap();
-}
+//mach_port_name_t task_self_trap() {
+//	return gSyscallHelpers->task_self_trap();
+//}
 
 kern_return_t mach_timebase_info(mach_timebase_info_t info) {
 	return gSyscallHelpers->mach_timebase_info(info);
@@ -680,17 +678,17 @@ int proc_regionfilename(int pid, uint64_t address, void* buffer, uint32_t buffer
 #endif
 }
 
-pid_t getpid()
-{
-	if ( gSyscallHelpers->version >= 5 )
-		return gSyscallHelpers->getpid();
-#if SUPPORT_HOST_10_11
-	findHostFunctions();
-	return (*proc_getpid)();
-#else
-	return 0;
-#endif
-}
+//pid_t getpid()
+//{
+//	if ( gSyscallHelpers->version >= 5 )
+//		return gSyscallHelpers->getpid();
+//#if SUPPORT_HOST_10_11
+//	findHostFunctions();
+//	return (*proc_getpid)();
+//#else
+//	return 0;
+//#endif
+//}
 
 kern_return_t mach_port_insert_right(ipc_space_t task, mach_port_name_t name, mach_port_t poly, mach_msg_type_name_t polyPoly)
 {
@@ -810,9 +808,9 @@ uint64_t kdebug_trace_string(uint32_t debugid, uint64_t str_id, const char *str)
 
 int amfi_check_dyld_policy_self(uint64_t inFlags, uint64_t* outFlags)
 {
-    if ( gSyscallHelpers->version >= 10 )
-        return gSyscallHelpers->amfi_check_dyld_policy_self(inFlags, outFlags);
-    *outFlags = 0x3F;  // on old kernel, simulator process get all flags
+//    if ( gSyscallHelpers->version >= 10 )
+//        return gSyscallHelpers->amfi_check_dyld_policy_self(inFlags, outFlags);
+//    *outFlags = 0x3F;  // on old kernel, simulator process get all flags
     return 0;
 }
 
@@ -862,9 +860,9 @@ int getfsstat(struct statfs *buf, int bufsize, int flags) {
     return -1;
 }
 
-int* __error(void) {
-    return gSyscallHelpers->errnoAddress();
-}
+//int* __error(void) {
+//    return gSyscallHelpers->errnoAddress();
+//}
 
 extern void mach_init(void);
 void mach_init() {

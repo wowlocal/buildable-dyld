@@ -20,5 +20,1347 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "84200EA1-D679-444A-B682-D777E22BA517"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "_objc_init"
+            moduleName = "">
+            <Locations>
+               <Location
+                  uuid = "84200EA1-D679-444A-B682-D777E22BA517 - bbc41dcf801b248f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_objc_init"
+                  moduleName = "libobjc.A.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11314FF0-55A5-48A5-8401-51E24249716A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/main.c"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "main(argc, argv)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "11314FF0-55A5-48A5-8401-51E24249716A - 91c1e75861ebf0ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/dyld/main.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "11314FF0-55A5-48A5-8401-51E24249716A - 91c1e75861ebf0ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/dyld/main.c"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "5D21FF70-5E6D-491C-955E-B2F8294B8F6E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "task_self_trap"
+            moduleName = "">
+            <Locations>
+               <Location
+                  uuid = "5D21FF70-5E6D-491C-955E-B2F8294B8F6E - f2456b6cc6bfe6f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "task_self_trap"
+                  moduleName = "libsystem_kernel.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99A6B071-F171-45B9-A3F0-C242166DFAD3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lsl/Allocator.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "501"
+            endingLineNumber = "501"
+            landmarkName = "MemoryManager::vm_allocate_bytes(size)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "99A6B071-F171-45B9-A3F0-C242166DFAD3 - 7e5adc66bcfe1bb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lsl::MemoryManager::vm_allocate_bytes(unsigned long)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/lsl/Allocator.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "502"
+                  endingLineNumber = "502"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "99A6B071-F171-45B9-A3F0-C242166DFAD3 - 7e5adc66bcfe1b94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lsl::MemoryManager::vm_allocate_bytes(unsigned long)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/lsl/Allocator.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "503"
+                  endingLineNumber = "503"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47863646-3F76-487C-9EA8-7FA6F3C30A42"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/dyldMain.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1345"
+            endingLineNumber = "1345"
+            landmarkName = "_dyld_sim_prepare(argc, argv, envp, apple, mainExecutableMH, dyldMA, dyldSimSlide, sc, startGlue)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5683C04-95B1-4EF4-A585-36442402DD96"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2377"
+            endingLineNumber = "2377"
+            landmarkName = "MachOFile::isFairPlayEncrypted(textOffset, size)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34EFEA98-509E-4D1C-9611-1BAC933B0F95"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2372"
+            endingLineNumber = "2372"
+            landmarkName = "MachOFile::isFairPlayEncrypted(textOffset, size)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0DD18E7-3933-4500-A202-7DBF1A6AF5AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldAPIs.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1667"
+            endingLineNumber = "1667"
+            landmarkName = "APIs::dlopen_from(path, mode, addressInCaller)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A96424A3-B0DE-4D0B-A7FB-A48C610D640D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldAPIs.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1656"
+            endingLineNumber = "1656"
+            landmarkName = "APIs::dlopen_from(path, mode, addressInCaller)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E3B57AA-EAEC-4142-B773-38162D63E608"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldAPIs.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1614"
+            endingLineNumber = "1614"
+            landmarkName = "APIs::dlopen_from(path, mode, addressInCaller)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4FE50E2-0124-4E6E-A563-82D315B8E081"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldAPIs.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1483"
+            endingLineNumber = "1483"
+            landmarkName = "APIs::dlopen_from(path, mode, addressInCaller)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93779D23-342F-408B-BBB8-9C1A306A46FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldAPIs.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1471"
+            endingLineNumber = "1471"
+            landmarkName = "APIs::dlopen_from(path, mode, addressInCaller)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB552426-12C0-4407-967A-2ED05C314AC2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "988"
+            endingLineNumber = "988"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BF159A8-DEB3-4575-B8D3-9330D328E698"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "772"
+            endingLineNumber = "772"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78963946-7C74-4C0D-81A2-796E36D322FD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "786"
+            endingLineNumber = "786"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB5CBAA9-4C38-4ECA-B6C5-4A15E5EF03DE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "788"
+            endingLineNumber = "788"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE54BA6A-8F39-4A04-9E28-2D31631C4DE9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "809"
+            endingLineNumber = "809"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6EE30C9A-6B33-44F9-8807-933E228E3E18"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "802"
+            endingLineNumber = "802"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A623C1BF-318A-448D-8C63-7620E162A29A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "885"
+            endingLineNumber = "885"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2634EB69-DDCE-44AF-8C26-239004F91E2D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "939"
+            endingLineNumber = "939"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5BE67F0-0DD8-49C2-80E0-8E9AF6DFCAB8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "957"
+            endingLineNumber = "957"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E66ACB70-F212-4E39-8CA5-39DCF50FAD5A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1214"
+            endingLineNumber = "1214"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FAFD7145-E6FF-4E7B-8C8C-38415754FB23"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1220"
+            endingLineNumber = "1220"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE14D39F-0F3D-4D9D-848C-2055C3701F25"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1229"
+            endingLineNumber = "1229"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6CDA1605-5D0A-4F29-8D33-2A1A263DC34E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1234"
+            endingLineNumber = "1234"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB1256CB-6FF8-454D-B0FC-018BBA712444"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1282"
+            endingLineNumber = "1282"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F44BCEC-5134-431A-A58D-869A2D5BF2D2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1209"
+            endingLineNumber = "1209"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0F44BCEC-5134-431A-A58D-869A2D5BF2D2 - 25f5f6292055d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "invocation function for block in dyld4::JustInTimeLoader::makeJustInTimeLoaderDisk(Diagnostics&amp;, dyld4::RuntimeState&amp;, char const*, dyld4::Loader::LoadOptions const&amp;, bool, unsigned int, mach_o::Layout const*)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/dyld/JustInTimeLoader.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1209"
+                  endingLineNumber = "1209"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "0F44BCEC-5134-431A-A58D-869A2D5BF2D2 - 25f5f6292055d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "invocation function for block in dyld4::JustInTimeLoader::makeJustInTimeLoaderDisk(Diagnostics&amp;, dyld4::RuntimeState&amp;, char const*, dyld4::Loader::LoadOptions const&amp;, bool, unsigned int, mach_o::Layout const*)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/dyld/JustInTimeLoader.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1209"
+                  endingLineNumber = "1209"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CB11FF5-9FCB-4666-8F4C-5F68D9190167"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldDelegates.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "672"
+            endingLineNumber = "672"
+            landmarkName = "SyscallDelegate::mapFileReadOnly(diag, path, size, fileID, isOSBinary, realerPath)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74267D82-C92C-411F-945C-CE2727752073"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldDelegates.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "665"
+            endingLineNumber = "665"
+            landmarkName = "SyscallDelegate::mapFileReadOnly(diag, path, size, fileID, isOSBinary, realerPath)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7DC5633-BC30-4878-BF96-2B148E8E7114"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldDelegates.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "651"
+            endingLineNumber = "651"
+            landmarkName = "SyscallDelegate::mapFileReadOnly(diag, path, size, fileID, isOSBinary, realerPath)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBA4B17F-E0F5-4648-805A-56667BE4B9C1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldDelegates.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "656"
+            endingLineNumber = "656"
+            landmarkName = "SyscallDelegate::mapFileReadOnly(diag, path, size, fileID, isOSBinary, realerPath)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED39F1C0-B2EC-4B18-AD76-77868DF4303C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldDelegates.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "715"
+            endingLineNumber = "715"
+            landmarkName = "SyscallDelegate::mapFileReadOnly(diag, path, size, fileID, isOSBinary, realerPath)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67A4A04D-2B85-4C91-AAED-9C7D44935448"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldDelegates.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "739"
+            endingLineNumber = "739"
+            landmarkName = "SyscallDelegate::withReadOnlyMappedFile(diag, path, checkIfOSBinary)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E02AE38-892D-4AEC-94EB-1525C7053BB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "958"
+            endingLineNumber = "958"
+            landmarkName = "Loader::getLoader(diag, state, loadPath, options)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B55D6C4-B2EB-4951-8F83-D4F09574C366"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1245"
+            endingLineNumber = "1245"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31D5E8DB-E942-4264-B9EC-D061D340AE61"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1236"
+            endingLineNumber = "1236"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70DDF06D-9ADD-4BF4-A148-18611CA4C4BB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2726"
+            endingLineNumber = "2726"
+            landmarkName = "MachOFile::compatibleSlice(diag, fileContent, contentSize, path, platform, isOSBinary, archs, internalInstall)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4EB64A2-10CC-4480-9F2F-A63BF48DED3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2738"
+            endingLineNumber = "2738"
+            landmarkName = "MachOFile::compatibleSlice(diag, fileContent, contentSize, path, platform, isOSBinary, archs, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D4EB64A2-10CC-4480-9F2F-A63BF48DED3C - 8dae7da8d99869e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2740"
+                  endingLineNumber = "2740"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "D4EB64A2-10CC-4480-9F2F-A63BF48DED3C - 8dae7da8d99869ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2738"
+                  endingLineNumber = "2738"
+                  offsetFromSymbolStart = "280">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0597A7F3-FBCC-42EE-9095-6E407E04338C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2744"
+            endingLineNumber = "2744"
+            landmarkName = "MachOFile::compatibleSlice(diag, fileContent, contentSize, path, platform, isOSBinary, archs, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0597A7F3-FBCC-42EE-9095-6E407E04338C - 8dae7da8d9986aa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2746"
+                  endingLineNumber = "2746"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "0597A7F3-FBCC-42EE-9095-6E407E04338C - 8dae7da8d9986a67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2744"
+                  endingLineNumber = "2744"
+                  offsetFromSymbolStart = "368">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "340204A0-6324-458B-BFF5-0AC5D2A30CF2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2751"
+            endingLineNumber = "2751"
+            landmarkName = "MachOFile::compatibleSlice(diag, fileContent, contentSize, path, platform, isOSBinary, archs, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "340204A0-6324-458B-BFF5-0AC5D2A30CF2 - 8dae7da8d9986b5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2753"
+                  endingLineNumber = "2753"
+                  offsetFromSymbolStart = "512">
+               </Location>
+               <Location
+                  uuid = "340204A0-6324-458B-BFF5-0AC5D2A30CF2 - 8dae7da8d9986b18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2751"
+                  endingLineNumber = "2751"
+                  offsetFromSymbolStart = "504">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC7994D7-E116-4EDD-BC5B-D52D12067B23"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2760"
+            endingLineNumber = "2760"
+            landmarkName = "MachOFile::compatibleSlice(diag, fileContent, contentSize, path, platform, isOSBinary, archs, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DC7994D7-E116-4EDD-BC5B-D52D12067B23 - 8dae7da8d9986477"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2760"
+                  endingLineNumber = "2760"
+                  offsetFromSymbolStart = "740">
+               </Location>
+               <Location
+                  uuid = "DC7994D7-E116-4EDD-BC5B-D52D12067B23 - 8dae7da8d9986477"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2760"
+                  endingLineNumber = "2760"
+                  offsetFromSymbolStart = "732">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEB7D7AE-70CC-4DEB-BED4-74E309310A4C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2763"
+            endingLineNumber = "2763"
+            landmarkName = "MachOFile::compatibleSlice(diag, fileContent, contentSize, path, platform, isOSBinary, archs, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BEB7D7AE-70CC-4DEB-BED4-74E309310A4C - 8dae7da8d9986494"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2763"
+                  endingLineNumber = "2763"
+                  offsetFromSymbolStart = "760">
+               </Location>
+               <Location
+                  uuid = "BEB7D7AE-70CC-4DEB-BED4-74E309310A4C - 8dae7da8d9986494"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2763"
+                  endingLineNumber = "2763"
+                  offsetFromSymbolStart = "748">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "206DB81E-EACF-4690-B720-7BBF9AFFAC93"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2734"
+            endingLineNumber = "2734"
+            landmarkName = "MachOFile::compatibleSlice(diag, fileContent, contentSize, path, platform, isOSBinary, archs, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "206DB81E-EACF-4690-B720-7BBF9AFFAC93 - 8dae7da8d9986908"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2735"
+                  endingLineNumber = "2735"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "206DB81E-EACF-4690-B720-7BBF9AFFAC93 - 8dae7da8d9986929"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::compatibleSlice(Diagnostics&amp;, void const*, unsigned long, char const*, dyld3::Platform, bool, dyld3::GradedArchs const&amp;, bool)"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2734"
+                  endingLineNumber = "2734"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4531AC5C-BDEF-403D-B132-4CBF77E7D108"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "669"
+            endingLineNumber = "669"
+            landmarkName = "MachOFile::loadableIntoProcess(processPlatform, path, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4531AC5C-BDEF-403D-B132-4CBF77E7D108 - 18c3f56c4cce3ade"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "671"
+                  endingLineNumber = "671"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "4531AC5C-BDEF-403D-B132-4CBF77E7D108 - 18c3f56c4cce3b1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "669"
+                  endingLineNumber = "669"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A14CDD5-1226-4977-A02A-7B979F00059F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "686"
+            endingLineNumber = "686"
+            landmarkName = "MachOFile::loadableIntoProcess(processPlatform, path, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A14CDD5-1226-4977-A02A-7B979F00059F - 18c3f56c4cce3cee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "687"
+                  endingLineNumber = "687"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "8A14CDD5-1226-4977-A02A-7B979F00059F - 18c3f56c4cce3c89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "688"
+                  endingLineNumber = "688"
+                  offsetFromSymbolStart = "296">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B7CA25F-632A-4507-8688-A49E1B9AD294"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "689"
+            endingLineNumber = "689"
+            landmarkName = "MachOFile::loadableIntoProcess(processPlatform, path, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6B7CA25F-632A-4507-8688-A49E1B9AD294 - 18c3f56c4cce3fe6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "695"
+                  endingLineNumber = "695"
+                  offsetFromSymbolStart = "384">
+               </Location>
+               <Location
+                  uuid = "6B7CA25F-632A-4507-8688-A49E1B9AD294 - 18c3f56c4cce3ca8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "689"
+                  endingLineNumber = "689"
+                  offsetFromSymbolStart = "368">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E49924E6-88A5-4869-A192-E8C0030D851E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "708"
+            endingLineNumber = "708"
+            landmarkName = "MachOFile::loadableIntoProcess(processPlatform, path, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E49924E6-88A5-4869-A192-E8C0030D851E - 18c3f56c4cce21d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "710"
+                  endingLineNumber = "710"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "E49924E6-88A5-4869-A192-E8C0030D851E - 18c3f56c4cce3e15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "708"
+                  endingLineNumber = "708"
+                  offsetFromSymbolStart = "452">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8F4D141-2CA6-41B8-803A-7F929D5DF8AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "common/MachOFile.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
+            landmarkName = "MachOFile::loadableIntoProcess(processPlatform, path, internalInstall)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F8F4D141-2CA6-41B8-803A-7F929D5DF8AA - 18c3f56c4cce21f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "711"
+                  endingLineNumber = "711"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "F8F4D141-2CA6-41B8-803A-7F929D5DF8AA - 18c3f56c4cce21f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld3::MachOFile::loadableIntoProcess(dyld3::Platform, char const*, bool) const"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/common/MachOFile.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "711"
+                  endingLineNumber = "711"
+                  offsetFromSymbolStart = "472">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "328DB5A9-4299-4FEC-9B53-90A7544F93CE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/DyldProcessConfig.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "698"
+            endingLineNumber = "698"
+            landmarkName = "ProcessConfig::Process::getMainPlatform()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "328DB5A9-4299-4FEC-9B53-90A7544F93CE - a801f82d7411f313"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld4::ProcessConfig::Process::getMainPlatform()"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/dyld/DyldProcessConfig.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "698"
+                  endingLineNumber = "698"
+                  offsetFromSymbolStart = "764">
+               </Location>
+               <Location
+                  uuid = "328DB5A9-4299-4FEC-9B53-90A7544F93CE - a801f82d7411f374"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dyld4::ProcessConfig::Process::getMainPlatform()"
+                  moduleName = "dyld_sim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/misha/Desktop/apple-sources/dyld/dyld/DyldProcessConfig.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "701"
+                  endingLineNumber = "701"
+                  offsetFromSymbolStart = "768">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAA54860-8182-4674-ADF8-E876D2D770BB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/JustInTimeLoader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1268"
+            endingLineNumber = "1268"
+            landmarkName = "JustInTimeLoader::makeJustInTimeLoaderDisk(diag, state, loadPath, options, overridesCache, overridesCacheIndex, layout)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "635F2563-9D6E-4BF2-8812-7E7EAC0D6FB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1399"
+            endingLineNumber = "1399"
+            landmarkName = "Loader::mapSegments(diag, state, path, vmSpace, codeSignature, hasCodeSignature, regions, neverUnloads, prebuilt, fileValidation)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16941996-9BEE-4C4E-A2F5-395866FF1B9D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1408"
+            endingLineNumber = "1408"
+            landmarkName = "Loader::mapSegments(diag, state, path, vmSpace, codeSignature, hasCodeSignature, regions, neverUnloads, prebuilt, fileValidation)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "919FCEC7-BC74-4B89-BCCA-AE79C990C05E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dyld/Loader.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1411"
+            endingLineNumber = "1411"
+            landmarkName = "Loader::mapSegments(diag, state, path, vmSpace, codeSignature, hasCodeSignature, regions, neverUnloads, prebuilt, fileValidation)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

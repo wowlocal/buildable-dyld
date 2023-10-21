@@ -77,7 +77,7 @@ int stat(const char* path, struct stat* buf)
     int result;
     do {
 #if BUILDING_DYLD
-        assert(false);
+        //assert(false);
         // ???
         result = ::stat(path, buf);
 #else
@@ -102,6 +102,7 @@ int fstatat(int fd, const char *path, struct stat *buf, int flag)
 // <rdar://problem/13805025> dyld should retry open() if it gets an EGAIN
 int open(const char* path, int flag, int other)
 {
+    return ::open(path, flag, other);
     int result;
     do {
 #if BUILDING_DYLD
@@ -112,7 +113,7 @@ int open(const char* path, int flag, int other)
         else
         {
             result = -1; 
-            assert(false);
+            //assert(false);
         }
         //result = ::open_with_subsystem(path, flag);
 #else
