@@ -6,7 +6,13 @@
 //
 
 #import "FFFLoader.h"
+#import "MakeShit.h"
 
 @implementation FFFLoader
+
++ (void)laod
+{
+    _make_shit(NULL);
+}
 
 @end

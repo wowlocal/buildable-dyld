@@ -9,6 +9,8 @@
 
 @implementation fuckme
 
-
++ (void)load
+{
+}
 
 @end

@@ -8,6 +8,6 @@
 #ifndef MakeShit_h
 #define MakeShit_h
 
-
+void _make_shit(const char* argv[]);
 
 #endif /* MakeShit_h */

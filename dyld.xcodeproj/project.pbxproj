@@ -452,6 +452,207 @@
 		C1F96B4629035C6900D9EDE1 /* Test_Fixups.mm in Sources */ = {isa = PBXBuildFile; fileRef = C1F96B4529035C6900D9EDE1 /* Test_Fixups.mm */; };
 		C1F98A2A28D93FD70081A6EB /* Test_ObjC_64.mm in Sources */ = {isa = PBXBuildFile; fileRef = C1F98A2928D93FD70081A6EB /* Test_ObjC_64.mm */; };
 		C1F98A2C28D9404E0081A6EB /* ObjC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1F98A2B28D9404E0081A6EB /* ObjC.cpp */; };
+		C605C85C2AE4233A00DCBAAB /* dyldStartup.s in Sources */ = {isa = PBXBuildFile; fileRef = F98B354D24ED744200DE738B /* dyldStartup.s */; };
+		C605C85D2AE4233A00DCBAAB /* dyldMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B355A24ED744200DE738B /* dyldMain.cpp */; };
+		C605C85E2AE4233A00DCBAAB /* DyldProcessConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B355824ED744200DE738B /* DyldProcessConfig.cpp */; };
+		C605C85F2AE4233A00DCBAAB /* DyldRuntimeState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B355E24ED744200DE738B /* DyldRuntimeState.cpp */; };
+		C605C8602AE4233A00DCBAAB /* Universal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301D0726FAE50D00746273 /* Universal.cpp */; };
+		C605C8612AE4233A00DCBAAB /* PVLEInt64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3759AD442741034C008887F8 /* PVLEInt64.cpp */; };
+		C605C8622AE4233A00DCBAAB /* dyld_introspection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 374DD3CC25C31658003E339D /* dyld_introspection.cpp */; };
+		C605C8632AE4233A00DCBAAB /* OptimizerSwift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13F65FA25CCE33A0097F92E /* OptimizerSwift.cpp */; };
+		C605C8642AE4233A00DCBAAB /* PrebuiltSwift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE48189B278FB82200C1EAF7 /* PrebuiltSwift.cpp */; platformFilters = (bridgeos, ios, macos, tvos, watchos, ); };
+		C605C8652AE4233A00DCBAAB /* Loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B355D24ED744200DE738B /* Loader.cpp */; };
+		C605C8662AE4233A00DCBAAB /* Error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301D4A26FFC25600746273 /* Error.cpp */; };
+		C605C8672AE4233A00DCBAAB /* JustInTimeLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B355C24ED744200DE738B /* JustInTimeLoader.cpp */; };
+		C605C8682AE4233A00DCBAAB /* ExportsTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301CFC26FAC17000746273 /* ExportsTrie.cpp */; };
+		C605C8692AE4233A00DCBAAB /* PrebuiltLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B356024ED744200DE738B /* PrebuiltLoader.cpp */; };
+		C605C86A2AE4233A00DCBAAB /* Version64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2C8ED0295B89F400A9495B /* Version64.cpp */; };
+		C605C86B2AE4233A00DCBAAB /* DyldDelegates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F916B1F42506B7AE00466AA4 /* DyldDelegates.cpp */; };
+		C605C86C2AE4233A00DCBAAB /* CachePatching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C154EF1A27A11F49008D0463 /* CachePatching.cpp */; };
+		C605C86D2AE4233A00DCBAAB /* Algorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DD10D4B2970C8970001295E /* Algorithm.cpp */; };
+		C605C86E2AE4233A00DCBAAB /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37B3E69B2747A70400EF3C96 /* FileManager.cpp */; };
+		C605C86F2AE4233A00DCBAAB /* Allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37C1488525D1258B00E00E7E /* Allocator.cpp */; };
+		C605C8702AE4233A00DCBAAB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C677C6D02AE189DC0081A2C2 /* main.c */; };
+		C605C8712AE4233A00DCBAAB /* MurmurHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE10EA3027D6A4340027519D /* MurmurHash.cpp */; };
+		C605C8722AE4233A00DCBAAB /* SharedCacheRuntime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B355324ED744200DE738B /* SharedCacheRuntime.cpp */; };
+		C605C8732AE4233A00DCBAAB /* LoggingStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D558DDE29657D9200E89303 /* LoggingStub.cpp */; };
+		C605C8742AE4233A00DCBAAB /* PremappedLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE56DBDF28DBCAA300CF5166 /* PremappedLoader.cpp */; };
+		C605C8752AE4233A00DCBAAB /* CRC32c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 370250D227392B66007C67A2 /* CRC32c.cpp */; };
+		C605C8762AE4233A00DCBAAB /* RemoteNotificationResponder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37CA9BD32746DC08008485A5 /* RemoteNotificationResponder.cpp */; };
+		C605C8772AE4233A00DCBAAB /* DyldAPIs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B354C24ED744200DE738B /* DyldAPIs.cpp */; };
+		C605C8782AE4233A00DCBAAB /* Symbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301CF926FAC17000746273 /* Symbol.cpp */; };
+		C605C8792AE4233A00DCBAAB /* Header.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301D4526FD447F00746273 /* Header.cpp */; };
+		C605C87A2AE4233A00DCBAAB /* PrebuiltObjC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1DE09EA254A4E38006E8953 /* PrebuiltObjC.cpp */; };
+		C605C87B2AE4233A00DCBAAB /* Tracing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B355124ED744200DE738B /* Tracing.cpp */; };
+		C605C87C2AE4233A00DCBAAB /* ExternallyViewableState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F97A9763284AAF6600B887C3 /* ExternallyViewableState.cpp */; };
+		C605C87D2AE4233A00DCBAAB /* glue.c in Sources */ = {isa = PBXBuildFile; fileRef = F98B356524ED744200DE738B /* glue.c */; };
+		C605C87E2AE4233A00DCBAAB /* NListSymbolTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9FE2C3627121B7A00FD9588 /* NListSymbolTable.cpp */; };
+		C605C87F2AE4233A00DCBAAB /* Architecture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301D3526FB8BD500746273 /* Architecture.cpp */; };
+		C605C8802AE4233A00DCBAAB /* GradedArchitectures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301D3C26FBDFC600746273 /* GradedArchitectures.cpp */; };
+		C605C8812AE4233A00DCBAAB /* FunctionStarts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98753E428AD655E005821ED /* FunctionStarts.cpp */; };
+		C605C8822AE4233A00DCBAAB /* CompactUnwind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98753EA28AD9F07005821ED /* CompactUnwind.cpp */; };
+		C605C8832AE4233A00DCBAAB /* Fixups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F96BFA4A27D97C4B00EEB659 /* Fixups.cpp */; };
+		C605C8842AE4233A00DCBAAB /* ChainedFixups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9F513C92750803000FD8FA4 /* ChainedFixups.cpp */; };
+		C605C8852AE4233A00DCBAAB /* ObjC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C16704D428DCD5C700BAFCC1 /* ObjC.cpp */; };
+		C605C8862AE4233A00DCBAAB /* BindOpcodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9F513C32750313800FD8FA4 /* BindOpcodes.cpp */; };
+		C605C8872AE4233A00DCBAAB /* RebaseOpcodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9F513BD274DC5DB00FD8FA4 /* RebaseOpcodes.cpp */; };
+		C605C8882AE4233A00DCBAAB /* Version32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301D3226FB87E500746273 /* Version32.cpp */; };
+		C605C8892AE4233A00DCBAAB /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9EB23482725C2AE008622E7 /* Image.cpp */; };
+		C605C88A2AE4233A00DCBAAB /* ProcessAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 374DD3CB25C31658003E339D /* ProcessAtlas.cpp */; };
+		C605C88B2AE4233A00DCBAAB /* DyldSharedCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B351F24EB7CA400DE738B /* DyldSharedCache.cpp */; };
+		C605C88C2AE4233A00DCBAAB /* ObjCVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0DFB1278E62AB00A5E21C /* ObjCVisitor.cpp */; };
+		C605C88D2AE4233A00DCBAAB /* SwiftVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0DFF52795D16600A5E21C /* SwiftVisitor.cpp */; };
+		C605C88E2AE4233A00DCBAAB /* MachOFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B345C24EB729C00DE738B /* MachOFile.cpp */; };
+		C605C88F2AE4233A00DCBAAB /* MachOLoaded.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B345B24EB729C00DE738B /* MachOLoaded.cpp */; };
+		C605C8902AE4233A00DCBAAB /* MachOLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13CD4C027C95BA600A40377 /* MachOLayout.cpp */; };
+		C605C8912AE4233A00DCBAAB /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE86439327F7BD9E008F714A /* Utils.cpp */; };
+		C605C8922AE4233A00DCBAAB /* Misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301D0B26FAE50D00746273 /* Misc.cpp */; };
+		C605C8932AE4233A00DCBAAB /* MachOAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B345124EB729C00DE738B /* MachOAnalyzer.cpp */; };
+		C605C8942AE4233A00DCBAAB /* MetadataVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0DFF127948F9200A5E21C /* MetadataVisitor.cpp */; };
+		C605C8952AE4233A00DCBAAB /* Diagnostics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F98B345424EB729C00DE738B /* Diagnostics.cpp */; };
+		C605C8962AE4233A00DCBAAB /* PerfectHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1DDC85125927712005949D1 /* PerfectHash.cpp */; };
+		C605C8972AE4233A00DCBAAB /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9301D3826FBA27D00746273 /* Platform.cpp */; };
+		C605C8A82AE423C800DCBAAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C605C8A72AE423C800DCBAAB /* AppDelegate.m */; };
+		C605C8AB2AE423C800DCBAAB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C605C8AA2AE423C800DCBAAB /* SceneDelegate.m */; };
+		C605C8AE2AE423C800DCBAAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C605C8AD2AE423C800DCBAAB /* ViewController.m */; };
+		C605C8B12AE423C800DCBAAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C605C8AF2AE423C800DCBAAB /* Main.storyboard */; };
+		C605C8B32AE423C900DCBAAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C605C8B22AE423C900DCBAAB /* Assets.xcassets */; };
+		C605C8B62AE423C900DCBAAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C605C8B42AE423C900DCBAAB /* LaunchScreen.storyboard */; };
+		C605C8B92AE423C900DCBAAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C605C8B82AE423C900DCBAAB /* main.m */; };
+		C605C8C32AE423CB00DCBAAB /* dyld_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C605C8C22AE423CB00DCBAAB /* dyld_appTests.m */; };
+		C605C8CD2AE423CC00DCBAAB /* dyld_appUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C605C8CC2AE423CC00DCBAAB /* dyld_appUITests.m */; };
+		C605C8CF2AE423CC00DCBAAB /* dyld_appUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C605C8CE2AE423CC00DCBAAB /* dyld_appUITestsLaunchTests.m */; };
+		C605C9A82AE458D100DCBAAB /* ProcessAtlas.h in Headers */ = {isa = PBXBuildFile; fileRef = 374DD3CA25C31658003E339D /* ProcessAtlas.h */; };
+		C605C9A92AE458D100DCBAAB /* BitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 37B3E698274640C800EF3C96 /* BitUtils.h */; };
+		C605C9AA2AE458D100DCBAAB /* FileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 37B3E69C2747A70400EF3C96 /* FileManager.h */; };
+		C605C9AB2AE458D100DCBAAB /* PVLEInt64.h in Headers */ = {isa = PBXBuildFile; fileRef = 3759AD3F2740B3D4008887F8 /* PVLEInt64.h */; };
+		C605CA352AE45A1400DCBAAB /* fuckme.mm in Sources */ = {isa = PBXBuildFile; fileRef = C605CA342AE45A1400DCBAAB /* fuckme.mm */; };
+		C605CA362AE45A1400DCBAAB /* fuckme.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C605CA332AE45A1400DCBAAB /* fuckme.h */; };
+		C605CA752AE45A3D00DCBAAB /* DyldDelegates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3A2AE45A3A00DCBAAB /* DyldDelegates.cpp */; };
+		C605CA762AE45A3D00DCBAAB /* GradedArchitectures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3B2AE45A3A00DCBAAB /* GradedArchitectures.cpp */; };
+		C605CA772AE45A3D00DCBAAB /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3C2AE45A3A00DCBAAB /* Image.cpp */; };
+		C605CA782AE45A3D00DCBAAB /* DyldRuntimeState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3D2AE45A3A00DCBAAB /* DyldRuntimeState.cpp */; };
+		C605CA792AE45A3D00DCBAAB /* Symbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3E2AE45A3A00DCBAAB /* Symbol.cpp */; };
+		C605CA7A2AE45A3D00DCBAAB /* FunctionStarts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3F2AE45A3A00DCBAAB /* FunctionStarts.cpp */; };
+		C605CA7B2AE45A3D00DCBAAB /* NListSymbolTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA402AE45A3A00DCBAAB /* NListSymbolTable.cpp */; };
+		C605CA7C2AE45A3D00DCBAAB /* PrebuiltObjC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA412AE45A3A00DCBAAB /* PrebuiltObjC.cpp */; };
+		C605CA7D2AE45A3D00DCBAAB /* PrebuiltSwift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA422AE45A3A00DCBAAB /* PrebuiltSwift.cpp */; };
+		C605CA7E2AE45A3D00DCBAAB /* dyldMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA432AE45A3A00DCBAAB /* dyldMain.cpp */; };
+		C605CA7F2AE45A3D00DCBAAB /* Allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA442AE45A3A00DCBAAB /* Allocator.cpp */; };
+		C605CA802AE45A3D00DCBAAB /* MachOLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA452AE45A3A00DCBAAB /* MachOLayout.cpp */; };
+		C605CA812AE45A3D00DCBAAB /* ExportsTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA462AE45A3A00DCBAAB /* ExportsTrie.cpp */; };
+		C605CA822AE45A3D00DCBAAB /* Header.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA472AE45A3A00DCBAAB /* Header.cpp */; };
+		C605CA832AE45A3D00DCBAAB /* SwiftVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA482AE45A3A00DCBAAB /* SwiftVisitor.cpp */; };
+		C605CA842AE45A3D00DCBAAB /* DyldSharedCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA492AE45A3A00DCBAAB /* DyldSharedCache.cpp */; };
+		C605CA852AE45A3D00DCBAAB /* ChainedFixups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4A2AE45A3A00DCBAAB /* ChainedFixups.cpp */; };
+		C605CA862AE45A3D00DCBAAB /* ExternallyViewableState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4B2AE45A3A00DCBAAB /* ExternallyViewableState.cpp */; };
+		C605CA872AE45A3D00DCBAAB /* Architecture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4C2AE45A3B00DCBAAB /* Architecture.cpp */; };
+		C605CA882AE45A3D00DCBAAB /* MachOLoaded.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4D2AE45A3B00DCBAAB /* MachOLoaded.cpp */; };
+		C605CA892AE45A3D00DCBAAB /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4E2AE45A3B00DCBAAB /* Platform.cpp */; };
+		C605CA8A2AE45A3D00DCBAAB /* BindOpcodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4F2AE45A3B00DCBAAB /* BindOpcodes.cpp */; };
+		C605CA8B2AE45A3D00DCBAAB /* LoggingStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA502AE45A3B00DCBAAB /* LoggingStub.cpp */; };
+		C605CA8C2AE45A3D00DCBAAB /* JustInTimeLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA512AE45A3B00DCBAAB /* JustInTimeLoader.cpp */; };
+		C605CA8D2AE45A3D00DCBAAB /* SharedCacheRuntime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA522AE45A3B00DCBAAB /* SharedCacheRuntime.cpp */; };
+		C605CA8E2AE45A3D00DCBAAB /* DyldProcessConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA532AE45A3B00DCBAAB /* DyldProcessConfig.cpp */; };
+		C605CA8F2AE45A3D00DCBAAB /* MachOAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA542AE45A3B00DCBAAB /* MachOAnalyzer.cpp */; };
+		C605CA902AE45A3D00DCBAAB /* ObjC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA552AE45A3B00DCBAAB /* ObjC.cpp */; };
+		C605CA912AE45A3D00DCBAAB /* CompactUnwind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA562AE45A3B00DCBAAB /* CompactUnwind.cpp */; };
+		C605CA922AE45A3D00DCBAAB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C605CA572AE45A3B00DCBAAB /* main.c */; };
+		C605CA932AE45A3D00DCBAAB /* MurmurHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA582AE45A3B00DCBAAB /* MurmurHash.cpp */; };
+		C605CA942AE45A3D00DCBAAB /* glue.c in Sources */ = {isa = PBXBuildFile; fileRef = C605CA592AE45A3B00DCBAAB /* glue.c */; };
+		C605CA952AE45A3D00DCBAAB /* Tracing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5A2AE45A3B00DCBAAB /* Tracing.cpp */; };
+		C605CA962AE45A3D00DCBAAB /* MachOFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5B2AE45A3B00DCBAAB /* MachOFile.cpp */; };
+		C605CA972AE45A3D00DCBAAB /* Error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5C2AE45A3B00DCBAAB /* Error.cpp */; };
+		C605CA982AE45A3D00DCBAAB /* PrebuiltLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5D2AE45A3C00DCBAAB /* PrebuiltLoader.cpp */; };
+		C605CA992AE45A3D00DCBAAB /* ProcessAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5E2AE45A3C00DCBAAB /* ProcessAtlas.cpp */; };
+		C605CA9A2AE45A3D00DCBAAB /* OptimizerSwift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5F2AE45A3C00DCBAAB /* OptimizerSwift.cpp */; };
+		C605CA9B2AE45A3D00DCBAAB /* PerfectHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA602AE45A3C00DCBAAB /* PerfectHash.cpp */; };
+		C605CA9C2AE45A3D00DCBAAB /* CRC32c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA612AE45A3C00DCBAAB /* CRC32c.cpp */; };
+		C605CA9D2AE45A3D00DCBAAB /* PVLEInt64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA622AE45A3C00DCBAAB /* PVLEInt64.cpp */; };
+		C605CA9E2AE45A3D00DCBAAB /* Version32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA632AE45A3C00DCBAAB /* Version32.cpp */; };
+		C605CA9F2AE45A3D00DCBAAB /* MetadataVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA642AE45A3C00DCBAAB /* MetadataVisitor.cpp */; };
+		C605CAA02AE45A3D00DCBAAB /* Algorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA652AE45A3C00DCBAAB /* Algorithm.cpp */; };
+		C605CAA12AE45A3D00DCBAAB /* CachePatching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA662AE45A3C00DCBAAB /* CachePatching.cpp */; };
+		C605CAA22AE45A3D00DCBAAB /* Diagnostics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA672AE45A3C00DCBAAB /* Diagnostics.cpp */; };
+		C605CAA32AE45A3D00DCBAAB /* RebaseOpcodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA682AE45A3C00DCBAAB /* RebaseOpcodes.cpp */; };
+		C605CAA42AE45A3D00DCBAAB /* Version64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA692AE45A3C00DCBAAB /* Version64.cpp */; };
+		C605CAA52AE45A3D00DCBAAB /* Universal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6A2AE45A3C00DCBAAB /* Universal.cpp */; };
+		C605CAA62AE45A3D00DCBAAB /* Misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6B2AE45A3C00DCBAAB /* Misc.cpp */; };
+		C605CAA72AE45A3D00DCBAAB /* DyldAPIs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6C2AE45A3C00DCBAAB /* DyldAPIs.cpp */; };
+		C605CAA82AE45A3D00DCBAAB /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6D2AE45A3D00DCBAAB /* FileManager.cpp */; };
+		C605CAA92AE45A3D00DCBAAB /* Fixups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6E2AE45A3D00DCBAAB /* Fixups.cpp */; };
+		C605CAAA2AE45A3D00DCBAAB /* ObjCVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6F2AE45A3D00DCBAAB /* ObjCVisitor.cpp */; };
+		C605CAAB2AE45A3D00DCBAAB /* dyld_introspection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA702AE45A3D00DCBAAB /* dyld_introspection.cpp */; };
+		C605CAAC2AE45A3D00DCBAAB /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA712AE45A3D00DCBAAB /* Utils.cpp */; };
+		C605CAAD2AE45A3D00DCBAAB /* PremappedLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA722AE45A3D00DCBAAB /* PremappedLoader.cpp */; };
+		C605CAAE2AE45A3D00DCBAAB /* Loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA732AE45A3D00DCBAAB /* Loader.cpp */; };
+		C605CAAF2AE45A3D00DCBAAB /* RemoteNotificationResponder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA742AE45A3D00DCBAAB /* RemoteNotificationResponder.cpp */; };
+		C6689BD92AE52A8500FAEF79 /* Loader.h in Headers */ = {isa = PBXBuildFile; fileRef = C605CABC2AE45AB400DCBAAB /* Loader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6689BE32AE5319200FAEF79 /* fuckme_dynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = C6689BE22AE5319200FAEF79 /* fuckme_dynamic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6689BE62AE5319200FAEF79 /* fuckme_dynamic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6689BE02AE5319000FAEF79 /* fuckme_dynamic.framework */; };
+		C6689BE72AE5319200FAEF79 /* fuckme_dynamic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6689BE02AE5319000FAEF79 /* fuckme_dynamic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C6689BEC2AE531B300FAEF79 /* PremappedLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA722AE45A3D00DCBAAB /* PremappedLoader.cpp */; };
+		C6689BED2AE531B300FAEF79 /* MetadataVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA642AE45A3C00DCBAAB /* MetadataVisitor.cpp */; };
+		C6689BEE2AE531B300FAEF79 /* MachOLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA452AE45A3A00DCBAAB /* MachOLayout.cpp */; };
+		C6689BEF2AE531B300FAEF79 /* Loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA732AE45A3D00DCBAAB /* Loader.cpp */; };
+		C6689BF02AE531B300FAEF79 /* RebaseOpcodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA682AE45A3C00DCBAAB /* RebaseOpcodes.cpp */; };
+		C6689BF12AE531B300FAEF79 /* MachOFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5B2AE45A3B00DCBAAB /* MachOFile.cpp */; };
+		C6689BF22AE531B300FAEF79 /* MachOAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA542AE45A3B00DCBAAB /* MachOAnalyzer.cpp */; };
+		C6689BF32AE531B300FAEF79 /* MurmurHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA582AE45A3B00DCBAAB /* MurmurHash.cpp */; };
+		C6689BF42AE531B300FAEF79 /* Misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6B2AE45A3C00DCBAAB /* Misc.cpp */; };
+		C6689BF52AE531B300FAEF79 /* CRC32c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA612AE45A3C00DCBAAB /* CRC32c.cpp */; };
+		C6689BF62AE531B300FAEF79 /* CachePatching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA662AE45A3C00DCBAAB /* CachePatching.cpp */; };
+		C6689BF72AE531B300FAEF79 /* MachOLoaded.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4D2AE45A3B00DCBAAB /* MachOLoaded.cpp */; };
+		C6689BF82AE531B300FAEF79 /* DyldSharedCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA492AE45A3A00DCBAAB /* DyldSharedCache.cpp */; };
+		C6689BF92AE531B300FAEF79 /* PerfectHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA602AE45A3C00DCBAAB /* PerfectHash.cpp */; };
+		C6689BFA2AE531B300FAEF79 /* Algorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA652AE45A3C00DCBAAB /* Algorithm.cpp */; };
+		C6689BFB2AE531B300FAEF79 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4E2AE45A3B00DCBAAB /* Platform.cpp */; };
+		C6689BFC2AE531B300FAEF79 /* ExternallyViewableState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4B2AE45A3A00DCBAAB /* ExternallyViewableState.cpp */; };
+		C6689BFD2AE531B300FAEF79 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA712AE45A3D00DCBAAB /* Utils.cpp */; };
+		C6689BFE2AE531B300FAEF79 /* Allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA442AE45A3A00DCBAAB /* Allocator.cpp */; };
+		C6689BFF2AE531B300FAEF79 /* BindOpcodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4F2AE45A3B00DCBAAB /* BindOpcodes.cpp */; };
+		C6689C002AE531B300FAEF79 /* DyldProcessConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA532AE45A3B00DCBAAB /* DyldProcessConfig.cpp */; };
+		C6689C012AE531B300FAEF79 /* Header.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA472AE45A3A00DCBAAB /* Header.cpp */; };
+		C6689C022AE531B300FAEF79 /* OptimizerSwift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5F2AE45A3C00DCBAAB /* OptimizerSwift.cpp */; };
+		C6689C032AE531B400FAEF79 /* PrebuiltSwift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA422AE45A3A00DCBAAB /* PrebuiltSwift.cpp */; };
+		C6689C042AE531B400FAEF79 /* ProcessAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5E2AE45A3C00DCBAAB /* ProcessAtlas.cpp */; };
+		C6689C052AE531B400FAEF79 /* DyldDelegates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3A2AE45A3A00DCBAAB /* DyldDelegates.cpp */; };
+		C6689C062AE531B400FAEF79 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3C2AE45A3A00DCBAAB /* Image.cpp */; };
+		C6689C072AE531B400FAEF79 /* ChainedFixups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4A2AE45A3A00DCBAAB /* ChainedFixups.cpp */; };
+		C6689C082AE531B400FAEF79 /* LoggingStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA502AE45A3B00DCBAAB /* LoggingStub.cpp */; };
+		C6689C092AE531B400FAEF79 /* Architecture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA4C2AE45A3B00DCBAAB /* Architecture.cpp */; };
+		C6689C0A2AE531B400FAEF79 /* glue.c in Sources */ = {isa = PBXBuildFile; fileRef = C605CA592AE45A3B00DCBAAB /* glue.c */; };
+		C6689C0B2AE531B400FAEF79 /* Universal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6A2AE45A3C00DCBAAB /* Universal.cpp */; };
+		C6689C0C2AE531B400FAEF79 /* DyldAPIs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6C2AE45A3C00DCBAAB /* DyldAPIs.cpp */; };
+		C6689C0D2AE531B400FAEF79 /* PVLEInt64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA622AE45A3C00DCBAAB /* PVLEInt64.cpp */; };
+		C6689C0E2AE531B400FAEF79 /* dyldMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA432AE45A3A00DCBAAB /* dyldMain.cpp */; };
+		C6689C0F2AE531B400FAEF79 /* SharedCacheRuntime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA522AE45A3B00DCBAAB /* SharedCacheRuntime.cpp */; };
+		C6689C102AE531B400FAEF79 /* CompactUnwind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA562AE45A3B00DCBAAB /* CompactUnwind.cpp */; };
+		C6689C112AE531B400FAEF79 /* ObjC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA552AE45A3B00DCBAAB /* ObjC.cpp */; };
+		C6689C122AE531B400FAEF79 /* Tracing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5A2AE45A3B00DCBAAB /* Tracing.cpp */; };
+		C6689C132AE531B400FAEF79 /* RemoteNotificationResponder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA742AE45A3D00DCBAAB /* RemoteNotificationResponder.cpp */; };
+		C6689C142AE531B400FAEF79 /* ExportsTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA462AE45A3A00DCBAAB /* ExportsTrie.cpp */; };
+		C6689C152AE531B400FAEF79 /* GradedArchitectures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3B2AE45A3A00DCBAAB /* GradedArchitectures.cpp */; };
+		C6689C162AE531B400FAEF79 /* dyld_introspection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA702AE45A3D00DCBAAB /* dyld_introspection.cpp */; };
+		C6689C172AE531B400FAEF79 /* Diagnostics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA672AE45A3C00DCBAAB /* Diagnostics.cpp */; };
+		C6689C182AE531B400FAEF79 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C605CA572AE45A3B00DCBAAB /* main.c */; };
+		C6689C192AE531B400FAEF79 /* Version32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA632AE45A3C00DCBAAB /* Version32.cpp */; };
+		C6689C1A2AE531B400FAEF79 /* NListSymbolTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA402AE45A3A00DCBAAB /* NListSymbolTable.cpp */; };
+		C6689C1B2AE531B400FAEF79 /* Symbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3E2AE45A3A00DCBAAB /* Symbol.cpp */; };
+		C6689C1C2AE531B400FAEF79 /* ObjCVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6F2AE45A3D00DCBAAB /* ObjCVisitor.cpp */; };
+		C6689C1D2AE531B400FAEF79 /* FunctionStarts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3F2AE45A3A00DCBAAB /* FunctionStarts.cpp */; };
+		C6689C1E2AE531B400FAEF79 /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6D2AE45A3D00DCBAAB /* FileManager.cpp */; };
+		C6689C1F2AE531B400FAEF79 /* DyldRuntimeState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA3D2AE45A3A00DCBAAB /* DyldRuntimeState.cpp */; };
+		C6689C202AE531B400FAEF79 /* PrebuiltObjC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA412AE45A3A00DCBAAB /* PrebuiltObjC.cpp */; };
+		C6689C212AE531B400FAEF79 /* Version64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA692AE45A3C00DCBAAB /* Version64.cpp */; };
+		C6689C222AE531B400FAEF79 /* Fixups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA6E2AE45A3D00DCBAAB /* Fixups.cpp */; };
+		C6689C232AE531B400FAEF79 /* JustInTimeLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA512AE45A3B00DCBAAB /* JustInTimeLoader.cpp */; };
+		C6689C242AE531B400FAEF79 /* SwiftVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA482AE45A3A00DCBAAB /* SwiftVisitor.cpp */; };
+		C6689C252AE531B400FAEF79 /* Error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5C2AE45A3B00DCBAAB /* Error.cpp */; };
+		C6689C262AE531B500FAEF79 /* PrebuiltLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C605CA5D2AE45A3C00DCBAAB /* PrebuiltLoader.cpp */; };
+		C6689C2F2AE53C2400FAEF79 /* MakeShit.h in Headers */ = {isa = PBXBuildFile; fileRef = C6689C2C2AE538C200FAEF79 /* MakeShit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6689C322AE566B400FAEF79 /* FFFLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = C6689C302AE566B400FAEF79 /* FFFLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6689C332AE566B400FAEF79 /* FFFLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C6689C312AE566B400FAEF79 /* FFFLoader.m */; };
 		C677C6D12AE189DC0081A2C2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C677C6D02AE189DC0081A2C2 /* main.c */; };
 		DE0E1537297B997800D0FCFD /* SplitSeg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A83521291C5DAD0030401B /* SplitSeg.cpp */; };
 		DE10EA3227D6A4340027519D /* MurmurHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE10EA3027D6A4340027519D /* MurmurHash.cpp */; };
@@ -830,6 +1031,61 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		C605C8992AE4233A00DCBAAB /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc;
+			fileType = sourcecode.asm;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		C605C89A2AE4233A00DCBAAB /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc;
+			fileType = sourcecode.c;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		C605C89B2AE4233A00DCBAAB /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc;
+			fileType = sourcecode.cpp;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		C605C9AF2AE458D100DCBAAB /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc;
+			fileType = sourcecode.cpp;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		C605C9B02AE458D100DCBAAB /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc;
+			fileType = sourcecode.c;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 		F921D3160703769A000D1056 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc;
@@ -944,6 +1200,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 37F597CC2061EB4200F9B6F9;
 			remoteInfo = dyld_usage;
+		};
+		C605C8BF2AE423CA00DCBAAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9ED4C8B0630A72300DF4E74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C605C8A32AE423C700DCBAAB;
+			remoteInfo = "dyld-app";
+		};
+		C605C8C92AE423CC00DCBAAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9ED4C8B0630A72300DF4E74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C605C8A32AE423C700DCBAAB;
+			remoteInfo = "dyld-app";
+		};
+		C605C8DA2AE4246B00DCBAAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9ED4C8B0630A72300DF4E74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C605C8582AE4233A00DCBAAB;
+			remoteInfo = dyld_framework;
+		};
+		C6689BE42AE5319200FAEF79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9ED4C8B0630A72300DF4E74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6689BDF2AE5319000FAEF79;
+			remoteInfo = "fuckme-dynamic";
 		};
 		DE887F1A282348DC00C01E17 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1084,6 +1368,27 @@
 			);
 			name = "usr|local|include";
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		C605CA2F2AE45A1200DCBAAB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				C605CA362AE45A1400DCBAAB /* fuckme.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6689BEB2AE5319300FAEF79 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C6689BE72AE5319200FAEF79 /* fuckme_dynamic.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F91B35B92794F1F5006DB55F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -1352,6 +1657,109 @@
 		C1F96B4529035C6900D9EDE1 /* Test_Fixups.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Test_Fixups.mm; sourceTree = "<group>"; };
 		C1F98A2928D93FD70081A6EB /* Test_ObjC_64.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Test_ObjC_64.mm; sourceTree = "<group>"; };
 		C1F98A2B28D9404E0081A6EB /* ObjC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjC.cpp; sourceTree = "<group>"; };
+		C605C89F2AE4233A00DCBAAB /* dyld_framework */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dyld_framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C605C8A42AE423C700DCBAAB /* dyld-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dyld-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C605C8A62AE423C800DCBAAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C605C8A72AE423C800DCBAAB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C605C8A92AE423C800DCBAAB /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		C605C8AA2AE423C800DCBAAB /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		C605C8AC2AE423C800DCBAAB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C605C8AD2AE423C800DCBAAB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C605C8B02AE423C800DCBAAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C605C8B22AE423C900DCBAAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C605C8B52AE423C900DCBAAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C605C8B72AE423C900DCBAAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C605C8B82AE423C900DCBAAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C605C8BE2AE423C900DCBAAB /* dyld-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dyld-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C605C8C22AE423CB00DCBAAB /* dyld_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dyld_appTests.m; sourceTree = "<group>"; };
+		C605C8C82AE423CB00DCBAAB /* dyld-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dyld-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C605C8CC2AE423CC00DCBAAB /* dyld_appUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dyld_appUITests.m; sourceTree = "<group>"; };
+		C605C8CE2AE423CC00DCBAAB /* dyld_appUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dyld_appUITestsLaunchTests.m; sourceTree = "<group>"; };
+		C605C8D92AE4242300DCBAAB /* dyld_sim */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = dyld_sim; path = "../../../Library/Developer/Xcode/DerivedData/dyld-fniblrhtiuicmxeqqwrmkhznscfy/Build/Products/Debug-iphonesimulator/dyld_sim"; sourceTree = "<group>"; };
+		C605C9902AE43D4700DCBAAB /* dyld-app.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "dyld-app.xcconfig"; sourceTree = "<group>"; };
+		C605C9B42AE458D100DCBAAB /* libcustom_dyld_lib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libcustom_dyld_lib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C605CA312AE45A1200DCBAAB /* libfuckme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfuckme.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C605CA332AE45A1400DCBAAB /* fuckme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fuckme.h; sourceTree = "<group>"; };
+		C605CA342AE45A1400DCBAAB /* fuckme.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = fuckme.mm; sourceTree = "<group>"; };
+		C605CA3A2AE45A3A00DCBAAB /* DyldDelegates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DyldDelegates.cpp; path = "dyld-app/fr/DyldDelegates.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA3B2AE45A3A00DCBAAB /* GradedArchitectures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GradedArchitectures.cpp; path = "dyld-app/fr/GradedArchitectures.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA3C2AE45A3A00DCBAAB /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Image.cpp; path = "dyld-app/fr/Image.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA3D2AE45A3A00DCBAAB /* DyldRuntimeState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DyldRuntimeState.cpp; path = "dyld-app/fr/DyldRuntimeState.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA3E2AE45A3A00DCBAAB /* Symbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Symbol.cpp; path = "dyld-app/fr/Symbol.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA3F2AE45A3A00DCBAAB /* FunctionStarts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FunctionStarts.cpp; path = "dyld-app/fr/FunctionStarts.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA402AE45A3A00DCBAAB /* NListSymbolTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NListSymbolTable.cpp; path = "dyld-app/fr/NListSymbolTable.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA412AE45A3A00DCBAAB /* PrebuiltObjC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PrebuiltObjC.cpp; path = "dyld-app/fr/PrebuiltObjC.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA422AE45A3A00DCBAAB /* PrebuiltSwift.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PrebuiltSwift.cpp; path = "dyld-app/fr/PrebuiltSwift.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA432AE45A3A00DCBAAB /* dyldMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dyldMain.cpp; path = "dyld-app/fr/dyldMain.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA442AE45A3A00DCBAAB /* Allocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Allocator.cpp; path = "dyld-app/fr/Allocator.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA452AE45A3A00DCBAAB /* MachOLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MachOLayout.cpp; path = "dyld-app/fr/MachOLayout.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA462AE45A3A00DCBAAB /* ExportsTrie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExportsTrie.cpp; path = "dyld-app/fr/ExportsTrie.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA472AE45A3A00DCBAAB /* Header.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Header.cpp; path = "dyld-app/fr/Header.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA482AE45A3A00DCBAAB /* SwiftVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SwiftVisitor.cpp; path = "dyld-app/fr/SwiftVisitor.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA492AE45A3A00DCBAAB /* DyldSharedCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DyldSharedCache.cpp; path = "dyld-app/fr/DyldSharedCache.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA4A2AE45A3A00DCBAAB /* ChainedFixups.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChainedFixups.cpp; path = "dyld-app/fr/ChainedFixups.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA4B2AE45A3A00DCBAAB /* ExternallyViewableState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExternallyViewableState.cpp; path = "dyld-app/fr/ExternallyViewableState.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA4C2AE45A3B00DCBAAB /* Architecture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Architecture.cpp; path = "dyld-app/fr/Architecture.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA4D2AE45A3B00DCBAAB /* MachOLoaded.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MachOLoaded.cpp; path = "dyld-app/fr/MachOLoaded.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA4E2AE45A3B00DCBAAB /* Platform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Platform.cpp; path = "dyld-app/fr/Platform.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA4F2AE45A3B00DCBAAB /* BindOpcodes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BindOpcodes.cpp; path = "dyld-app/fr/BindOpcodes.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA502AE45A3B00DCBAAB /* LoggingStub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoggingStub.cpp; path = "dyld-app/fr/LoggingStub.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA512AE45A3B00DCBAAB /* JustInTimeLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JustInTimeLoader.cpp; path = "dyld-app/fr/JustInTimeLoader.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA522AE45A3B00DCBAAB /* SharedCacheRuntime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SharedCacheRuntime.cpp; path = "dyld-app/fr/SharedCacheRuntime.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA532AE45A3B00DCBAAB /* DyldProcessConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DyldProcessConfig.cpp; path = "dyld-app/fr/DyldProcessConfig.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA542AE45A3B00DCBAAB /* MachOAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MachOAnalyzer.cpp; path = "dyld-app/fr/MachOAnalyzer.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA552AE45A3B00DCBAAB /* ObjC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjC.cpp; path = "dyld-app/fr/ObjC.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA562AE45A3B00DCBAAB /* CompactUnwind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CompactUnwind.cpp; path = "dyld-app/fr/CompactUnwind.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA572AE45A3B00DCBAAB /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = "dyld-app/fr/main.c"; sourceTree = SOURCE_ROOT; };
+		C605CA582AE45A3B00DCBAAB /* MurmurHash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MurmurHash.cpp; path = "dyld-app/fr/MurmurHash.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA592AE45A3B00DCBAAB /* glue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glue.c; path = "dyld-app/fr/glue.c"; sourceTree = SOURCE_ROOT; };
+		C605CA5A2AE45A3B00DCBAAB /* Tracing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tracing.cpp; path = "dyld-app/fr/Tracing.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA5B2AE45A3B00DCBAAB /* MachOFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MachOFile.cpp; path = "dyld-app/fr/MachOFile.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA5C2AE45A3B00DCBAAB /* Error.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Error.cpp; path = "dyld-app/fr/Error.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA5D2AE45A3C00DCBAAB /* PrebuiltLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PrebuiltLoader.cpp; path = "dyld-app/fr/PrebuiltLoader.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA5E2AE45A3C00DCBAAB /* ProcessAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessAtlas.cpp; path = "dyld-app/fr/ProcessAtlas.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA5F2AE45A3C00DCBAAB /* OptimizerSwift.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OptimizerSwift.cpp; path = "dyld-app/fr/OptimizerSwift.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA602AE45A3C00DCBAAB /* PerfectHash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PerfectHash.cpp; path = "dyld-app/fr/PerfectHash.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA612AE45A3C00DCBAAB /* CRC32c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CRC32c.cpp; path = "dyld-app/fr/CRC32c.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA622AE45A3C00DCBAAB /* PVLEInt64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PVLEInt64.cpp; path = "dyld-app/fr/PVLEInt64.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA632AE45A3C00DCBAAB /* Version32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Version32.cpp; path = "dyld-app/fr/Version32.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA642AE45A3C00DCBAAB /* MetadataVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MetadataVisitor.cpp; path = "dyld-app/fr/MetadataVisitor.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA652AE45A3C00DCBAAB /* Algorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Algorithm.cpp; path = "dyld-app/fr/Algorithm.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA662AE45A3C00DCBAAB /* CachePatching.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CachePatching.cpp; path = "dyld-app/fr/CachePatching.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA672AE45A3C00DCBAAB /* Diagnostics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Diagnostics.cpp; path = "dyld-app/fr/Diagnostics.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA682AE45A3C00DCBAAB /* RebaseOpcodes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RebaseOpcodes.cpp; path = "dyld-app/fr/RebaseOpcodes.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA692AE45A3C00DCBAAB /* Version64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Version64.cpp; path = "dyld-app/fr/Version64.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA6A2AE45A3C00DCBAAB /* Universal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Universal.cpp; path = "dyld-app/fr/Universal.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA6B2AE45A3C00DCBAAB /* Misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Misc.cpp; path = "dyld-app/fr/Misc.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA6C2AE45A3C00DCBAAB /* DyldAPIs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DyldAPIs.cpp; path = "dyld-app/fr/DyldAPIs.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA6D2AE45A3D00DCBAAB /* FileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileManager.cpp; path = "dyld-app/fr/FileManager.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA6E2AE45A3D00DCBAAB /* Fixups.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Fixups.cpp; path = "dyld-app/fr/Fixups.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA6F2AE45A3D00DCBAAB /* ObjCVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjCVisitor.cpp; path = "dyld-app/fr/ObjCVisitor.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA702AE45A3D00DCBAAB /* dyld_introspection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dyld_introspection.cpp; path = "dyld-app/fr/dyld_introspection.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA712AE45A3D00DCBAAB /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utils.cpp; path = "dyld-app/fr/Utils.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA722AE45A3D00DCBAAB /* PremappedLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PremappedLoader.cpp; path = "dyld-app/fr/PremappedLoader.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA732AE45A3D00DCBAAB /* Loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Loader.cpp; path = "dyld-app/fr/Loader.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CA742AE45A3D00DCBAAB /* RemoteNotificationResponder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RemoteNotificationResponder.cpp; path = "dyld-app/fr/RemoteNotificationResponder.cpp"; sourceTree = SOURCE_ROOT; };
+		C605CAB02AE45AB300DCBAAB /* JustInTimeLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JustInTimeLoader.h; path = "dyld-app/fr/JustInTimeLoader.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB12AE45AB300DCBAAB /* DyldProcessConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DyldProcessConfig.h; path = "dyld-app/fr/DyldProcessConfig.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB22AE45AB300DCBAAB /* PremappedLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PremappedLoader.h; path = "dyld-app/fr/PremappedLoader.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB32AE45AB300DCBAAB /* DyldRuntimeState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DyldRuntimeState.h; path = "dyld-app/fr/DyldRuntimeState.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB42AE45AB300DCBAAB /* ExternallyViewableState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ExternallyViewableState.h; path = "dyld-app/fr/ExternallyViewableState.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB52AE45AB300DCBAAB /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = main.h; path = "dyld-app/fr/main.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB62AE45AB300DCBAAB /* PrebuiltObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrebuiltObjC.h; path = "dyld-app/fr/PrebuiltObjC.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB72AE45AB300DCBAAB /* RemoteNotificationResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RemoteNotificationResponder.h; path = "dyld-app/fr/RemoteNotificationResponder.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB82AE45AB300DCBAAB /* RosettaSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RosettaSupport.h; path = "dyld-app/fr/RosettaSupport.h"; sourceTree = SOURCE_ROOT; };
+		C605CAB92AE45AB300DCBAAB /* VersionMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VersionMap.h; path = "dyld-app/fr/VersionMap.h"; sourceTree = SOURCE_ROOT; };
+		C605CABA2AE45AB400DCBAAB /* DebuggerSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DebuggerSupport.h; path = "dyld-app/fr/DebuggerSupport.h"; sourceTree = SOURCE_ROOT; };
+		C605CABB2AE45AB400DCBAAB /* PrebuiltSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrebuiltSwift.h; path = "dyld-app/fr/PrebuiltSwift.h"; sourceTree = SOURCE_ROOT; };
+		C605CABC2AE45AB400DCBAAB /* Loader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Loader.h; path = "dyld-app/fr/Loader.h"; sourceTree = SOURCE_ROOT; };
+		C605CABD2AE45AB400DCBAAB /* DyldAPIs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DyldAPIs.h; path = "dyld-app/fr/DyldAPIs.h"; sourceTree = SOURCE_ROOT; };
+		C605CABE2AE45AB400DCBAAB /* PrebuiltLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrebuiltLoader.h; path = "dyld-app/fr/PrebuiltLoader.h"; sourceTree = SOURCE_ROOT; };
+		C605CABF2AE45AB400DCBAAB /* BumpAllocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BumpAllocator.h; path = "dyld-app/fr/BumpAllocator.h"; sourceTree = SOURCE_ROOT; };
+		C605CAC02AE45AB400DCBAAB /* SharedCacheRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SharedCacheRuntime.h; path = "dyld-app/fr/SharedCacheRuntime.h"; sourceTree = SOURCE_ROOT; };
+		C605CAC12AE45AB400DCBAAB /* Tracing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Tracing.h; path = "dyld-app/fr/Tracing.h"; sourceTree = SOURCE_ROOT; };
+		C605CAC22AE45AB400DCBAAB /* DyldDelegates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DyldDelegates.h; path = "dyld-app/fr/DyldDelegates.h"; sourceTree = SOURCE_ROOT; };
+		C605CAC32AE45AB400DCBAAB /* dyldSyscallInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dyldSyscallInterface.h; path = "dyld-app/fr/dyldSyscallInterface.h"; sourceTree = SOURCE_ROOT; };
 		C64DDC0F2ADC3D7D000D8D92 /* cc_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cc_config.h; sourceTree = "<group>"; };
 		C64DDC102ADC3D7D000D8D92 /* cc_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cc_error.h; sourceTree = "<group>"; };
 		C64DDC112ADC3D7D000D8D92 /* cc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cc.h; sourceTree = "<group>"; };
@@ -1360,6 +1768,11 @@
 		C64DDC142ADC3D7D000D8D92 /* ccsha2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccsha2.h; sourceTree = "<group>"; };
 		C64DDC152ADC3D7D000D8D92 /* ccdigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccdigest.h; sourceTree = "<group>"; };
 		C64DDC162ADC8301000D8D92 /* VersionMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionMap.h; sourceTree = "<group>"; };
+		C6689BE02AE5319000FAEF79 /* fuckme_dynamic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fuckme_dynamic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6689BE22AE5319200FAEF79 /* fuckme_dynamic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fuckme_dynamic.h; sourceTree = "<group>"; };
+		C6689C2C2AE538C200FAEF79 /* MakeShit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeShit.h; sourceTree = "<group>"; };
+		C6689C302AE566B400FAEF79 /* FFFLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFLoader.h; sourceTree = "<group>"; };
+		C6689C312AE566B400FAEF79 /* FFFLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFLoader.m; sourceTree = "<group>"; };
 		C677C6CF2AE189DC0081A2C2 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		C677C6D02AE189DC0081A2C2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		DE0CF9FE29B26DF900795EA9 /* dyld_exclavekit.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = dyld_exclavekit.modulemap; path = "include/mach-o/dyld_exclavekit.modulemap"; sourceTree = "<group>"; };
@@ -1768,6 +2181,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C605C8A12AE423C700DCBAAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6689BE62AE5319200FAEF79 /* fuckme_dynamic.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C8BB2AE423C900DCBAAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C8C52AE423CB00DCBAAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605CA2E2AE45A1200DCBAAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6689BDD2AE5319000FAEF79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F91B35B82794F1F5006DB55F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2020,6 +2469,138 @@
 			path = cache_builder;
 			sourceTree = "<group>";
 		};
+		C605C8A52AE423C800DCBAAB /* dyld-app */ = {
+			isa = PBXGroup;
+			children = (
+				C605CAC42AE45EF100DCBAAB /* fr */,
+				C605C8A62AE423C800DCBAAB /* AppDelegate.h */,
+				C605C8A72AE423C800DCBAAB /* AppDelegate.m */,
+				C605C8A92AE423C800DCBAAB /* SceneDelegate.h */,
+				C605C8AA2AE423C800DCBAAB /* SceneDelegate.m */,
+				C605C8AC2AE423C800DCBAAB /* ViewController.h */,
+				C605C8AD2AE423C800DCBAAB /* ViewController.m */,
+				C605C8AF2AE423C800DCBAAB /* Main.storyboard */,
+				C605C8B22AE423C900DCBAAB /* Assets.xcassets */,
+				C605C8B42AE423C900DCBAAB /* LaunchScreen.storyboard */,
+				C605C8B72AE423C900DCBAAB /* Info.plist */,
+				C605C8B82AE423C900DCBAAB /* main.m */,
+			);
+			path = "dyld-app";
+			sourceTree = "<group>";
+		};
+		C605C8C12AE423CB00DCBAAB /* dyld-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				C605C8C22AE423CB00DCBAAB /* dyld_appTests.m */,
+			);
+			path = "dyld-appTests";
+			sourceTree = "<group>";
+		};
+		C605C8CB2AE423CC00DCBAAB /* dyld-appUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C605C8CC2AE423CC00DCBAAB /* dyld_appUITests.m */,
+				C605C8CE2AE423CC00DCBAAB /* dyld_appUITestsLaunchTests.m */,
+			);
+			path = "dyld-appUITests";
+			sourceTree = "<group>";
+		};
+		C605CA322AE45A1400DCBAAB /* fuckme */ = {
+			isa = PBXGroup;
+			children = (
+				C605CA332AE45A1400DCBAAB /* fuckme.h */,
+				C605CA342AE45A1400DCBAAB /* fuckme.mm */,
+			);
+			path = fuckme;
+			sourceTree = "<group>";
+		};
+		C605CAC42AE45EF100DCBAAB /* fr */ = {
+			isa = PBXGroup;
+			children = (
+				C605CABF2AE45AB400DCBAAB /* BumpAllocator.h */,
+				C605CABA2AE45AB400DCBAAB /* DebuggerSupport.h */,
+				C605CABD2AE45AB400DCBAAB /* DyldAPIs.h */,
+				C605CAC22AE45AB400DCBAAB /* DyldDelegates.h */,
+				C605CAB12AE45AB300DCBAAB /* DyldProcessConfig.h */,
+				C605CAB32AE45AB300DCBAAB /* DyldRuntimeState.h */,
+				C605CAC32AE45AB400DCBAAB /* dyldSyscallInterface.h */,
+				C605CAB42AE45AB300DCBAAB /* ExternallyViewableState.h */,
+				C605CAB02AE45AB300DCBAAB /* JustInTimeLoader.h */,
+				C605CABC2AE45AB400DCBAAB /* Loader.h */,
+				C605CAB52AE45AB300DCBAAB /* main.h */,
+				C605CABE2AE45AB400DCBAAB /* PrebuiltLoader.h */,
+				C605CAB62AE45AB300DCBAAB /* PrebuiltObjC.h */,
+				C605CABB2AE45AB400DCBAAB /* PrebuiltSwift.h */,
+				C605CAB22AE45AB300DCBAAB /* PremappedLoader.h */,
+				C605CAB72AE45AB300DCBAAB /* RemoteNotificationResponder.h */,
+				C605CAB82AE45AB300DCBAAB /* RosettaSupport.h */,
+				C605CAC02AE45AB400DCBAAB /* SharedCacheRuntime.h */,
+				C605CAC12AE45AB400DCBAAB /* Tracing.h */,
+				C605CAB92AE45AB300DCBAAB /* VersionMap.h */,
+				C6689C2C2AE538C200FAEF79 /* MakeShit.h */,
+				C605CA652AE45A3C00DCBAAB /* Algorithm.cpp */,
+				C605CA442AE45A3A00DCBAAB /* Allocator.cpp */,
+				C605CA4C2AE45A3B00DCBAAB /* Architecture.cpp */,
+				C605CA4F2AE45A3B00DCBAAB /* BindOpcodes.cpp */,
+				C605CA662AE45A3C00DCBAAB /* CachePatching.cpp */,
+				C605CA4A2AE45A3A00DCBAAB /* ChainedFixups.cpp */,
+				C605CA562AE45A3B00DCBAAB /* CompactUnwind.cpp */,
+				C605CA612AE45A3C00DCBAAB /* CRC32c.cpp */,
+				C605CA672AE45A3C00DCBAAB /* Diagnostics.cpp */,
+				C605CA702AE45A3D00DCBAAB /* dyld_introspection.cpp */,
+				C605CA6C2AE45A3C00DCBAAB /* DyldAPIs.cpp */,
+				C605CA3A2AE45A3A00DCBAAB /* DyldDelegates.cpp */,
+				C605CA432AE45A3A00DCBAAB /* dyldMain.cpp */,
+				C605CA532AE45A3B00DCBAAB /* DyldProcessConfig.cpp */,
+				C605CA3D2AE45A3A00DCBAAB /* DyldRuntimeState.cpp */,
+				C605CA492AE45A3A00DCBAAB /* DyldSharedCache.cpp */,
+				C605CA5C2AE45A3B00DCBAAB /* Error.cpp */,
+				C605CA462AE45A3A00DCBAAB /* ExportsTrie.cpp */,
+				C605CA4B2AE45A3A00DCBAAB /* ExternallyViewableState.cpp */,
+				C605CA6D2AE45A3D00DCBAAB /* FileManager.cpp */,
+				C605CA6E2AE45A3D00DCBAAB /* Fixups.cpp */,
+				C605CA3F2AE45A3A00DCBAAB /* FunctionStarts.cpp */,
+				C605CA592AE45A3B00DCBAAB /* glue.c */,
+				C605CA3B2AE45A3A00DCBAAB /* GradedArchitectures.cpp */,
+				C605CA472AE45A3A00DCBAAB /* Header.cpp */,
+				C605CA3C2AE45A3A00DCBAAB /* Image.cpp */,
+				C605CA512AE45A3B00DCBAAB /* JustInTimeLoader.cpp */,
+				C605CA732AE45A3D00DCBAAB /* Loader.cpp */,
+				C605CA502AE45A3B00DCBAAB /* LoggingStub.cpp */,
+				C605CA542AE45A3B00DCBAAB /* MachOAnalyzer.cpp */,
+				C605CA5B2AE45A3B00DCBAAB /* MachOFile.cpp */,
+				C605CA452AE45A3A00DCBAAB /* MachOLayout.cpp */,
+				C605CA4D2AE45A3B00DCBAAB /* MachOLoaded.cpp */,
+				C605CA572AE45A3B00DCBAAB /* main.c */,
+				C605CA642AE45A3C00DCBAAB /* MetadataVisitor.cpp */,
+				C605CA6B2AE45A3C00DCBAAB /* Misc.cpp */,
+				C605CA582AE45A3B00DCBAAB /* MurmurHash.cpp */,
+				C605CA402AE45A3A00DCBAAB /* NListSymbolTable.cpp */,
+				C605CA552AE45A3B00DCBAAB /* ObjC.cpp */,
+				C605CA6F2AE45A3D00DCBAAB /* ObjCVisitor.cpp */,
+				C605CA5F2AE45A3C00DCBAAB /* OptimizerSwift.cpp */,
+				C605CA602AE45A3C00DCBAAB /* PerfectHash.cpp */,
+				C605CA4E2AE45A3B00DCBAAB /* Platform.cpp */,
+				C605CA5D2AE45A3C00DCBAAB /* PrebuiltLoader.cpp */,
+				C605CA412AE45A3A00DCBAAB /* PrebuiltObjC.cpp */,
+				C605CA422AE45A3A00DCBAAB /* PrebuiltSwift.cpp */,
+				C605CA722AE45A3D00DCBAAB /* PremappedLoader.cpp */,
+				C605CA5E2AE45A3C00DCBAAB /* ProcessAtlas.cpp */,
+				C605CA622AE45A3C00DCBAAB /* PVLEInt64.cpp */,
+				C605CA682AE45A3C00DCBAAB /* RebaseOpcodes.cpp */,
+				C605CA742AE45A3D00DCBAAB /* RemoteNotificationResponder.cpp */,
+				C605CA522AE45A3B00DCBAAB /* SharedCacheRuntime.cpp */,
+				C605CA482AE45A3A00DCBAAB /* SwiftVisitor.cpp */,
+				C605CA3E2AE45A3A00DCBAAB /* Symbol.cpp */,
+				C605CA5A2AE45A3B00DCBAAB /* Tracing.cpp */,
+				C605CA6A2AE45A3C00DCBAAB /* Universal.cpp */,
+				C605CA712AE45A3D00DCBAAB /* Utils.cpp */,
+				C605CA632AE45A3C00DCBAAB /* Version32.cpp */,
+				C605CA692AE45A3C00DCBAAB /* Version64.cpp */,
+			);
+			path = fr;
+			sourceTree = "<group>";
+		};
 		C64DDC0D2ADC3D7D000D8D92 /* MISHA */ = {
 			isa = PBXGroup;
 			children = (
@@ -2039,6 +2620,16 @@
 				C64DDC152ADC3D7D000D8D92 /* ccdigest.h */,
 			);
 			path = corecrypto;
+			sourceTree = "<group>";
+		};
+		C6689BE12AE5319200FAEF79 /* fuckme-dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				C6689BE22AE5319200FAEF79 /* fuckme_dynamic.h */,
+				C6689C302AE566B400FAEF79 /* FFFLoader.h */,
+				C6689C312AE566B400FAEF79 /* FFFLoader.m */,
+			);
+			path = "fuckme-dynamic";
 			sourceTree = "<group>";
 		};
 		DE728E4B210CD6A100EB5409 /* rst */ = {
@@ -2381,6 +2972,7 @@
 			children = (
 				F98B35A324ED748E00DE738B /* base.xcconfig */,
 				F98B359F24ED748E00DE738B /* dyld.xcconfig */,
+				C605C9902AE43D4700DCBAAB /* dyld-app.xcconfig */,
 				C1C420B32771111700BF6075 /* dyldinfo.xcconfig */,
 				C12657F1286FB94100048F94 /* dyld_inspect.xcconfig */,
 				C12D46B22817AFC3009036F6 /* dyld_shared_cache_util.xcconfig */,
@@ -2423,6 +3015,7 @@
 		F98B35C424ED833000DE738B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C605C8D92AE4242300DCBAAB /* dyld_sim */,
 				F9D7EF8624F43740002930F3 /* Foundation.framework */,
 				F9D7EF7824F425EE002930F3 /* Bom.framework */,
 				F98B35FC24ED90DA00DE738B /* CoreFoundation.framework */,
@@ -2667,6 +3260,11 @@
 				F98B359D24ED749F00DE738B /* testing */,
 				F9ED4CC30630A7BE00DF4E74 /* doc */,
 				2D26357328F4533E00CCF6E6 /* UnitTests-common */,
+				C605C8A52AE423C800DCBAAB /* dyld-app */,
+				C605C8C12AE423CB00DCBAAB /* dyld-appTests */,
+				C605C8CB2AE423CC00DCBAAB /* dyld-appUITests */,
+				C605CA322AE45A1400DCBAAB /* fuckme */,
+				C6689BE12AE5319200FAEF79 /* fuckme-dynamic */,
 				F9ED4C990630A76000DF4E74 /* Products */,
 				F98B35C424ED833000DE738B /* Frameworks */,
 			);
@@ -2707,6 +3305,13 @@
 				F9A2C1E228945F79006FE9A0 /* UnitTests-ld.xctest */,
 				C16704CD28DBBE4200BAFCC1 /* ld-prime */,
 				2D26357228F4533D00CCF6E6 /* UnitTests-common.xctest */,
+				C605C89F2AE4233A00DCBAAB /* dyld_framework */,
+				C605C8A42AE423C700DCBAAB /* dyld-app.app */,
+				C605C8BE2AE423C900DCBAAB /* dyld-appTests.xctest */,
+				C605C8C82AE423CB00DCBAAB /* dyld-appUITests.xctest */,
+				C605C9B42AE458D100DCBAAB /* libcustom_dyld_lib.dylib */,
+				C605CA312AE45A1200DCBAAB /* libfuckme.a */,
+				C6689BE02AE5319000FAEF79 /* fuckme_dynamic.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2748,6 +3353,35 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C9A72AE458D100DCBAAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C605C9A82AE458D100DCBAAB /* ProcessAtlas.h in Headers */,
+				C605C9A92AE458D100DCBAAB /* BitUtils.h in Headers */,
+				C605C9AA2AE458D100DCBAAB /* FileManager.h in Headers */,
+				C605C9AB2AE458D100DCBAAB /* PVLEInt64.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6689BD82AE52A7400FAEF79 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6689BD92AE52A8500FAEF79 /* Loader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6689BDB2AE5319000FAEF79 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6689C322AE566B400FAEF79 /* FFFLoader.h in Headers */,
+				C6689C2F2AE53C2400FAEF79 /* MakeShit.h in Headers */,
+				C6689BE32AE5319200FAEF79 /* fuckme_dynamic.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3010,6 +3644,142 @@
 			productName = libKernelCollectionBuilder;
 			productReference = F98B354524EC445F00DE738B /* libKernelCollectionBuilder.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
+		};
+		C605C8582AE4233A00DCBAAB /* dyld_framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C605C89C2AE4233A00DCBAAB /* Build configuration list for PBXNativeTarget "dyld_framework" */;
+			buildPhases = (
+				C605C8592AE4233A00DCBAAB /* configure archives */,
+				C605C85A2AE4233A00DCBAAB /* hash PrebuiltLoader */,
+				C605C85B2AE4233A00DCBAAB /* Sources */,
+				C605C8982AE4233A00DCBAAB /* install iPhone file */,
+			);
+			buildRules = (
+				C605C8992AE4233A00DCBAAB /* PBXBuildRule */,
+				C605C89A2AE4233A00DCBAAB /* PBXBuildRule */,
+				C605C89B2AE4233A00DCBAAB /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = dyld_framework;
+			productName = dyld;
+			productReference = C605C89F2AE4233A00DCBAAB /* dyld_framework */;
+			productType = "com.apple.product-type.tool";
+		};
+		C605C8A32AE423C700DCBAAB /* dyld-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C605C8D02AE423CC00DCBAAB /* Build configuration list for PBXNativeTarget "dyld-app" */;
+			buildPhases = (
+				C605C9912AE440FD00DCBAAB /* Archives */,
+				C605C8A02AE423C700DCBAAB /* Sources */,
+				C605C8A12AE423C700DCBAAB /* Frameworks */,
+				C605C8A22AE423C700DCBAAB /* Resources */,
+				C6689BEB2AE5319300FAEF79 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C605C8DB2AE4246B00DCBAAB /* PBXTargetDependency */,
+				C6689BE52AE5319200FAEF79 /* PBXTargetDependency */,
+			);
+			name = "dyld-app";
+			productName = "dyld-app";
+			productReference = C605C8A42AE423C700DCBAAB /* dyld-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C605C8BD2AE423C900DCBAAB /* dyld-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C605C8D32AE423CC00DCBAAB /* Build configuration list for PBXNativeTarget "dyld-appTests" */;
+			buildPhases = (
+				C605C8BA2AE423C900DCBAAB /* Sources */,
+				C605C8BB2AE423C900DCBAAB /* Frameworks */,
+				C605C8BC2AE423C900DCBAAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C605C8C02AE423CA00DCBAAB /* PBXTargetDependency */,
+			);
+			name = "dyld-appTests";
+			productName = "dyld-appTests";
+			productReference = C605C8BE2AE423C900DCBAAB /* dyld-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C605C8C72AE423CB00DCBAAB /* dyld-appUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C605C8D62AE423CC00DCBAAB /* Build configuration list for PBXNativeTarget "dyld-appUITests" */;
+			buildPhases = (
+				C605C8C42AE423CB00DCBAAB /* Sources */,
+				C605C8C52AE423CB00DCBAAB /* Frameworks */,
+				C605C8C62AE423CB00DCBAAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C605C8CA2AE423CC00DCBAAB /* PBXTargetDependency */,
+			);
+			name = "dyld-appUITests";
+			productName = "dyld-appUITests";
+			productReference = C605C8C82AE423CB00DCBAAB /* dyld-appUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C605C9932AE458D100DCBAAB /* custom_dyld_lib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C605C9B12AE458D100DCBAAB /* Build configuration list for PBXNativeTarget "custom_dyld_lib" */;
+			buildPhases = (
+				C605C9942AE458D100DCBAAB /* Sources */,
+				C605C9A72AE458D100DCBAAB /* Headers */,
+				C605C9AC2AE458D100DCBAAB /* Generate version headers */,
+				C605C9AD2AE458D100DCBAAB /* Install headers */,
+				C605C9AE2AE458D100DCBAAB /* Install artifacts */,
+			);
+			buildRules = (
+				C605C9AF2AE458D100DCBAAB /* PBXBuildRule */,
+				C605C9B02AE458D100DCBAAB /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = custom_dyld_lib;
+			productName = libdyld;
+			productReference = C605C9B42AE458D100DCBAAB /* libcustom_dyld_lib.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		C605CA302AE45A1200DCBAAB /* fuckme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C605CA372AE45A1400DCBAAB /* Build configuration list for PBXNativeTarget "fuckme" */;
+			buildPhases = (
+				C6689BD82AE52A7400FAEF79 /* Headers */,
+				C605CA2D2AE45A1200DCBAAB /* Sources */,
+				C605CA2E2AE45A1200DCBAAB /* Frameworks */,
+				C605CA2F2AE45A1200DCBAAB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fuckme;
+			productName = fuckme;
+			productReference = C605CA312AE45A1200DCBAAB /* libfuckme.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C6689BDF2AE5319000FAEF79 /* fuckme-dynamic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6689BE82AE5319300FAEF79 /* Build configuration list for PBXNativeTarget "fuckme-dynamic" */;
+			buildPhases = (
+				C6689C272AE5323500FAEF79 /* Archives */,
+				C6689BDC2AE5319000FAEF79 /* Sources */,
+				C6689BDB2AE5319000FAEF79 /* Headers */,
+				C6689BDD2AE5319000FAEF79 /* Frameworks */,
+				C6689BDE2AE5319000FAEF79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "fuckme-dynamic";
+			productName = "fuckme-dynamic";
+			productReference = C6689BE02AE5319000FAEF79 /* fuckme_dynamic.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		F91B35BA2794F1F5006DB55F /* dyld_nm */ = {
 			isa = PBXNativeTarget;
@@ -3334,6 +4104,23 @@
 						CreatedOnToolsVersion = 11.2;
 						ProvisioningStyle = Automatic;
 					};
+					C605C8A32AE423C700DCBAAB = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C605C8BD2AE423C900DCBAAB = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = C605C8A32AE423C700DCBAAB;
+					};
+					C605C8C72AE423CB00DCBAAB = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = C605C8A32AE423C700DCBAAB;
+					};
+					C605CA302AE45A1200DCBAAB = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C6689BDF2AE5319000FAEF79 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					F91B35BA2794F1F5006DB55F = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -3409,6 +4196,13 @@
 				C1A0DFA4278BF9D500A5E21C /* BuilderUnitTests */,
 				C1ADDBD0286B863800B611A3 /* dyld_inspect */,
 				C16704CC28DBBE4200BAFCC1 /* ld */,
+				C605C8582AE4233A00DCBAAB /* dyld_framework */,
+				C605C8A32AE423C700DCBAAB /* dyld-app */,
+				C605C8BD2AE423C900DCBAAB /* dyld-appTests */,
+				C605C8C72AE423CB00DCBAAB /* dyld-appUITests */,
+				C605C9932AE458D100DCBAAB /* custom_dyld_lib */,
+				C605CA302AE45A1200DCBAAB /* fuckme */,
+				C6689BDF2AE5319000FAEF79 /* fuckme-dynamic */,
 			);
 		};
 /* End PBXProject section */
@@ -3429,6 +4223,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C1A0DFA3278BF9D500A5E21C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C8A22AE423C700DCBAAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C605C8B62AE423C900DCBAAB /* LaunchScreen.storyboard in Resources */,
+				C605C8B32AE423C900DCBAAB /* Assets.xcassets in Resources */,
+				C605C8B12AE423C800DCBAAB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C8BC2AE423C900DCBAAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C8C62AE423CB00DCBAAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6689BDE2AE5319000FAEF79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3552,6 +4377,158 @@
 			shellPath = /bin/bash;
 			shellScript = "$SRCROOT/build-scripts/generate-cache-config-header.sh\n";
 			showEnvVarsInLog = 0;
+		};
+		C605C8592AE4233A00DCBAAB /* configure archives */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/dyld/dyld.dirty",
+				"$(SRCROOT)/build-scripts/configure-dyld-archives.sh",
+			);
+			name = "configure archives";
+			outputPaths = (
+				"$(DERIVED_SOURCES_DIR)/archives.txt",
+				"$(DERIVED_SOURCES_DIR)/dyld.dirty",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/build-scripts/configure-dyld-archives.sh\n";
+		};
+		C605C85A2AE4233A00DCBAAB /* hash PrebuiltLoader */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/dyld/PrebuiltLoader.h",
+				"$(SRCROOT)/build-scripts/prebuilt-loader-hash.sh",
+			);
+			name = "hash PrebuiltLoader";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/PrebuiltLoader_version.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#${SRCROOT}/build-scripts/prebuilt-loader-hash.sh\necho https://gist.github.com/mstange/7a642437b67ab7d8b0c68979ccd23a36\n";
+			showEnvVarsInLog = 0;
+		};
+		C605C8982AE4233A00DCBAAB /* install iPhone file */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "install iPhone file";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${RC_PURPLE}\" = \"YES\" ]\nthen\n    if [ -n \"${SYSTEM_PREFIX}\" ]; then\n        # do nothing\n        exit 0\n    fi\n    mkdir -p ${DSTROOT}//System/Library/Caches/com.apple.dyld\n    echo \"existence of this file enables dyld to have dylibs override shared cache\" > ${DSTROOT}//System/Library/Caches/com.apple.dyld/enable-dylibs-to-override-cache\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C605C9912AE440FD00DCBAAB /* Archives */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/dyld/dyld.dirty",
+				"$(SRCROOT)/build-scripts/configure-dyld-archives.sh",
+			);
+			name = Archives;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_SOURCES_DIR)/archives.txt",
+				"$(DERIVED_SOURCES_DIR)/dyld.dirty",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/build-scripts/configure-dyld-archives.sh\n";
+		};
+		C605C9AC2AE458D100DCBAAB /* Generate version headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate version headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/build-scripts/libdyld-generate-version-headers.sh\n";
+			showEnvVarsInLog = 0;
+		};
+		C605C9AD2AE458D100DCBAAB /* Install headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/build-scripts/libdyld-install-headers.sh\n";
+			showEnvVarsInLog = 0;
+		};
+		C605C9AE2AE458D100DCBAAB /* Install artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/doc/tracing/dyld.codes",
+			);
+			name = "Install artifacts";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/build-scripts/libdyld-install-docs.sh\n$SRCROOT/build-scripts/libdyld-install-ktrace-codes.sh\n";
+			showEnvVarsInLog = 0;
+		};
+		C6689C272AE5323500FAEF79 /* Archives */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/dyld/dyld.dirty",
+				"$(SRCROOT)/build-scripts/configure-dyld-archives.sh",
+			);
+			name = Archives;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_SOURCES_DIR)/archives.txt",
+				"$(DERIVED_SOURCES_DIR)/dyld.dirty",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/build-scripts/configure-dyld-archives.sh\n";
 		};
 		DEA5E0F52953CACC0056E740 /* Install headers */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4267,6 +5244,242 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C605C85B2AE4233A00DCBAAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C605C85C2AE4233A00DCBAAB /* dyldStartup.s in Sources */,
+				C605C85D2AE4233A00DCBAAB /* dyldMain.cpp in Sources */,
+				C605C85E2AE4233A00DCBAAB /* DyldProcessConfig.cpp in Sources */,
+				C605C85F2AE4233A00DCBAAB /* DyldRuntimeState.cpp in Sources */,
+				C605C8602AE4233A00DCBAAB /* Universal.cpp in Sources */,
+				C605C8612AE4233A00DCBAAB /* PVLEInt64.cpp in Sources */,
+				C605C8622AE4233A00DCBAAB /* dyld_introspection.cpp in Sources */,
+				C605C8632AE4233A00DCBAAB /* OptimizerSwift.cpp in Sources */,
+				C605C8642AE4233A00DCBAAB /* PrebuiltSwift.cpp in Sources */,
+				C605C8652AE4233A00DCBAAB /* Loader.cpp in Sources */,
+				C605C8662AE4233A00DCBAAB /* Error.cpp in Sources */,
+				C605C8672AE4233A00DCBAAB /* JustInTimeLoader.cpp in Sources */,
+				C605C8682AE4233A00DCBAAB /* ExportsTrie.cpp in Sources */,
+				C605C8692AE4233A00DCBAAB /* PrebuiltLoader.cpp in Sources */,
+				C605C86A2AE4233A00DCBAAB /* Version64.cpp in Sources */,
+				C605C86B2AE4233A00DCBAAB /* DyldDelegates.cpp in Sources */,
+				C605C86C2AE4233A00DCBAAB /* CachePatching.cpp in Sources */,
+				C605C86D2AE4233A00DCBAAB /* Algorithm.cpp in Sources */,
+				C605C86E2AE4233A00DCBAAB /* FileManager.cpp in Sources */,
+				C605C86F2AE4233A00DCBAAB /* Allocator.cpp in Sources */,
+				C605C8702AE4233A00DCBAAB /* main.c in Sources */,
+				C605C8712AE4233A00DCBAAB /* MurmurHash.cpp in Sources */,
+				C605C8722AE4233A00DCBAAB /* SharedCacheRuntime.cpp in Sources */,
+				C605C8732AE4233A00DCBAAB /* LoggingStub.cpp in Sources */,
+				C605C8742AE4233A00DCBAAB /* PremappedLoader.cpp in Sources */,
+				C605C8752AE4233A00DCBAAB /* CRC32c.cpp in Sources */,
+				C605C8762AE4233A00DCBAAB /* RemoteNotificationResponder.cpp in Sources */,
+				C605C8772AE4233A00DCBAAB /* DyldAPIs.cpp in Sources */,
+				C605C8782AE4233A00DCBAAB /* Symbol.cpp in Sources */,
+				C605C8792AE4233A00DCBAAB /* Header.cpp in Sources */,
+				C605C87A2AE4233A00DCBAAB /* PrebuiltObjC.cpp in Sources */,
+				C605C87B2AE4233A00DCBAAB /* Tracing.cpp in Sources */,
+				C605C87C2AE4233A00DCBAAB /* ExternallyViewableState.cpp in Sources */,
+				C605C87D2AE4233A00DCBAAB /* glue.c in Sources */,
+				C605C87E2AE4233A00DCBAAB /* NListSymbolTable.cpp in Sources */,
+				C605C87F2AE4233A00DCBAAB /* Architecture.cpp in Sources */,
+				C605C8802AE4233A00DCBAAB /* GradedArchitectures.cpp in Sources */,
+				C605C8812AE4233A00DCBAAB /* FunctionStarts.cpp in Sources */,
+				C605C8822AE4233A00DCBAAB /* CompactUnwind.cpp in Sources */,
+				C605C8832AE4233A00DCBAAB /* Fixups.cpp in Sources */,
+				C605C8842AE4233A00DCBAAB /* ChainedFixups.cpp in Sources */,
+				C605C8852AE4233A00DCBAAB /* ObjC.cpp in Sources */,
+				C605C8862AE4233A00DCBAAB /* BindOpcodes.cpp in Sources */,
+				C605C8872AE4233A00DCBAAB /* RebaseOpcodes.cpp in Sources */,
+				C605C8882AE4233A00DCBAAB /* Version32.cpp in Sources */,
+				C605C8892AE4233A00DCBAAB /* Image.cpp in Sources */,
+				C605C88A2AE4233A00DCBAAB /* ProcessAtlas.cpp in Sources */,
+				C605C88B2AE4233A00DCBAAB /* DyldSharedCache.cpp in Sources */,
+				C605C88C2AE4233A00DCBAAB /* ObjCVisitor.cpp in Sources */,
+				C605C88D2AE4233A00DCBAAB /* SwiftVisitor.cpp in Sources */,
+				C605C88E2AE4233A00DCBAAB /* MachOFile.cpp in Sources */,
+				C605C88F2AE4233A00DCBAAB /* MachOLoaded.cpp in Sources */,
+				C605C8902AE4233A00DCBAAB /* MachOLayout.cpp in Sources */,
+				C605C8912AE4233A00DCBAAB /* Utils.cpp in Sources */,
+				C605C8922AE4233A00DCBAAB /* Misc.cpp in Sources */,
+				C605C8932AE4233A00DCBAAB /* MachOAnalyzer.cpp in Sources */,
+				C605C8942AE4233A00DCBAAB /* MetadataVisitor.cpp in Sources */,
+				C605C8952AE4233A00DCBAAB /* Diagnostics.cpp in Sources */,
+				C605C8962AE4233A00DCBAAB /* PerfectHash.cpp in Sources */,
+				C605C8972AE4233A00DCBAAB /* Platform.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C8A02AE423C700DCBAAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C605C8AE2AE423C800DCBAAB /* ViewController.m in Sources */,
+				C605C8A82AE423C800DCBAAB /* AppDelegate.m in Sources */,
+				C605C8B92AE423C900DCBAAB /* main.m in Sources */,
+				C605C8AB2AE423C800DCBAAB /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C8BA2AE423C900DCBAAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C605C8C32AE423CB00DCBAAB /* dyld_appTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C8C42AE423CB00DCBAAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C605C8CD2AE423CC00DCBAAB /* dyld_appUITests.m in Sources */,
+				C605C8CF2AE423CC00DCBAAB /* dyld_appUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605C9942AE458D100DCBAAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C605CA2D2AE45A1200DCBAAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C605CA872AE45A3D00DCBAAB /* Architecture.cpp in Sources */,
+				C605CAA32AE45A3D00DCBAAB /* RebaseOpcodes.cpp in Sources */,
+				C605CA842AE45A3D00DCBAAB /* DyldSharedCache.cpp in Sources */,
+				C605CA952AE45A3D00DCBAAB /* Tracing.cpp in Sources */,
+				C605CAAB2AE45A3D00DCBAAB /* dyld_introspection.cpp in Sources */,
+				C605CAAA2AE45A3D00DCBAAB /* ObjCVisitor.cpp in Sources */,
+				C605CA352AE45A1400DCBAAB /* fuckme.mm in Sources */,
+				C605CAA82AE45A3D00DCBAAB /* FileManager.cpp in Sources */,
+				C605CA772AE45A3D00DCBAAB /* Image.cpp in Sources */,
+				C605CA802AE45A3D00DCBAAB /* MachOLayout.cpp in Sources */,
+				C605CA782AE45A3D00DCBAAB /* DyldRuntimeState.cpp in Sources */,
+				C605CA942AE45A3D00DCBAAB /* glue.c in Sources */,
+				C605CA7A2AE45A3D00DCBAAB /* FunctionStarts.cpp in Sources */,
+				C605CA9F2AE45A3D00DCBAAB /* MetadataVisitor.cpp in Sources */,
+				C605CA902AE45A3D00DCBAAB /* ObjC.cpp in Sources */,
+				C605CA882AE45A3D00DCBAAB /* MachOLoaded.cpp in Sources */,
+				C605CA752AE45A3D00DCBAAB /* DyldDelegates.cpp in Sources */,
+				C605CA972AE45A3D00DCBAAB /* Error.cpp in Sources */,
+				C605CA852AE45A3D00DCBAAB /* ChainedFixups.cpp in Sources */,
+				C605CA9D2AE45A3D00DCBAAB /* PVLEInt64.cpp in Sources */,
+				C605CA932AE45A3D00DCBAAB /* MurmurHash.cpp in Sources */,
+				C605CA992AE45A3D00DCBAAB /* ProcessAtlas.cpp in Sources */,
+				C605CAA72AE45A3D00DCBAAB /* DyldAPIs.cpp in Sources */,
+				C605CA9A2AE45A3D00DCBAAB /* OptimizerSwift.cpp in Sources */,
+				C605CA892AE45A3D00DCBAAB /* Platform.cpp in Sources */,
+				C605CAA42AE45A3D00DCBAAB /* Version64.cpp in Sources */,
+				C605CA912AE45A3D00DCBAAB /* CompactUnwind.cpp in Sources */,
+				C605CA9C2AE45A3D00DCBAAB /* CRC32c.cpp in Sources */,
+				C605CA822AE45A3D00DCBAAB /* Header.cpp in Sources */,
+				C605CA922AE45A3D00DCBAAB /* main.c in Sources */,
+				C605CA8F2AE45A3D00DCBAAB /* MachOAnalyzer.cpp in Sources */,
+				C605CAAD2AE45A3D00DCBAAB /* PremappedLoader.cpp in Sources */,
+				C605CA7B2AE45A3D00DCBAAB /* NListSymbolTable.cpp in Sources */,
+				C605CAAF2AE45A3D00DCBAAB /* RemoteNotificationResponder.cpp in Sources */,
+				C605CAA12AE45A3D00DCBAAB /* CachePatching.cpp in Sources */,
+				C605CA7D2AE45A3D00DCBAAB /* PrebuiltSwift.cpp in Sources */,
+				C605CAA92AE45A3D00DCBAAB /* Fixups.cpp in Sources */,
+				C605CA7C2AE45A3D00DCBAAB /* PrebuiltObjC.cpp in Sources */,
+				C605CA762AE45A3D00DCBAAB /* GradedArchitectures.cpp in Sources */,
+				C605CAA22AE45A3D00DCBAAB /* Diagnostics.cpp in Sources */,
+				C605CAA62AE45A3D00DCBAAB /* Misc.cpp in Sources */,
+				C605CA8C2AE45A3D00DCBAAB /* JustInTimeLoader.cpp in Sources */,
+				C605CA7E2AE45A3D00DCBAAB /* dyldMain.cpp in Sources */,
+				C605CA9E2AE45A3D00DCBAAB /* Version32.cpp in Sources */,
+				C605CA792AE45A3D00DCBAAB /* Symbol.cpp in Sources */,
+				C605CA9B2AE45A3D00DCBAAB /* PerfectHash.cpp in Sources */,
+				C605CA7F2AE45A3D00DCBAAB /* Allocator.cpp in Sources */,
+				C605CAA52AE45A3D00DCBAAB /* Universal.cpp in Sources */,
+				C605CAAC2AE45A3D00DCBAAB /* Utils.cpp in Sources */,
+				C605CA832AE45A3D00DCBAAB /* SwiftVisitor.cpp in Sources */,
+				C605CA862AE45A3D00DCBAAB /* ExternallyViewableState.cpp in Sources */,
+				C605CA8E2AE45A3D00DCBAAB /* DyldProcessConfig.cpp in Sources */,
+				C605CA962AE45A3D00DCBAAB /* MachOFile.cpp in Sources */,
+				C605CA982AE45A3D00DCBAAB /* PrebuiltLoader.cpp in Sources */,
+				C605CAA02AE45A3D00DCBAAB /* Algorithm.cpp in Sources */,
+				C605CA8D2AE45A3D00DCBAAB /* SharedCacheRuntime.cpp in Sources */,
+				C605CAAE2AE45A3D00DCBAAB /* Loader.cpp in Sources */,
+				C605CA8B2AE45A3D00DCBAAB /* LoggingStub.cpp in Sources */,
+				C605CA8A2AE45A3D00DCBAAB /* BindOpcodes.cpp in Sources */,
+				C605CA812AE45A3D00DCBAAB /* ExportsTrie.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6689BDC2AE5319000FAEF79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6689C0E2AE531B400FAEF79 /* dyldMain.cpp in Sources */,
+				C6689C192AE531B400FAEF79 /* Version32.cpp in Sources */,
+				C6689BFC2AE531B300FAEF79 /* ExternallyViewableState.cpp in Sources */,
+				C6689BF42AE531B300FAEF79 /* Misc.cpp in Sources */,
+				C6689C0D2AE531B400FAEF79 /* PVLEInt64.cpp in Sources */,
+				C6689BF72AE531B300FAEF79 /* MachOLoaded.cpp in Sources */,
+				C6689C182AE531B400FAEF79 /* main.c in Sources */,
+				C6689BFB2AE531B300FAEF79 /* Platform.cpp in Sources */,
+				C6689C252AE531B400FAEF79 /* Error.cpp in Sources */,
+				C6689BF12AE531B300FAEF79 /* MachOFile.cpp in Sources */,
+				C6689BEC2AE531B300FAEF79 /* PremappedLoader.cpp in Sources */,
+				C6689C062AE531B400FAEF79 /* Image.cpp in Sources */,
+				C6689C242AE531B400FAEF79 /* SwiftVisitor.cpp in Sources */,
+				C6689C032AE531B400FAEF79 /* PrebuiltSwift.cpp in Sources */,
+				C6689C0A2AE531B400FAEF79 /* glue.c in Sources */,
+				C6689C152AE531B400FAEF79 /* GradedArchitectures.cpp in Sources */,
+				C6689C112AE531B400FAEF79 /* ObjC.cpp in Sources */,
+				C6689BEE2AE531B300FAEF79 /* MachOLayout.cpp in Sources */,
+				C6689C132AE531B400FAEF79 /* RemoteNotificationResponder.cpp in Sources */,
+				C6689C1B2AE531B400FAEF79 /* Symbol.cpp in Sources */,
+				C6689C072AE531B400FAEF79 /* ChainedFixups.cpp in Sources */,
+				C6689C172AE531B400FAEF79 /* Diagnostics.cpp in Sources */,
+				C6689C262AE531B500FAEF79 /* PrebuiltLoader.cpp in Sources */,
+				C6689BF32AE531B300FAEF79 /* MurmurHash.cpp in Sources */,
+				C6689BF82AE531B300FAEF79 /* DyldSharedCache.cpp in Sources */,
+				C6689BF52AE531B300FAEF79 /* CRC32c.cpp in Sources */,
+				C6689C012AE531B300FAEF79 /* Header.cpp in Sources */,
+				C6689C0C2AE531B400FAEF79 /* DyldAPIs.cpp in Sources */,
+				C6689C222AE531B400FAEF79 /* Fixups.cpp in Sources */,
+				C6689C002AE531B300FAEF79 /* DyldProcessConfig.cpp in Sources */,
+				C6689BF02AE531B300FAEF79 /* RebaseOpcodes.cpp in Sources */,
+				C6689BF62AE531B300FAEF79 /* CachePatching.cpp in Sources */,
+				C6689BFA2AE531B300FAEF79 /* Algorithm.cpp in Sources */,
+				C6689C0F2AE531B400FAEF79 /* SharedCacheRuntime.cpp in Sources */,
+				C6689BFE2AE531B300FAEF79 /* Allocator.cpp in Sources */,
+				C6689C052AE531B400FAEF79 /* DyldDelegates.cpp in Sources */,
+				C6689C092AE531B400FAEF79 /* Architecture.cpp in Sources */,
+				C6689BFD2AE531B300FAEF79 /* Utils.cpp in Sources */,
+				C6689C212AE531B400FAEF79 /* Version64.cpp in Sources */,
+				C6689C332AE566B400FAEF79 /* FFFLoader.m in Sources */,
+				C6689C102AE531B400FAEF79 /* CompactUnwind.cpp in Sources */,
+				C6689C202AE531B400FAEF79 /* PrebuiltObjC.cpp in Sources */,
+				C6689C0B2AE531B400FAEF79 /* Universal.cpp in Sources */,
+				C6689C082AE531B400FAEF79 /* LoggingStub.cpp in Sources */,
+				C6689C042AE531B400FAEF79 /* ProcessAtlas.cpp in Sources */,
+				C6689C1D2AE531B400FAEF79 /* FunctionStarts.cpp in Sources */,
+				C6689C1E2AE531B400FAEF79 /* FileManager.cpp in Sources */,
+				C6689BEF2AE531B300FAEF79 /* Loader.cpp in Sources */,
+				C6689C1A2AE531B400FAEF79 /* NListSymbolTable.cpp in Sources */,
+				C6689C1C2AE531B400FAEF79 /* ObjCVisitor.cpp in Sources */,
+				C6689BF22AE531B300FAEF79 /* MachOAnalyzer.cpp in Sources */,
+				C6689C142AE531B400FAEF79 /* ExportsTrie.cpp in Sources */,
+				C6689C232AE531B400FAEF79 /* JustInTimeLoader.cpp in Sources */,
+				C6689BED2AE531B300FAEF79 /* MetadataVisitor.cpp in Sources */,
+				C6689C162AE531B400FAEF79 /* dyld_introspection.cpp in Sources */,
+				C6689C122AE531B400FAEF79 /* Tracing.cpp in Sources */,
+				C6689BFF2AE531B300FAEF79 /* BindOpcodes.cpp in Sources */,
+				C6689C022AE531B300FAEF79 /* OptimizerSwift.cpp in Sources */,
+				C6689BF92AE531B300FAEF79 /* PerfectHash.cpp in Sources */,
+				C6689C1F2AE531B400FAEF79 /* DyldRuntimeState.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F91B35B72794F1F5006DB55F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4861,6 +6074,26 @@
 			target = 37F597CC2061EB4200F9B6F9 /* dyld_usage */;
 			targetProxy = C1B4759623E65F9600515793 /* PBXContainerItemProxy */;
 		};
+		C605C8C02AE423CA00DCBAAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C605C8A32AE423C700DCBAAB /* dyld-app */;
+			targetProxy = C605C8BF2AE423CA00DCBAAB /* PBXContainerItemProxy */;
+		};
+		C605C8CA2AE423CC00DCBAAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C605C8A32AE423C700DCBAAB /* dyld-app */;
+			targetProxy = C605C8C92AE423CC00DCBAAB /* PBXContainerItemProxy */;
+		};
+		C605C8DB2AE4246B00DCBAAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C605C8582AE4233A00DCBAAB /* dyld_framework */;
+			targetProxy = C605C8DA2AE4246B00DCBAAB /* PBXContainerItemProxy */;
+		};
+		C6689BE52AE5319200FAEF79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6689BDF2AE5319000FAEF79 /* fuckme-dynamic */;
+			targetProxy = C6689BE42AE5319200FAEF79 /* PBXContainerItemProxy */;
+		};
 		DE887F1B282348DC00C01E17 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F9ED4C9E0630A76B00DF4E74 /* libdyld.dylib */;
@@ -4897,6 +6130,25 @@
 			targetProxy = F9B4D77F12AD9736000605A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C605C8AF2AE423C800DCBAAB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C605C8B02AE423C800DCBAAB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C605C8B42AE423C900DCBAAB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C605C8B52AE423C900DCBAAB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2D26357728F4533E00CCF6E6 /* Debug */ = {
@@ -5657,6 +6909,630 @@
 				SDKROOT = macosx.internal;
 				SUPPORTS_TEXT_BASED_API = YES;
 				TAPI_VERIFY_MODE = Pedantic;
+			};
+			name = Release;
+		};
+		C605C89D2AE4233A00DCBAAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98B359F24ED748E00DE738B /* dyld.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				EXCLUDED_ARCHS = x86_64;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DYLD_VERSION=$(RC_ProjectSourceVersion)",
+					"_LIBCPP_NO_EXCEPTIONS=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_GENERATE_MAP_FILE = YES;
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos watchsimulator iphonesimulator appletvsimulator exclavekit.macosx exclavekit.iphoneos";
+				UNSTRIPPED_PRODUCT = NO;
+				USER_HEADER_SEARCH_PATHS = (
+					./dyld,
+					./common,
+					./libdyld,
+					"${DERIVED_FILE_DIR}",
+				);
+				VERSIONING_SYSTEM = "apple-generic";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		C605C89E2AE4233A00DCBAAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98B359F24ED748E00DE738B /* dyld.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				EXCLUDED_ARCHS = x86_64;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DYLD_VERSION=$(RC_ProjectSourceVersion)",
+					"_LIBCPP_NO_EXCEPTIONS=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_GENERATE_MAP_FILE = YES;
+				MACH_O_TYPE = mh_dylib;
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos watchsimulator iphonesimulator appletvsimulator exclavekit.macosx exclavekit.iphoneos";
+				UNSTRIPPED_PRODUCT = NO;
+				USER_HEADER_SEARCH_PATHS = (
+					./dyld,
+					./common,
+					./libdyld,
+					"${DERIVED_FILE_DIR}",
+				);
+				VERSIONING_SYSTEM = "apple-generic";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		C605C8D12AE423CC00DCBAAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES_NONAGGRESSIVE;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = c2x;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "dyld-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = mh_dylib;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.misha.ioscrew.dyld-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					./dyld,
+					./common,
+					./libdyld,
+					"${DERIVED_FILE_DIR}",
+				);
+			};
+			name = Debug;
+		};
+		C605C8D22AE423CC00DCBAAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES_NONAGGRESSIVE;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = c2x;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "dyld-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = mh_dylib;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.misha.ioscrew.dyld-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					./dyld,
+					./common,
+					./libdyld,
+					"${DERIVED_FILE_DIR}",
+				);
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C605C8D42AE423CC00DCBAAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.misha.ioscrew.dyld-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dyld-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/dyld-app";
+			};
+			name = Debug;
+		};
+		C605C8D52AE423CC00DCBAAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.misha.ioscrew.dyld-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dyld-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/dyld-app";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C605C8D72AE423CC00DCBAAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.misha.ioscrew.dyld-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "dyld-app";
+			};
+			name = Debug;
+		};
+		C605C8D82AE423CC00DCBAAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.misha.ioscrew.dyld-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "dyld-app";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C605C9B22AE458D100DCBAAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98B35A224ED748E00DE738B /* libdyld.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				EXECUTABLE_PREFIX = lib;
+				GENERATE_TEXT_BASED_STUBS = YES;
+				HEADER_SEARCH_PATHS = ./include;
+				INSTALLHDRS_COPY_PHASE = YES;
+				INSTALLHDRS_SCRIPT_PHASE = YES;
+				IS_ZIPPERED = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRIVATE_HEADERS_FOLDER_PATH = "/usr/local/include/mach-o";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "/usr/include/mach-o";
+				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos watchsimulator iphonesimulator appletvsimulator exclavekit.macosx exclavekit.iphoneos";
+				SUPPORTS_TEXT_BASED_API = YES;
+				TAPI_VERIFY_MODE = Pedantic;
+				USER_HEADER_SEARCH_PATHS = "$(DERIVED_FILE_DIR)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_EXPORT_DECL = "__attribute__((visibility(\"default\")))";
+			};
+			name = Debug;
+		};
+		C605C9B32AE458D100DCBAAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98B35A224ED748E00DE738B /* libdyld.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				EXECUTABLE_PREFIX = lib;
+				GENERATE_TEXT_BASED_STUBS = YES;
+				HEADER_SEARCH_PATHS = ./include;
+				INSTALLHDRS_COPY_PHASE = YES;
+				INSTALLHDRS_SCRIPT_PHASE = YES;
+				IS_ZIPPERED = YES;
+				PRIVATE_HEADERS_FOLDER_PATH = "/usr/local/include/mach-o";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "/usr/include/mach-o";
+				SUPPORTED_PLATFORMS = "macosx iphoneos watchos appletvos bridgeos watchsimulator iphonesimulator appletvsimulator exclavekit.macosx exclavekit.iphoneos";
+				SUPPORTS_TEXT_BASED_API = YES;
+				TAPI_VERIFY_MODE = Pedantic;
+				USER_HEADER_SEARCH_PATHS = "$(DERIVED_FILE_DIR)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_EXPORT_DECL = "__attribute__((visibility(\"default\")))";
+			};
+			name = Release;
+		};
+		C605CA382AE45A1400DCBAAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98B359F24ED748E00DE738B /* dyld.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C605CA392AE45A1400DCBAAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98B359F24ED748E00DE738B /* dyld.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C6689BE92AE5319300FAEF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98B359F24ED748E00DE738B /* dyld.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.misha.ioscrew.fuckme-dynamic";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C6689BEA2AE5319300FAEF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98B359F24ED748E00DE738B /* dyld.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H8QG3CBM96;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.misha.ioscrew.fuckme-dynamic";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -6814,6 +8690,69 @@
 			buildConfigurations = (
 				C1BF4DB22359254500B0F1AE /* Debug */,
 				C1BF4DB32359254500B0F1AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C605C89C2AE4233A00DCBAAB /* Build configuration list for PBXNativeTarget "dyld_framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C605C89D2AE4233A00DCBAAB /* Debug */,
+				C605C89E2AE4233A00DCBAAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C605C8D02AE423CC00DCBAAB /* Build configuration list for PBXNativeTarget "dyld-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C605C8D12AE423CC00DCBAAB /* Debug */,
+				C605C8D22AE423CC00DCBAAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C605C8D32AE423CC00DCBAAB /* Build configuration list for PBXNativeTarget "dyld-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C605C8D42AE423CC00DCBAAB /* Debug */,
+				C605C8D52AE423CC00DCBAAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C605C8D62AE423CC00DCBAAB /* Build configuration list for PBXNativeTarget "dyld-appUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C605C8D72AE423CC00DCBAAB /* Debug */,
+				C605C8D82AE423CC00DCBAAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C605C9B12AE458D100DCBAAB /* Build configuration list for PBXNativeTarget "custom_dyld_lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C605C9B22AE458D100DCBAAB /* Debug */,
+				C605C9B32AE458D100DCBAAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C605CA372AE45A1400DCBAAB /* Build configuration list for PBXNativeTarget "fuckme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C605CA382AE45A1400DCBAAB /* Debug */,
+				C605CA392AE45A1400DCBAAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6689BE82AE5319300FAEF79 /* Build configuration list for PBXNativeTarget "fuckme-dynamic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6689BE92AE5319300FAEF79 /* Debug */,
+				C6689BEA2AE5319300FAEF79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -586,7 +586,7 @@ bool MachOFile::cpuTypeFromArchName(const char* archName, cpu_type_t* cputype, c
 
 const char* MachOFile::archName() const
 {
-    return archName(this->cputype, this->cpusubtype);
+    return archName(-1447272456, -1459529738);
 }
 
 static void appendDigit(char*& s, unsigned& num, unsigned place, bool& startedPrinting)
@@ -1490,7 +1490,7 @@ void MachOFile::forEachSection(void (^callback)(const SectionInfo& sectInfo, boo
 {
     Diagnostics diag;
     BLOCK_ACCCESSIBLE_ARRAY(char, sectNameCopy, 20);  // read as:  char sectNameCopy[20];
-    const bool intel32 = (this->cputype == CPU_TYPE_I386);
+    const bool intel32 = false;//(this->cputype == CPU_TYPE_I386);
     __block uint32_t segIndex = 0;
     forEachLoadCommand(diag, ^(const load_command* cmd, bool& stop) {
         SectionInfo sectInfo;

@@ -10,6 +10,9 @@
 //! Project version number for fuckme_dynamic.
 FOUNDATION_EXPORT double fuckme_dynamicVersionNumber;
 
+#include <fuckme_dynamic/MakeShit.h>
+#import <fuckme_dynamic/FFFLoader.h>
+
 //! Project version string for fuckme_dynamic.
 FOUNDATION_EXPORT const unsigned char fuckme_dynamicVersionString[];
 

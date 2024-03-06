@@ -652,6 +652,8 @@ bool ProcessConfig::Process::usesCatalyst()
 
 Platform ProcessConfig::Process::getMainPlatform()
 {
+    // HARDCODE
+    return dyld3::Platform::iOS_simulator;
     // extract platform from main executable
     this->mainExecutableSDKVersion   = 0;
     this->mainExecutableMinOSVersion = 0;
@@ -695,9 +697,7 @@ Platform ProcessConfig::Process::getMainPlatform()
     this->mainExecutableMinOSVersionSet = findVersionSetEquivalent(this->basePlatform, this->mainExecutableMinOSVersion);
 #endif // !TARGET_OS_EXCLAVEKIT
 
-    //return result;
-    // HARDCODE
-    return dyld3::Platform::iOS_simulator;
+    return result;
 }
 
 

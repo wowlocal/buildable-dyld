@@ -1,0 +1,20 @@
+//
+//  dyld-app.xcconfig
+//  dyld
+//
+//  Created by Misha Nya on 21.10.2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "dyld.xcconfig"
+
+GCC_SYMBOLS_PRIVATE_EXTERN = NO
+
+GCC_PREPROCESSOR_DEFINITIONS                  = $(GCC_PREPROCESSOR_DEFINITIONS_$(CONFIGURATION)) _LIBCPP_NO_EXCEPTIONS=1 DYLD_VERSION= BUILDING_DYLD=1
+GCC_C_LANGUAGE_STANDARD = c2x
+CLANG_CXX_LANGUAGE_STANDARD = c++20
+LD_GENERATE_MAP_FILE = YES
+ENTRY_NAME =
+
+//OTHER_LDFLAGS = -e $(ENTRY_NAME) $(LLDB_SUPPORT) @$(DERIVED_SOURCES_DIR)/archives.txt

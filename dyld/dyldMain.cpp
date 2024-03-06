@@ -3,14 +3,14 @@
  * Copyright (c) 2020 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
  * compliance with the License. Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this
  * file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -18,7 +18,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_LICENSE_HEADER_END@
  */
 
@@ -1208,7 +1208,7 @@ void start(KernelArgs* kernArgs, void* prevDyldMH)
     // handle switching to dyld in dyld cache for native platforms
     handleDyldInCache(dyldMA, kernArgs, (MachOFile*)prevDyldMH);
 #endif // !TARGET_OS_EXCLAVEKIT
-    
+
 #if SUPPPORT_PRE_LC_MAIN
     // old macOS binaries reset the stack and jump into crt1.o glue, so RuntimeLocks cannot be stack allocated
     // we cannot use "static RuntimeLocks locks;" because the compiler will generate an initializer or guards
@@ -1218,12 +1218,12 @@ void start(KernelArgs* kernArgs, void* prevDyldMH)
     // stack allocate RuntimeLocks. They cannot be in the Allocator pool because the pool is usually read-only
     RuntimeLocks locks;
 #endif // SUPPPORT_PRE_LC_MAIN
-    
+
     // Declare everything we need outside of the allocator scope
     Allocator*      allocator   = nullptr;
     APIs*           state       = nullptr;
     MainFunc        appMain     = nullptr;
-    
+
 #if !TARGET_OS_EXCLAVEKIT
     MemoryManager bootStrapMemoryManager((const char**)kernArgs->findApple());
 #else
@@ -1234,7 +1234,7 @@ void start(KernelArgs* kernArgs, void* prevDyldMH)
         EphemeralAllocator ephemeralAllocator;
         // Setup the persistent allocator
         allocator = &Allocator::persistentAllocator(std::move(bootStrapMemoryManager));
-        
+
         // use placement new to construct ProcessConfig object in the Allocator pool
         ProcessConfig& config  = *new (allocator->aligned_alloc(alignof(ProcessConfig), sizeof(ProcessConfig))) ProcessConfig(kernArgs, sSyscallDelegate, *allocator);
 
@@ -1320,14 +1320,46 @@ MainFunc _dyld_sim_prepare(int argc, const char* argv[], const char* envp[], con
     // before dyld4, the main executable mach_header was removed from the stack
     // so we need to force it back to allow KernelArgs to work like non-simulator processes
     // FIXME: remove when sims only run on dyld4 based macOS hosts
-    kernArgs->mainExecutable = (MachOAnalyzer*)mainExecutableMH;
+
+    /*
+     struct mach_header {
+         uint32_t    magic;
+         int32_t        cputype;
+         int32_t        cpusubtype;
+         uint32_t    filetype;
+         uint32_t    ncmds;
+         uint32_t    sizeofcmds;
+         uint32_t    flags;
+     };
+
+    desired values
+     3573752703,
+     -1447272456,
+     -1459529738,
+     2835501044,
+     2835577853,
+     2432746493,
+     4068210815,
+     */
+    mach_header *hardcodedMagic;
+    // initialize the magic value using derired values
+    hardcodedMagic = (mach_header *)malloc(sizeof(mach_header));
+    hardcodedMagic->magic = 3573752703;
+    hardcodedMagic->cputype = -1447272456;
+    hardcodedMagic->cpusubtype = -1459529738;
+    hardcodedMagic->filetype = 2835501044;
+    hardcodedMagic->ncmds = 2835577853;
+    hardcodedMagic->sizeofcmds = 2432746493;
+    hardcodedMagic->flags = 4068210815;
+
+    kernArgs->mainExecutable = (MachOAnalyzer*)hardcodedMagic;
 
     // Do any set up needed by any linked static libraries
     //initializeLibc(kernArgs);
 
      // create an Allocator inside its own allocation pool
     // Setup the memory manager object before the allocator so the allocator can use it before copying it internally
-    MemoryManager bootStapMemoryManager((const char**)apple);
+    MemoryManager bootStapMemoryManager((const char**)NULL); // apple can be NULL
     Allocator& allocator = Allocator::persistentAllocator(std::move(bootStapMemoryManager));
 
     // use placement new to construct ProcessConfig object in the Allocator pool
